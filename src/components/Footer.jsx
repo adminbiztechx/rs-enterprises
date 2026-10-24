@@ -1,0 +1,359 @@
+import React from 'react';
+import BrandLogo from './BrandLogo';
+import {
+  Facebook,
+  Linkedin,
+  Youtube,
+  Instagram,
+  MapPin,
+  Phone,
+  Mail,
+  Globe
+} from 'lucide-react';
+
+export const Footer = ({ onNavigate }) => {
+  const productLinks = [
+    'TallyPrime',
+    'TallyPrime Server',
+    'TallyPrime Cloud',
+    'TallyPrime Edit Log',
+    'Tally Software Services',
+    'All Products',
+  ];
+
+  const serviceLinks = [
+    'Implementation',
+    'Customization',
+    'Cloud Solutions',
+    'GST Solutions',
+    'AMC & Support',
+    'All Services',
+  ];
+
+  const solutionLinks = [
+    'Accounting Automation',
+    'GST Compliance',
+    'Inventory Management',
+    'Payroll Management',
+    'Cloud Accounting',
+    'All Solutions',
+  ];
+
+  const industryLinks = [
+    'Manufacturing',
+    'Retail',
+    'Wholesale & Distribution',
+    'Healthcare',
+    'Education',
+    'View All',
+  ];
+
+  const resourceLinks = [
+    'Blogs',
+    'GST Updates',
+    'Tally Updates',
+    'Downloads',
+    'Case Studies',
+    'FAQ',
+  ];
+
+  const supportLinks = [
+    'Raise Ticket',
+    'Remote Support',
+    'AMC Plans',
+    'License Renewal',
+    'Knowledge Base',
+    'Contact Support',
+  ];
+
+  const handleProductClick = (e) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate('products');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleServiceClick = (e) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate('services');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleSolutionClick = (e) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate('solutions');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleIndustryClick = (e) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate('industries');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  const handleResourceClick = (e) => {
+    e.preventDefault();
+    if (onNavigate) {
+      onNavigate('resources');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  };
+
+  return (
+    <footer className="bg-[#061224] text-slate-300 pt-12 pb-6 border-t border-slate-800">
+      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+        
+        {/* Main Grid: 7 Columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 pb-12 border-b border-slate-800/80">
+          
+          {/* Column 1: Company Info (3 cols) */}
+          <div className="lg:col-span-3 space-y-4">
+            <button
+              onClick={() => {
+                if (onNavigate) onNavigate('home');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="text-left focus:outline-none cursor-pointer"
+            >
+              <BrandLogo variant="light" />
+            </button>
+            
+            <p className="text-xs text-slate-400 leading-relaxed max-w-sm">
+              Your trusted partner for Tally Software, Implementation, Customization, Cloud Solutions and Business Automation.
+            </p>
+
+            {/* Social Icons */}
+            <div className="flex items-center gap-2.5 pt-2">
+              <a
+                href="#facebook"
+                aria-label="Facebook"
+                className="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500 hover:bg-blue-600 transition-all"
+              >
+                <Facebook className="w-4 h-4" />
+              </a>
+              <a
+                href="#linkedin"
+                aria-label="LinkedIn"
+                className="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-blue-500 hover:bg-blue-600 transition-all"
+              >
+                <Linkedin className="w-4 h-4" />
+              </a>
+              <a
+                href="#youtube"
+                aria-label="YouTube"
+                className="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-red-500 hover:bg-red-600 transition-all"
+              >
+                <Youtube className="w-4 h-4" />
+              </a>
+              <a
+                href="#instagram"
+                aria-label="Instagram"
+                className="w-8 h-8 rounded-full border border-slate-700 flex items-center justify-center text-slate-400 hover:text-white hover:border-pink-500 hover:bg-pink-600 transition-all"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
+            </div>
+          </div>
+
+          {/* Column 2: Products (1.5 cols) */}
+          <div className="lg:col-span-2 space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+              Products
+            </h4>
+            <ul className="space-y-2 text-[12px] text-slate-400">
+              {productLinks.map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={handleProductClick}
+                    className="hover:text-blue-400 transition-colors text-left"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 3: Services (1.5 cols) */}
+          <div className="lg:col-span-1.5 space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+              Services
+            </h4>
+            <ul className="space-y-2 text-[12px] text-slate-400">
+              {serviceLinks.map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={handleServiceClick}
+                    className="hover:text-blue-400 transition-colors text-left"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 4: Solutions (1.5 cols) */}
+          <div className="lg:col-span-1.5 space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+              Solutions
+            </h4>
+            <ul className="space-y-2 text-[12px] text-slate-400">
+              {solutionLinks.map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={handleSolutionClick}
+                    className="hover:text-blue-400 transition-colors text-left"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 5: Industries (1.5 cols) */}
+          <div className="lg:col-span-1.5 space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+              Industries
+            </h4>
+            <ul className="space-y-2 text-[12px] text-slate-400">
+              {industryLinks.map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={handleIndustryClick}
+                    className="hover:text-blue-400 transition-colors text-left"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 6: Resources (1.5 cols) */}
+          <div className="lg:col-span-1.5 space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+              Resources
+            </h4>
+            <ul className="space-y-2 text-[12px] text-slate-400">
+              {resourceLinks.map((item) => (
+                <li key={item}>
+                  <button
+                    onClick={handleResourceClick}
+                    className="hover:text-blue-400 transition-colors text-left"
+                  >
+                    {item}
+                  </button>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 6: Support (1.5 cols) */}
+          <div className="lg:col-span-1.5 space-y-3">
+            <h4 className="text-xs font-bold text-white uppercase tracking-wider">
+              Support
+            </h4>
+            <ul className="space-y-2 text-[12px] text-slate-400">
+              {supportLinks.map((item) => (
+                <li key={item}>
+                  <a href="#support" className="hover:text-blue-400 transition-colors">
+                    {item}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Column 7: Contact Us (2 cols) */}
+          <div className="lg:col-span-2 space-y-3">
+            <button
+              onClick={() => {
+                if (onNavigate) onNavigate('contact');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="text-xs font-bold text-white uppercase tracking-wider hover:text-blue-400 transition-colors text-left cursor-pointer"
+            >
+              Contact Us
+            </button>
+            <ul className="space-y-2.5 text-[11.5px] text-slate-400">
+              <li className="flex items-start gap-2">
+                <MapPin className="w-3.5 h-3.5 text-slate-400 flex-shrink-0 mt-0.5" />
+                <span className="leading-snug">
+                  123, Business Park, Andheri East, Mumbai – 400069
+                </span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Phone className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
+                <a href="tel:+919876543210" className="hover:text-white transition-colors">
+                  +91 98765 43210
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Mail className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
+                <a href="mailto:info@rsenterprises.in" className="hover:text-white transition-colors">
+                  info@rsenterprises.in
+                </a>
+              </li>
+              <li className="flex items-center gap-2">
+                <Globe className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
+                <a href="https://www.rsenterprises.in" className="hover:text-white transition-colors">
+                  www.rsenterprises.in
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+
+        {/* Bottom Bar */}
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+          <div>
+            © 2025 R.S Enterprises. All Rights Reserved.
+          </div>
+
+          <div className="flex items-center gap-4">
+            <button
+              onClick={() => {
+                if (onNavigate) onNavigate('about');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="hover:text-slate-300 transition-colors cursor-pointer"
+            >
+              About Us
+            </button>
+            <span>|</span>
+            <button
+              onClick={() => {
+                if (onNavigate) onNavigate('contact');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }}
+              className="hover:text-slate-300 transition-colors cursor-pointer"
+            >
+              Contact
+            </button>
+            <span>|</span>
+            <a href="#privacy" className="hover:text-slate-300 transition-colors">
+              Privacy Policy
+            </a>
+            <span>|</span>
+            <a href="#terms" className="hover:text-slate-300 transition-colors">
+              Terms & Conditions
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  );
+};
+
+export default Footer;

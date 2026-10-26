@@ -348,6 +348,17 @@ export const Footer = ({ onNavigate }) => {
             <a href="#terms" className="hover:text-slate-300 transition-colors">
               Terms & Conditions
             </a>
+            <span>|</span>
+            <a
+              href="http://localhost/rs-backend/admin/login.php"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-blue-400/80 hover:text-blue-300 transition-colors inline-flex items-center gap-1 font-semibold"
+              title="Open XAMPP Backend Admin Panel"
+            >
+              <span>Admin Panel</span>
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
+            </a>
           </div>
         </div>
 

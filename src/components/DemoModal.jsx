@@ -1,8 +1,10 @@
 import React, { useState } from 'react';
 import { X, Calendar, CheckCircle2, Phone, Mail, Building, User } from 'lucide-react';
+import { submitInquiry } from '../services/api';
 
 export const DemoModal = ({ isOpen, onClose, defaultService = '' }) => {
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
     phone: '',
@@ -15,12 +17,20 @@ export const DemoModal = ({ isOpen, onClose, defaultService = '' }) => {
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    await submitInquiry({
+      type: 'demo',
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      company: formData.company,
+      product_interest: formData.service || defaultService,
+      message: `Preferred Date: ${formData.date || 'Earliest available'}. Notes: ${formData.notes || 'None'}`
+    });
+    setLoading(false);
     setSubmitted(true);
-    setTimeout(() => {
-      // Optional auto-close after 3 seconds
-    }, 3000);
   };
 
   const handleReset = () => {

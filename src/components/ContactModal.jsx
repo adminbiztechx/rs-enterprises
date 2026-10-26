@@ -1,14 +1,25 @@
 import React, { useState } from 'react';
 import { X, PhoneCall, CheckCircle2, MessageSquare, Phone, Mail, Clock } from 'lucide-react';
+import { submitInquiry } from '../services/api';
 
 export const ContactModal = ({ isOpen, onClose }) => {
   const [called, setCalled] = useState(false);
+  const [loading, setLoading] = useState(false);
   const [phone, setPhone] = useState('');
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    await submitInquiry({
+      type: 'callback',
+      name: 'Callback Request',
+      phone: phone,
+      product_interest: 'Immediate Callback Assistance',
+      message: 'Client requested an instant callback within 10 minutes.'
+    });
+    setLoading(false);
     setCalled(true);
   };
 

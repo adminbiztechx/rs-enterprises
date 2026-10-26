@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import AutoSlidingRow from '../components/AutoSlidingRow';
+import { submitInquiry } from '../services/api';
 import {
   Phone,
   Mail,
@@ -29,14 +30,22 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!formData.name || !formData.phone) return;
+    setLoading(true);
+    await submitInquiry({
+      type: 'contact',
+      name: formData.name,
+      phone: formData.phone,
+      email: formData.email,
+      product_interest: formData.subject,
+      message: formData.message
+    });
+    setLoading(false);
     setSubmitted(true);
-    setTimeout(() => {
-      // keep success state or clear
-    }, 4000);
   };
 
   const handleChange = (e) => {

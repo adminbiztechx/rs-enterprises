@@ -249,12 +249,47 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
   return (
     <div className="bg-white min-h-screen">
       
-      {/* 1. HERO SECTION (Dark Blue Gradient) */}
-      <section className="bg-gradient-to-r from-[#061730] via-[#092248] to-[#0d2e5e] text-white pt-8 pb-12 lg:pt-12 lg:pb-16 relative overflow-hidden">
-        {/* Subtle mesh overlay */}
-        <div className="absolute inset-0 bg-[radial-gradient(#38bdf8_1px,transparent_1px)] [background-size:24px_24px] opacity-10 pointer-events-none" />
+      {/* 1. HERO SECTION (Dark Blue Gradient with Constellation Network matching reference) */}
+      <section className="bg-gradient-to-r from-[#031533] via-[#072149] to-[#0a2c5f] text-white pt-8 pb-12 lg:pt-12 lg:pb-16 relative overflow-hidden">
+        {/* Constellation / Geometric network overlay matching exact user reference */}
+        <svg
+          className="absolute inset-0 w-full h-full opacity-30 pointer-events-none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <defs>
+            <linearGradient id="netGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.45" />
+              <stop offset="100%" stopColor="#818cf8" stopOpacity="0.15" />
+            </linearGradient>
+          </defs>
+          {/* Geometric constellation lines */}
+          <line x1="8%" y1="20%" x2="22%" y2="45%" stroke="url(#netGrad)" strokeWidth="1" />
+          <line x1="22%" y1="45%" x2="35%" y2="25%" stroke="url(#netGrad)" strokeWidth="1" />
+          <line x1="35%" y1="25%" x2="48%" y2="60%" stroke="url(#netGrad)" strokeWidth="1" />
+          <line x1="48%" y1="60%" x2="62%" y2="30%" stroke="url(#netGrad)" strokeWidth="1" />
+          <line x1="62%" y1="30%" x2="78%" y2="65%" stroke="url(#netGrad)" strokeWidth="1" />
+          <line x1="78%" y1="65%" x2="92%" y2="25%" stroke="url(#netGrad)" strokeWidth="1" />
+          <line x1="22%" y1="45%" x2="15%" y2="85%" stroke="url(#netGrad)" strokeWidth="1" />
+          <line x1="15%" y1="85%" x2="48%" y2="60%" stroke="url(#netGrad)" strokeWidth="1" />
+          <line x1="48%" y1="60%" x2="55%" y2="88%" stroke="url(#netGrad)" strokeWidth="1" />
+          <line x1="55%" y1="88%" x2="78%" y2="65%" stroke="url(#netGrad)" strokeWidth="1" />
+          <line x1="62%" y1="30%" x2="88%" y2="15%" stroke="url(#netGrad)" strokeWidth="1" />
+          <line x1="88%" y1="15%" x2="92%" y2="25%" stroke="url(#netGrad)" strokeWidth="1" />
+          <line x1="35%" y1="25%" x2="62%" y2="30%" stroke="url(#netGrad)" strokeWidth="1" />
+          {/* Constellation nodes */}
+          <circle cx="8%" cy="20%" r="2.5" fill="#38bdf8" opacity="0.6" />
+          <circle cx="22%" cy="45%" r="3" fill="#38bdf8" opacity="0.8" />
+          <circle cx="35%" cy="25%" r="2.5" fill="#38bdf8" opacity="0.6" />
+          <circle cx="48%" cy="60%" r="3" fill="#38bdf8" opacity="0.7" />
+          <circle cx="62%" cy="30%" r="2.5" fill="#38bdf8" opacity="0.6" />
+          <circle cx="78%" cy="65%" r="3" fill="#38bdf8" opacity="0.8" />
+          <circle cx="92%" cy="25%" r="2.5" fill="#38bdf8" opacity="0.6" />
+          <circle cx="15%" cy="85%" r="2" fill="#38bdf8" opacity="0.5" />
+          <circle cx="55%" cy="88%" r="2" fill="#38bdf8" opacity="0.5" />
+          <circle cx="88%" cy="15%" r="2" fill="#38bdf8" opacity="0.5" />
+        </svg>
 
-        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
             
             {/* Left Content */}
@@ -282,17 +317,20 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
               </p>
             </div>
 
-            {/* Right Graphic: Laptop + Tally Box */}
+            {/* Right Graphic: Laptop + Tally Box matching exact user reference */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative max-w-md w-full">
+              <div className="relative max-w-lg w-full flex items-center justify-center">
+                {/* Soft ambient blue glow behind device */}
+                <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full scale-90 pointer-events-none" />
+                
                 <img
-                  src="/assets/images/product-hero-devices-hd.jpg"
-                  alt="TallyPrime Software and Retail Box"
-                  className="w-full h-auto object-contain drop-shadow-2xl rounded-2xl"
+                  src="/assets/images/product-hero-devices-clean.png"
+                  alt="TallyPrime Software on Laptop and Retail Box"
+                  className="w-full h-auto object-contain drop-shadow-2xl relative z-10 transition-transform duration-300 hover:scale-[1.02]"
                   loading="eager"
                   onError={(e) => {
                     e.target.onerror = null;
-                    e.target.src = '/assets/images/product-hero-crop.png';
+                    e.target.src = '/assets/images/product-hero-devices-exact.png';
                   }}
                 />
               </div>

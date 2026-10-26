@@ -8,7 +8,8 @@ import {
   MapPin,
   Phone,
   Mail,
-  Globe
+  Globe,
+  MessageCircle
 } from 'lucide-react';
 
 export const Footer = ({ onNavigate }) => {

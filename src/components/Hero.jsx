@@ -27,7 +27,7 @@ export const Hero = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
   ];
 
   return (
-    <section id="home" className="relative pt-6 pb-12 lg:pt-10 lg:pb-16 overflow-hidden hero-gradient">
+    <section id="home" className="relative pt-6 pb-16 lg:pt-10 lg:pb-20 xl:pb-24 overflow-hidden hero-gradient">
       
       {/* Curved radial wave lines in background matching the 4K design */}
       <div className="absolute top-0 right-0 w-full h-full overflow-hidden pointer-events-none -z-10">
@@ -54,7 +54,7 @@ export const Hero = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
 
       {/* Hero Container with comfortable, balanced gap */}
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 xl:gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
           
           {/* Left Column: Heading, Subtitle, CTA, Trust Badges (5 cols) */}
           <div className="lg:col-span-5 space-y-6">
@@ -105,7 +105,7 @@ export const Hero = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
             </div>
 
             {/* 4 Trust Badges Horizontal Strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-4 border-t border-slate-100">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-6 mt-2 border-t border-slate-100">
               {trustMetrics.map((item, idx) => {
                 const IconComp = item.icon;
                 return (
@@ -125,7 +125,7 @@ export const Hero = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
           </div>
 
           {/* Right Column: Hero Visual Mockup (7 cols) with comfortable spacing */}
-          <div className="lg:col-span-7 relative flex justify-center lg:justify-end items-center lg:pl-2 xl:pl-6">
+          <div className="lg:col-span-7 relative flex justify-center lg:justify-end items-center lg:pl-6 xl:pl-10">
             <HeroMockup />
           </div>
 

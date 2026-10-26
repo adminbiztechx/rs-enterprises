@@ -2,8 +2,8 @@ import React from 'react';
 
 export const TrustedClients = () => {
   return (
-    <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-3 sm:py-5">
-      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm px-6 lg:px-8 py-5">
+    <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 py-6 sm:py-8">
+      <div className="bg-white rounded-2xl border border-slate-100 shadow-sm px-6 lg:px-8 py-6">
         <div className="flex flex-col lg:flex-row items-center justify-between gap-6 lg:gap-8">
           
           {/* Left Title */}

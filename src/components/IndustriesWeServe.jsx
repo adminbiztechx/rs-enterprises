@@ -40,8 +40,36 @@ export const IndustriesWeServe = ({ onNavigate }) => {
           </h2>
         </div>
 
-        {/* Industries Auto-Sliding Single Row Container */}
-        <div className="bg-white rounded-2xl border border-slate-100 shadow-sm px-4 sm:px-6 py-4">
+        {/* Desktop View: Exact original 11-column static grid */}
+        <div className="hidden lg:block bg-white rounded-2xl border border-slate-100 shadow-sm px-6 sm:px-8 lg:px-10 py-6">
+          <div className="grid grid-cols-11 gap-3 items-center justify-items-center">
+            {industries.map((ind) => {
+              const Icon = ind.icon;
+              return (
+                <div
+                  key={ind.name}
+                  onClick={() => {
+                    if (onNavigate) {
+                      onNavigate('industries');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                  }}
+                  className="flex flex-col items-center justify-center gap-2 group cursor-pointer p-2 rounded-xl hover:bg-blue-50/50 transition-all duration-200"
+                >
+                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-[#0d5dd6] group-hover:scale-110 transition-transform">
+                    <Icon className="w-6 h-6 stroke-[1.8]" />
+                  </div>
+                  <span className="text-[12.5px] font-bold text-slate-800 group-hover:text-blue-600 transition-colors text-center whitespace-nowrap">
+                    {ind.name}
+                  </span>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+
+        {/* Mobile View: Single Row Auto-Sliding */}
+        <div className="block lg:hidden bg-white rounded-2xl border border-slate-100 shadow-sm px-4 sm:px-6 py-4">
           <AutoSlidingRow speed={0.7} gap="gap-4" showControls={true}>
             {industries.map((ind) => {
               const Icon = ind.icon;

@@ -99,8 +99,8 @@ export const ProductsAndServices = ({ onNavigate, onSelectService }) => {
           </h2>
         </div>
 
-        {/* Single Row Auto-Sliding Cards (Right to Left) */}
-        <AutoSlidingRow speed={0.9} gap="gap-5">
+        {/* Desktop View: Exact Original 4x2 Static Grid */}
+        <div className="hidden lg:grid grid-cols-4 gap-5 sm:gap-6">
           {items.map((item) => {
             const Icon = item.icon;
             return (
@@ -120,7 +120,7 @@ export const ProductsAndServices = ({ onNavigate, onSelectService }) => {
                     onSelectService(item);
                   }
                 }}
-                className="w-[280px] sm:w-[310px] flex-shrink-0 group bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-200 flex flex-col justify-between cursor-pointer"
+                className="group bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-200 flex flex-col justify-between cursor-pointer"
               >
                 <div>
                   {/* Icon Badge */}
@@ -134,7 +134,7 @@ export const ProductsAndServices = ({ onNavigate, onSelectService }) => {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4 min-h-[36px]">
+                  <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4">
                     {item.desc}
                   </p>
                 </div>
@@ -149,7 +149,61 @@ export const ProductsAndServices = ({ onNavigate, onSelectService }) => {
               </div>
             );
           })}
-        </AutoSlidingRow>
+        </div>
+
+        {/* Mobile View: Single Row Auto-Sliding Cards (Right to Left) */}
+        <div className="block lg:hidden">
+          <AutoSlidingRow speed={0.9} gap="gap-5">
+            {items.map((item) => {
+              const Icon = item.icon;
+              return (
+                <div
+                  key={item.id}
+                  onClick={() => {
+                    if (item.id === 'software' && onNavigate) {
+                      onNavigate('products');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else if (item.href === '#services' && onNavigate) {
+                      onNavigate('services');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else if (item.href === '#solutions' && onNavigate) {
+                      onNavigate('solutions');
+                      window.scrollTo({ top: 0, behavior: 'smooth' });
+                    } else if (onSelectService) {
+                      onSelectService(item);
+                    }
+                  }}
+                  className="w-[280px] sm:w-[310px] flex-shrink-0 group bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-200 flex flex-col justify-between cursor-pointer"
+                >
+                  <div>
+                    {/* Icon Badge */}
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110 ${item.iconBg}`}>
+                      <Icon className="w-6 h-6" />
+                    </div>
+
+                    {/* Title */}
+                    <h3 className="text-base font-bold text-[#0a1a38] mb-1.5 group-hover:text-blue-600 transition-colors">
+                      {item.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4 min-h-[36px]">
+                      {item.desc}
+                    </p>
+                  </div>
+
+                  {/* Link */}
+                  <div className="pt-2">
+                    <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0052cc] group-hover:text-[#003bb3] transition-colors">
+                      <span>{item.linkText}</span>
+                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                    </span>
+                  </div>
+                </div>
+              );
+            })}
+          </AutoSlidingRow>
+        </div>
 
       </div>
     </section>

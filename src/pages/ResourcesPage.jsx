@@ -256,15 +256,15 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
             </h2>
           </div>
 
-          {/* Single Row Auto-Sliding Categories */}
-          <AutoSlidingRow speed={0.7} gap="gap-4">
+          {/* Desktop View: Exact Original 6-Column Static Grid */}
+          <div className="hidden lg:grid grid-cols-6 gap-4 sm:gap-5">
             {categories.map((cat, idx) => {
               const Icon = cat.icon;
               return (
                 <div
                   key={idx}
                   onClick={() => setSelectedResource({ title: cat.name, category: 'Category Guide', desc: `Explore detailed articles, guides, and tools related to ${cat.name}.` })}
-                  className="w-[180px] sm:w-[200px] flex-shrink-0 bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-lg hover:border-blue-200 transition duration-200 flex flex-col items-center text-center justify-center space-y-3 cursor-pointer group"
+                  className="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-lg hover:border-blue-200 hover:-translate-y-1 transition duration-200 flex flex-col items-center text-center justify-center space-y-3 cursor-pointer group"
                 >
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 ${cat.color}`}>
                     {cat.iconType === 'tally-text' ? (
@@ -273,13 +273,40 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
                       Icon && <Icon className="w-6 h-6" />
                     )}
                   </div>
-                  <h4 className="text-xs sm:text-[13px] font-bold text-[#0a1a38] group-hover:text-blue-600 transition-colors leading-snug whitespace-nowrap">
+                  <h4 className="text-xs sm:text-[13px] font-bold text-[#0a1a38] group-hover:text-blue-600 transition-colors leading-snug">
                     {cat.name}
                   </h4>
                 </div>
               );
             })}
-          </AutoSlidingRow>
+          </div>
+
+          {/* Mobile View: Single Row Auto-Sliding Categories */}
+          <div className="block lg:hidden">
+            <AutoSlidingRow speed={0.7} gap="gap-4">
+              {categories.map((cat, idx) => {
+                const Icon = cat.icon;
+                return (
+                  <div
+                    key={idx}
+                    onClick={() => setSelectedResource({ title: cat.name, category: 'Category Guide', desc: `Explore detailed articles, guides, and tools related to ${cat.name}.` })}
+                    className="w-[180px] sm:w-[200px] flex-shrink-0 bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-lg hover:border-blue-200 transition duration-200 flex flex-col items-center text-center justify-center space-y-3 cursor-pointer group"
+                  >
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 ${cat.color}`}>
+                      {cat.iconType === 'tally-text' ? (
+                        <span className="font-black text-xs tracking-tight text-[#e11d48]">Tally</span>
+                      ) : (
+                        Icon && <Icon className="w-6 h-6" />
+                      )}
+                    </div>
+                    <h4 className="text-xs sm:text-[13px] font-bold text-[#0a1a38] group-hover:text-blue-600 transition-colors leading-snug whitespace-nowrap">
+                      {cat.name}
+                    </h4>
+                  </div>
+                );
+              })}
+            </AutoSlidingRow>
+          </div>
         </div>
       </section>
 
@@ -299,13 +326,13 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
             </button>
           </div>
 
-          {/* Single Row Auto-Sliding Featured Articles */}
-          <AutoSlidingRow speed={0.8} gap="gap-6">
+          {/* Desktop View: Exact Original 4 Cards Grid */}
+          <div className="hidden lg:grid grid-cols-4 gap-6">
             {featuredArticles.map((art) => (
               <div
                 key={art.id}
                 onClick={() => setSelectedResource({ title: art.title, category: art.tag, desc: art.desc, date: art.date, readTime: art.readTime, image: art.image })}
-                className="w-[280px] sm:w-[310px] flex-shrink-0 group bg-white rounded-2xl border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
+                className="group bg-white rounded-2xl border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
               >
                 <div>
                   {/* Article Thumbnail */}
@@ -322,10 +349,10 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
                   {/* Body */}
                   <div className="p-5">
-                    <h4 className="text-sm sm:text-base font-bold text-[#0a1a38] mb-2 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
+                    <h4 className="text-sm sm:text-base font-bold text-[#0a1a38] mb-2 group-hover:text-blue-600 transition-colors leading-snug">
                       {art.title}
                     </h4>
-                    <p className="text-xs text-slate-500 leading-relaxed mb-4 min-h-[36px] line-clamp-2">
+                    <p className="text-xs text-slate-500 leading-relaxed mb-4">
                       {art.desc}
                     </p>
                   </div>
@@ -341,7 +368,53 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
                 </div>
               </div>
             ))}
-          </AutoSlidingRow>
+          </div>
+
+          {/* Mobile View: Single Row Auto-Sliding Featured Articles */}
+          <div className="block lg:hidden">
+            <AutoSlidingRow speed={0.8} gap="gap-6">
+              {featuredArticles.map((art) => (
+                <div
+                  key={art.id}
+                  onClick={() => setSelectedResource({ title: art.title, category: art.tag, desc: art.desc, date: art.date, readTime: art.readTime, image: art.image })}
+                  className="w-[280px] sm:w-[310px] flex-shrink-0 group bg-white rounded-2xl border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
+                >
+                  <div>
+                    {/* Article Thumbnail */}
+                    <div className="relative h-44 overflow-hidden bg-slate-100">
+                      <img
+                        src={art.image}
+                        alt={art.title}
+                        className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                      />
+                      <div className="absolute top-3 left-3 bg-white/95 backdrop-blur-xs text-[10px] font-bold text-slate-800 px-2.5 py-1 rounded-full shadow-xs uppercase tracking-wide border border-slate-100">
+                        {art.tag}
+                      </div>
+                    </div>
+
+                    {/* Body */}
+                    <div className="p-5">
+                      <h4 className="text-sm sm:text-base font-bold text-[#0a1a38] mb-2 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
+                        {art.title}
+                      </h4>
+                      <p className="text-xs text-slate-500 leading-relaxed mb-4 min-h-[36px] line-clamp-2">
+                        {art.desc}
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Footer with date and read time */}
+                  <div className="px-5 pb-5 pt-2 border-t border-slate-50 flex items-center justify-between text-[11px] text-slate-400">
+                    <span className="flex items-center gap-1">
+                      <Calendar className="w-3.5 h-3.5 text-slate-400" />
+                      <span>{art.date}</span>
+                    </span>
+                    <span>{art.readTime}</span>
+                  </div>
+                </div>
+              ))}
+            </AutoSlidingRow>
+          </div>
         </div>
       </section>
 

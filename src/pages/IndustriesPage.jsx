@@ -359,15 +359,15 @@ export const IndustriesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal
             </p>
           </div>
 
-          {/* Single Row Auto-Sliding Industry Cards (Right to Left) */}
-          <AutoSlidingRow speed={0.85} gap="gap-5">
+          {/* Desktop View: Exact Original 12 Cards Grid (4 columns) */}
+          <div className="hidden lg:grid grid-cols-4 gap-5 sm:gap-6">
             {industriesList.map((ind) => {
               const Icon = ind.icon;
               return (
                 <div
                   key={ind.id}
                   onClick={() => handleIndustryClick(ind)}
-                  className="w-[280px] sm:w-[310px] flex-shrink-0 group bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                  className="group bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 >
                   <div>
                     {/* Icon container */}
@@ -381,7 +381,7 @@ export const IndustriesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4 min-h-[36px]">
+                    <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4">
                       {ind.desc}
                     </p>
                   </div>
@@ -396,7 +396,48 @@ export const IndustriesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal
                 </div>
               );
             })}
-          </AutoSlidingRow>
+          </div>
+
+          {/* Mobile View: Single Row Auto-Sliding Industry Cards (Right to Left) */}
+          <div className="block lg:hidden">
+            <AutoSlidingRow speed={0.85} gap="gap-5">
+              {industriesList.map((ind) => {
+                const Icon = ind.icon;
+                return (
+                  <div
+                    key={ind.id}
+                    onClick={() => handleIndustryClick(ind)}
+                    className="w-[280px] sm:w-[310px] flex-shrink-0 group bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                  >
+                    <div>
+                      {/* Icon container */}
+                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110 ${ind.iconBg}`}>
+                        <Icon className="w-6 h-6" />
+                      </div>
+
+                      {/* Title */}
+                      <h3 className="text-base font-bold text-[#0a1a38] mb-2 group-hover:text-blue-600 transition-colors">
+                        {ind.title}
+                      </h3>
+
+                      {/* Description */}
+                      <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4 min-h-[36px]">
+                        {ind.desc}
+                      </p>
+                    </div>
+
+                    {/* View Solutions link */}
+                    <div className="pt-2 border-t border-slate-50">
+                      <span className="inline-flex items-center gap-1 text-xs font-bold text-[#0052cc] group-hover:text-[#003bb3] transition-colors">
+                        <span>View Solutions</span>
+                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                      </span>
+                    </div>
+                  </div>
+                );
+              })}
+            </AutoSlidingRow>
+          </div>
         </div>
       </section>
 

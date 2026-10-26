@@ -342,57 +342,168 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
             </p>
           </div>
 
-          {/* Single Row Auto-Sliding Products (Right to Left) */}
-          <AutoSlidingRow speed={0.85} gap="gap-5">
-            {filteredProducts.map((p) => (
-              <div
-                key={p.id}
-                className="w-[280px] sm:w-[310px] flex-shrink-0 bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all flex flex-col justify-between"
-              >
-                <div>
-                  {/* Icon */}
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${p.iconBg}`}>
-                    {renderProductIcon(p.iconType)}
+          {/* Desktop View: Exact original 4-card row + 5-card row */}
+          <div className="hidden lg:block">
+            {/* Row 1: 4 Main Cards */}
+            <div className="grid grid-cols-4 gap-5 mb-6">
+              {filteredProducts.slice(0, 4).map((p) => (
+                <div
+                  key={p.id}
+                  className="bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Icon */}
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${p.iconBg}`}>
+                      {renderProductIcon(p.iconType)}
+                    </div>
+
+                    {/* Title & Desc */}
+                    <h3 className="text-base font-black text-[#0a1a38] mb-1.5">
+                      {p.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 mb-4 min-h-[34px]">
+                      {p.desc}
+                    </p>
+
+                    {/* Checklist */}
+                    <div className="space-y-2 mb-6">
+                      {p.features.map((feat, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
+                          <span className="text-[11.5px] font-semibold text-slate-700">{feat}</span>
+                        </div>
+                      ))}
+                    </div>
                   </div>
 
-                  {/* Title & Desc */}
-                  <h3 className="text-base font-black text-[#0a1a38] mb-1.5">
-                    {p.title}
-                  </h3>
-                  <p className="text-xs text-slate-500 mb-4 min-h-[34px]">
-                    {p.desc}
-                  </p>
+                  {/* Bottom Actions */}
+                  <div className="pt-2 flex flex-col gap-2.5">
+                    <button
+                      onClick={() => setSelectedProduct(p)}
+                      className="w-full py-2 rounded-lg text-xs font-bold text-[#0052cc] border border-[#0052cc] hover:bg-blue-50 transition-colors cursor-pointer"
+                    >
+                      View Details
+                    </button>
+                    <button
+                      onClick={() => onOpenDemoModal(p.title)}
+                      className="inline-flex items-center gap-1 text-xs font-bold text-[#0052cc] hover:text-[#003bb3] transition-colors cursor-pointer"
+                    >
+                      <span>{p.linkText}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
+                  </div>
+                </div>
+              ))}
+            </div>
 
-                  {/* Checklist */}
-                  <div className="space-y-2 mb-6">
-                    {p.features.map((feat, idx) => (
-                      <div key={idx} className="flex items-center gap-2">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
-                        <span className="text-[11.5px] font-semibold text-slate-700">{feat}</span>
+            {/* Row 2: 5 Cards Grid */}
+            {filteredProducts.length > 4 && (
+              <div className="grid grid-cols-5 gap-5">
+                {filteredProducts.slice(4).map((p) => (
+                  <div
+                    key={p.id}
+                    className="bg-white rounded-2xl p-5 border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all flex flex-col justify-between"
+                  >
+                    <div>
+                      {/* Icon */}
+                      <div className={`w-11 h-11 rounded-xl flex items-center justify-center mb-3.5 ${p.iconBg}`}>
+                        {renderProductIcon(p.iconType)}
                       </div>
-                    ))}
+
+                      {/* Title & Desc */}
+                      <h3 className="text-[14.5px] font-black text-[#0a1a38] mb-1">
+                        {p.title}
+                      </h3>
+                      <p className="text-[11px] text-slate-500 mb-4 min-h-[32px] leading-snug">
+                        {p.desc}
+                      </p>
+
+                      {/* Checklist */}
+                      <div className="space-y-1.5 mb-5">
+                        {p.features.map((feat, idx) => (
+                          <div key={idx} className="flex items-center gap-1.5">
+                            <CheckCircle2 className="w-3 h-3 text-slate-400 flex-shrink-0" />
+                            <span className="text-[11px] font-semibold text-slate-700">{feat}</span>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    {/* Bottom Actions */}
+                    <div className="pt-2 flex flex-col gap-2">
+                      <button
+                        onClick={() => setSelectedProduct(p)}
+                        className="w-full py-1.5 rounded-lg text-[11px] font-bold text-[#0052cc] border border-[#0052cc] hover:bg-blue-50 transition-colors cursor-pointer"
+                      >
+                        View Details
+                      </button>
+                      <button
+                        onClick={() => onOpenDemoModal(p.title)}
+                        className="inline-flex items-center gap-1 text-[11px] font-bold text-[#0052cc] hover:text-[#003bb3] transition-colors cursor-pointer"
+                      >
+                        <span>{p.linkText}</span>
+                        <ArrowRight className="w-3 h-3" />
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+
+          {/* Mobile View: Right to Left Auto-Sliding Single Row */}
+          <div className="block lg:hidden">
+            <AutoSlidingRow speed={0.85} gap="gap-5">
+              {filteredProducts.map((p) => (
+                <div
+                  key={p.id}
+                  className="w-[280px] sm:w-[310px] flex-shrink-0 bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all flex flex-col justify-between"
+                >
+                  <div>
+                    {/* Icon */}
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${p.iconBg}`}>
+                      {renderProductIcon(p.iconType)}
+                    </div>
+
+                    {/* Title & Desc */}
+                    <h3 className="text-base font-black text-[#0a1a38] mb-1.5">
+                      {p.title}
+                    </h3>
+                    <p className="text-xs text-slate-500 mb-4 min-h-[34px]">
+                      {p.desc}
+                    </p>
+
+                    {/* Checklist */}
+                    <div className="space-y-2 mb-6">
+                      {p.features.map((feat, idx) => (
+                        <div key={idx} className="flex items-center gap-2">
+                          <CheckCircle2 className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
+                          <span className="text-[11.5px] font-semibold text-slate-700">{feat}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  {/* Bottom Actions */}
+                  <div className="pt-2 flex flex-col gap-2.5">
+                    <button
+                      onClick={() => setSelectedProduct(p)}
+                      className="w-full py-2 rounded-lg text-xs font-bold text-[#0052cc] border border-[#0052cc] hover:bg-blue-50 transition-colors cursor-pointer"
+                    >
+                      View Details
+                    </button>
+                    <button
+                      onClick={() => onOpenDemoModal(p.title)}
+                      className="inline-flex items-center gap-1 text-xs font-bold text-[#0052cc] hover:text-[#003bb3] transition-colors cursor-pointer"
+                    >
+                      <span>{p.linkText}</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </button>
                   </div>
                 </div>
-
-                {/* Bottom Actions */}
-                <div className="pt-2 flex flex-col gap-2.5">
-                  <button
-                    onClick={() => setSelectedProduct(p)}
-                    className="w-full py-2 rounded-lg text-xs font-bold text-[#0052cc] border border-[#0052cc] hover:bg-blue-50 transition-colors cursor-pointer"
-                  >
-                    View Details
-                  </button>
-                  <button
-                    onClick={() => onOpenDemoModal(p.title)}
-                    className="inline-flex items-center gap-1 text-xs font-bold text-[#0052cc] hover:text-[#003bb3] transition-colors cursor-pointer"
-                  >
-                    <span>{p.linkText}</span>
-                    <ArrowRight className="w-3.5 h-3.5" />
-                  </button>
-                </div>
-              </div>
-            ))}
-          </AutoSlidingRow>
+              ))}
+            </AutoSlidingRow>
+          </div>
 
         </div>
       </section>
@@ -409,7 +520,8 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
               Trusted by millions of businesses across India.
             </p>
 
-            <AutoSlidingRow speed={0.7} gap="gap-4">
+            {/* Desktop View: Exact original 6-item static row with dividers */}
+            <div className="hidden lg:grid grid-cols-6 divide-x divide-blue-200/60">
               {[
                 { icon: ShieldCheck, title: 'Reliable & Secure', desc: 'Data security you can count on' },
                 { icon: Smile, title: 'Easy to Use', desc: 'Simple interface easy to learn' },
@@ -420,16 +532,41 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
               ].map((item, idx) => {
                 const Icon = item.icon;
                 return (
-                  <div key={idx} className="w-[180px] sm:w-[200px] flex-shrink-0 flex flex-col items-center text-center px-4 py-3 bg-white/70 rounded-2xl border border-blue-100 shadow-xs">
-                    <div className="w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center text-[#0052cc] mb-2.5">
+                  <div key={idx} className="flex flex-col items-center text-center px-3 pt-0">
+                    <div className="w-10 h-10 rounded-full flex items-center justify-center text-[#0052cc] mb-2.5">
                       <Icon className="w-6 h-6 stroke-[2]" />
                     </div>
-                    <div className="text-xs font-bold text-slate-900 mb-0.5 whitespace-nowrap">{item.title}</div>
+                    <div className="text-xs font-bold text-slate-900 mb-0.5">{item.title}</div>
                     <div className="text-[11px] text-slate-500 leading-snug">{item.desc}</div>
                   </div>
                 );
               })}
-            </AutoSlidingRow>
+            </div>
+
+            {/* Mobile View: Auto-sliding single row */}
+            <div className="block lg:hidden">
+              <AutoSlidingRow speed={0.7} gap="gap-4">
+                {[
+                  { icon: ShieldCheck, title: 'Reliable & Secure', desc: 'Data security you can count on' },
+                  { icon: Smile, title: 'Easy to Use', desc: 'Simple interface easy to learn' },
+                  { icon: FileCheck, title: 'GST Compliant', desc: 'Stay updated with latest compliance' },
+                  { icon: TrendingUp, title: 'Scalable', desc: 'Grows with your business' },
+                  { icon: BarChart3, title: 'Advanced Reporting', desc: 'Make smarter business decisions' },
+                  { icon: Award, title: 'Backed by Experts', desc: 'Support from certified Tally experts' },
+                ].map((item, idx) => {
+                  const Icon = item.icon;
+                  return (
+                    <div key={idx} className="w-[180px] sm:w-[200px] flex-shrink-0 flex flex-col items-center text-center px-4 py-3 bg-white/70 rounded-2xl border border-blue-100 shadow-xs">
+                      <div className="w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center text-[#0052cc] mb-2.5">
+                        <Icon className="w-6 h-6 stroke-[2]" />
+                      </div>
+                      <div className="text-xs font-bold text-slate-900 mb-0.5 whitespace-nowrap">{item.title}</div>
+                      <div className="text-[11px] text-slate-500 leading-snug">{item.desc}</div>
+                    </div>
+                  );
+                })}
+              </AutoSlidingRow>
+            </div>
 
           </div>
         </div>

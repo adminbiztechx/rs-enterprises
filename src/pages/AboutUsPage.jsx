@@ -486,18 +486,19 @@ export const AboutUsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
             <div className="w-12 h-1 bg-[#0052cc] rounded-full mx-auto mt-2"></div>
           </div>
 
-          <AutoSlidingRow speed={0.7} gap="gap-6">
-            {whyChooseUs.map((item) => {
+          {/* Desktop View: Exact Original 5-Column Grid with dividers */}
+          <div className="hidden lg:grid grid-cols-5 gap-4 divide-x divide-slate-100">
+            {whyChooseUs.map((item, idx) => {
               const IconComp = item.icon;
               return (
                 <div
                   key={item.title}
-                  className="w-[200px] sm:w-[220px] flex-shrink-0 flex flex-col items-center text-center px-4 py-4 bg-[#f8faff] rounded-2xl border border-blue-50 group"
+                  className={`flex flex-col items-center text-center ${idx > 0 ? 'pl-4' : ''} group`}
                 >
                   <div className="w-14 h-14 rounded-full bg-blue-50 text-[#0052cc] flex items-center justify-center mb-4 group-hover:bg-[#0052cc] group-hover:text-white transition-all duration-300 shadow-xs">
                     <IconComp className="w-6 h-6" />
                   </div>
-                  <h4 className="text-sm font-bold text-[#0a1a38] leading-snug whitespace-nowrap">
+                  <h4 className="text-sm font-bold text-[#0a1a38] leading-snug">
                     {item.title}
                   </h4>
                   <p className="text-xs text-slate-500 mt-1.5 leading-relaxed max-w-[200px]">
@@ -506,7 +507,32 @@ export const AboutUsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
                 </div>
               );
             })}
-          </AutoSlidingRow>
+          </div>
+
+          {/* Mobile View: Single Row Auto-Sliding */}
+          <div className="block lg:hidden">
+            <AutoSlidingRow speed={0.7} gap="gap-6">
+              {whyChooseUs.map((item) => {
+                const IconComp = item.icon;
+                return (
+                  <div
+                    key={item.title}
+                    className="w-[200px] sm:w-[220px] flex-shrink-0 flex flex-col items-center text-center px-4 py-4 bg-[#f8faff] rounded-2xl border border-blue-50 group"
+                  >
+                    <div className="w-14 h-14 rounded-full bg-blue-50 text-[#0052cc] flex items-center justify-center mb-4 group-hover:bg-[#0052cc] group-hover:text-white transition-all duration-300 shadow-xs">
+                      <IconComp className="w-6 h-6" />
+                    </div>
+                    <h4 className="text-sm font-bold text-[#0a1a38] leading-snug whitespace-nowrap">
+                      {item.title}
+                    </h4>
+                    <p className="text-xs text-slate-500 mt-1.5 leading-relaxed max-w-[200px]">
+                      {item.desc}
+                    </p>
+                  </div>
+                );
+              })}
+            </AutoSlidingRow>
+          </div>
         </div>
       </section>
 
@@ -520,16 +546,31 @@ export const AboutUsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
             <div className="w-12 h-1 bg-[#0052cc] rounded-full mx-auto mt-2"></div>
           </div>
 
-          <AutoSlidingRow speed={0.6} gap="gap-4">
+          {/* Desktop View: Exact Original 6-Column Static Grid */}
+          <div className="hidden lg:grid grid-cols-6 gap-4">
             {certifications.map((cert) => (
               <div
                 key={cert.id}
-                className="w-[160px] sm:w-[180px] flex-shrink-0 bg-white rounded-xl border border-slate-200/80 p-3 sm:p-4 flex flex-col items-center justify-center text-center shadow-xs hover:shadow-md hover:border-blue-300 transition-all min-h-[110px]"
+                className="bg-white rounded-xl border border-slate-200/80 p-4 flex flex-col items-center justify-center text-center shadow-xs hover:shadow-md hover:border-blue-300 transition-all min-h-[110px]"
               >
                 {cert.badge}
               </div>
             ))}
-          </AutoSlidingRow>
+          </div>
+
+          {/* Mobile View: Single Row Auto-Sliding */}
+          <div className="block lg:hidden">
+            <AutoSlidingRow speed={0.6} gap="gap-4">
+              {certifications.map((cert) => (
+                <div
+                  key={cert.id}
+                  className="w-[160px] sm:w-[180px] flex-shrink-0 bg-white rounded-xl border border-slate-200/80 p-3 sm:p-4 flex flex-col items-center justify-center text-center shadow-xs hover:shadow-md hover:border-blue-300 transition-all min-h-[110px]"
+                >
+                  {cert.badge}
+                </div>
+              ))}
+            </AutoSlidingRow>
+          </div>
         </div>
       </section>
 

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AutoSlidingRow from '../components/AutoSlidingRow';
 import ResourceDetailModal from '../components/ResourceDetailModal';
 import {
   Search,
@@ -255,14 +256,15 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
             </h2>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5">
+          {/* Single Row Auto-Sliding Categories */}
+          <AutoSlidingRow speed={0.7} gap="gap-4">
             {categories.map((cat, idx) => {
               const Icon = cat.icon;
               return (
                 <div
                   key={idx}
                   onClick={() => setSelectedResource({ title: cat.name, category: 'Category Guide', desc: `Explore detailed articles, guides, and tools related to ${cat.name}.` })}
-                  className="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-lg hover:border-blue-200 hover:-translate-y-1 transition duration-200 flex flex-col items-center text-center justify-center space-y-3 cursor-pointer group"
+                  className="w-[180px] sm:w-[200px] flex-shrink-0 bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-lg hover:border-blue-200 transition duration-200 flex flex-col items-center text-center justify-center space-y-3 cursor-pointer group"
                 >
                   <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 ${cat.color}`}>
                     {cat.iconType === 'tally-text' ? (
@@ -271,13 +273,13 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
                       Icon && <Icon className="w-6 h-6" />
                     )}
                   </div>
-                  <h4 className="text-xs sm:text-[13px] font-bold text-[#0a1a38] group-hover:text-blue-600 transition-colors leading-snug">
+                  <h4 className="text-xs sm:text-[13px] font-bold text-[#0a1a38] group-hover:text-blue-600 transition-colors leading-snug whitespace-nowrap">
                     {cat.name}
                   </h4>
                 </div>
               );
             })}
-          </div>
+          </AutoSlidingRow>
         </div>
       </section>
 
@@ -297,12 +299,13 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Single Row Auto-Sliding Featured Articles */}
+          <AutoSlidingRow speed={0.8} gap="gap-6">
             {featuredArticles.map((art) => (
               <div
                 key={art.id}
                 onClick={() => setSelectedResource({ title: art.title, category: art.tag, desc: art.desc, date: art.date, readTime: art.readTime, image: art.image })}
-                className="group bg-white rounded-2xl border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
+                className="w-[280px] sm:w-[310px] flex-shrink-0 group bg-white rounded-2xl border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 overflow-hidden flex flex-col justify-between cursor-pointer"
               >
                 <div>
                   {/* Article Thumbnail */}
@@ -319,10 +322,10 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
                   {/* Body */}
                   <div className="p-5">
-                    <h4 className="text-sm sm:text-base font-bold text-[#0a1a38] mb-2 group-hover:text-blue-600 transition-colors leading-snug">
+                    <h4 className="text-sm sm:text-base font-bold text-[#0a1a38] mb-2 group-hover:text-blue-600 transition-colors leading-snug line-clamp-2">
                       {art.title}
                     </h4>
-                    <p className="text-xs text-slate-500 leading-relaxed mb-4">
+                    <p className="text-xs text-slate-500 leading-relaxed mb-4 min-h-[36px] line-clamp-2">
                       {art.desc}
                     </p>
                   </div>
@@ -338,7 +341,7 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
                 </div>
               </div>
             ))}
-          </div>
+          </AutoSlidingRow>
         </div>
       </section>
 

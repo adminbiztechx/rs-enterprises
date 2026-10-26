@@ -1,4 +1,5 @@
 import React from 'react';
+import AutoSlidingRow from './AutoSlidingRow';
 import {
   Boxes,
   Network,
@@ -98,8 +99,8 @@ export const ProductsAndServices = ({ onNavigate, onSelectService }) => {
           </h2>
         </div>
 
-        {/* 4x2 Grid of Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+        {/* Single Row Auto-Sliding Cards (Right to Left) */}
+        <AutoSlidingRow speed={0.9} gap="gap-5">
           {items.map((item) => {
             const Icon = item.icon;
             return (
@@ -119,7 +120,7 @@ export const ProductsAndServices = ({ onNavigate, onSelectService }) => {
                     onSelectService(item);
                   }
                 }}
-                className="group bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-200 flex flex-col justify-between cursor-pointer"
+                className="w-[280px] sm:w-[310px] flex-shrink-0 group bg-white rounded-2xl p-6 border border-slate-100 shadow-sm hover:shadow-md hover:border-blue-200 transition-all duration-200 flex flex-col justify-between cursor-pointer"
               >
                 <div>
                   {/* Icon Badge */}
@@ -133,7 +134,7 @@ export const ProductsAndServices = ({ onNavigate, onSelectService }) => {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4">
+                  <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4 min-h-[36px]">
                     {item.desc}
                   </p>
                 </div>
@@ -148,7 +149,7 @@ export const ProductsAndServices = ({ onNavigate, onSelectService }) => {
               </div>
             );
           })}
-        </div>
+        </AutoSlidingRow>
 
       </div>
     </section>

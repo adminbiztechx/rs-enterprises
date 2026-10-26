@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AutoSlidingRow from '../components/AutoSlidingRow';
 import {
   Phone,
   Mail,
@@ -425,19 +426,22 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
             Other Ways to Connect
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+          {/* Single Row Auto-Sliding Connect Cards */}
+          <AutoSlidingRow speed={0.8} gap="gap-6">
             
             {/* Card 1: WhatsApp Us */}
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-emerald-300 transition-all group">
-              <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <MessageCircle className="w-7 h-7" />
+            <div className="w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-emerald-300 transition-all group justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform mx-auto">
+                  <MessageCircle className="w-7 h-7" />
+                </div>
+                <h3 className="text-base font-bold text-[#0a1a38]">
+                  WhatsApp Us
+                </h3>
+                <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
+                  Chat with our experts on WhatsApp for quick support.
+                </p>
               </div>
-              <h3 className="text-base font-bold text-[#0a1a38]">
-                WhatsApp Us
-              </h3>
-              <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
-                Chat with our experts on WhatsApp for quick support.
-              </p>
               <div className="w-full mt-auto">
                 <a
                   href="https://wa.me/919876543210?text=Hello%20R.S%20Enterprises,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions."
@@ -452,16 +456,18 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
             </div>
 
             {/* Card 2: Request a Callback */}
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-amber-300 transition-all group">
-              <div className="w-14 h-14 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <PhoneCall className="w-7 h-7" />
+            <div className="w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-amber-300 transition-all group justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform mx-auto">
+                  <PhoneCall className="w-7 h-7" />
+                </div>
+                <h3 className="text-base font-bold text-[#0a1a38]">
+                  Request a Callback
+                </h3>
+                <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
+                  Share your details and we'll call you back shortly.
+                </p>
               </div>
-              <h3 className="text-base font-bold text-[#0a1a38]">
-                Request a Callback
-              </h3>
-              <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
-                Share your details and we'll call you back shortly.
-              </p>
               <div className="w-full mt-auto">
                 <button
                   onClick={() => onOpenContactModal && onOpenContactModal()}
@@ -474,16 +480,18 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
             </div>
 
             {/* Card 3: Support Desk */}
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-indigo-300 transition-all group">
-              <div className="w-14 h-14 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <Headphones className="w-7 h-7" />
+            <div className="w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-indigo-300 transition-all group justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform mx-auto">
+                  <Headphones className="w-7 h-7" />
+                </div>
+                <h3 className="text-base font-bold text-[#0a1a38]">
+                  Support Desk
+                </h3>
+                <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
+                  For existing customers, get dedicated support.
+                </p>
               </div>
-              <h3 className="text-base font-bold text-[#0a1a38]">
-                Support Desk
-              </h3>
-              <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
-                For existing customers, get dedicated support.
-              </p>
               <div className="w-full mt-auto">
                 <button
                   onClick={() => onOpenContactModal && onOpenContactModal()}
@@ -496,16 +504,18 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
             </div>
 
             {/* Card 4: Book a Demo */}
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-blue-300 transition-all group">
-              <div className="w-14 h-14 rounded-full bg-blue-50 text-[#0052cc] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform">
-                <Calendar className="w-7 h-7" />
+            <div className="w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-blue-300 transition-all group justify-between">
+              <div>
+                <div className="w-14 h-14 rounded-full bg-blue-50 text-[#0052cc] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform mx-auto">
+                  <Calendar className="w-7 h-7" />
+                </div>
+                <h3 className="text-base font-bold text-[#0a1a38]">
+                  Book a Demo
+                </h3>
+                <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
+                  Schedule a free demo with our Tally solution experts.
+                </p>
               </div>
-              <h3 className="text-base font-bold text-[#0a1a38]">
-                Book a Demo
-              </h3>
-              <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
-                Schedule a free demo with our Tally solution experts.
-              </p>
               <div className="w-full mt-auto">
                 <button
                   onClick={() => onOpenDemoModal && onOpenDemoModal('Free Consultation')}
@@ -517,7 +527,7 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
               </div>
             </div>
 
-          </div>
+          </AutoSlidingRow>
 
         </div>
       </section>

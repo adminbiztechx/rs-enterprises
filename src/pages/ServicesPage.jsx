@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AutoSlidingRow from '../components/AutoSlidingRow';
 import ServiceDetailModal from '../components/ServiceDetailModal';
 import {
   Download,
@@ -474,15 +475,15 @@ export const ServicesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
             </p>
           </div>
 
-          {/* 15 Cards Grid: 5 columns on desktop, 3 on md, 2 on sm, 1 on mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 sm:gap-6">
+          {/* Single Row Auto-Sliding Services Cards (Right to Left) */}
+          <AutoSlidingRow speed={0.85} gap="gap-5">
             {servicesList.map((service) => {
               const Icon = service.icon;
               return (
                 <div
                   key={service.id}
                   onClick={() => handleLearnMore(service)}
-                  className="group bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                  className="w-[280px] sm:w-[310px] flex-shrink-0 group bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 >
                   <div>
                     {/* Icon container */}
@@ -496,7 +497,7 @@ export const ServicesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4">
+                    <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4 min-h-[36px]">
                       {service.desc}
                     </p>
                   </div>
@@ -511,7 +512,7 @@ export const ServicesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
                 </div>
               );
             })}
-          </div>
+          </AutoSlidingRow>
 
           {/* Center Button: Explore All Services */}
           <div className="mt-12 text-center">
@@ -541,28 +542,28 @@ export const ServicesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
               </p>
             </div>
 
-            {/* 6 Items Horizontal Row with Vertical Dividers */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-0 lg:divide-x divide-blue-200/70">
+            {/* Auto-Sliding Single Row */}
+            <AutoSlidingRow speed={0.7} gap="gap-6">
               {whyChooseItems.map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={idx}
-                    className="flex flex-col items-center text-center px-3 sm:px-4 space-y-2.5"
+                    className="w-[190px] sm:w-[210px] flex-shrink-0 flex flex-col items-center text-center px-4 py-3 bg-white/70 rounded-2xl border border-blue-100 shadow-xs space-y-2.5"
                   >
                     <div className="w-12 h-12 rounded-2xl bg-white text-blue-600 shadow-xs flex items-center justify-center">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h4 className="text-sm font-bold text-[#0d2347] leading-snug">
+                    <h4 className="text-sm font-bold text-[#0d2347] leading-snug whitespace-nowrap">
                       {item.title}
                     </h4>
-                    <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed">
+                    <p className="text-[11px] text-slate-500 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
                 );
               })}
-            </div>
+            </AutoSlidingRow>
           </div>
         </div>
       </section>

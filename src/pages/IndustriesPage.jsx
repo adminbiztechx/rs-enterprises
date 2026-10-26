@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AutoSlidingRow from '../components/AutoSlidingRow';
 import IndustryDetailModal from '../components/IndustryDetailModal';
 import {
   Factory,
@@ -358,15 +359,15 @@ export const IndustriesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal
             </p>
           </div>
 
-          {/* 12 Cards Grid (4 columns on lg, 2 on sm/md, 1 on mobile) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          {/* Single Row Auto-Sliding Industry Cards (Right to Left) */}
+          <AutoSlidingRow speed={0.85} gap="gap-5">
             {industriesList.map((ind) => {
               const Icon = ind.icon;
               return (
                 <div
                   key={ind.id}
                   onClick={() => handleIndustryClick(ind)}
-                  className="group bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                  className="w-[280px] sm:w-[310px] flex-shrink-0 group bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 >
                   <div>
                     {/* Icon container */}
@@ -380,7 +381,7 @@ export const IndustriesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4">
+                    <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4 min-h-[36px]">
                       {ind.desc}
                     </p>
                   </div>
@@ -395,7 +396,7 @@ export const IndustriesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal
                 </div>
               );
             })}
-          </div>
+          </AutoSlidingRow>
         </div>
       </section>
 

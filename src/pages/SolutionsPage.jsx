@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import AutoSlidingRow from '../components/AutoSlidingRow';
 import SolutionDetailModal from '../components/SolutionDetailModal';
 import {
   Calculator,
@@ -350,15 +351,15 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
             </p>
           </div>
 
-          {/* 8 Cards Grid: 4 columns on lg, 2 on sm/md, 1 on mobile */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6">
+          {/* Single Row Auto-Sliding Solutions (Right to Left) */}
+          <AutoSlidingRow speed={0.85} gap="gap-5">
             {solutionsList.map((sol) => {
               const Icon = sol.icon;
               return (
                 <div
                   key={sol.id}
                   onClick={() => handleExploreSolution(sol)}
-                  className="group bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer"
+                  className="w-[280px] sm:w-[310px] flex-shrink-0 group bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between cursor-pointer"
                 >
                   <div>
                     {/* Icon container */}
@@ -372,7 +373,7 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
                     </h3>
 
                     {/* Description */}
-                    <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4">
+                    <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4 min-h-[36px]">
                       {sol.desc}
                     </p>
                   </div>
@@ -387,7 +388,7 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
                 </div>
               );
             })}
-          </div>
+          </AutoSlidingRow>
 
           {/* Center Button: View All Solutions */}
           <div className="mt-12 text-center">
@@ -414,28 +415,28 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
               </h2>
             </div>
 
-            {/* 6 Items Row with Vertical Dividers */}
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 lg:gap-0 lg:divide-x divide-blue-200/70">
+            {/* Single Row Auto-Sliding Features */}
+            <AutoSlidingRow speed={0.7} gap="gap-6">
               {whyChooseSolutions.map((item, idx) => {
                 const Icon = item.icon;
                 return (
                   <div
                     key={idx}
-                    className="flex flex-col items-center text-center px-3 sm:px-4 space-y-2.5"
+                    className="w-[190px] sm:w-[210px] flex-shrink-0 flex flex-col items-center text-center px-4 py-3 bg-white/70 rounded-2xl border border-blue-100 shadow-xs space-y-2.5"
                   >
                     <div className="w-12 h-12 rounded-2xl bg-white text-blue-600 shadow-xs flex items-center justify-center">
                       <Icon className="w-6 h-6" />
                     </div>
-                    <h4 className="text-sm font-bold text-[#0d2347] leading-snug">
+                    <h4 className="text-sm font-bold text-[#0d2347] leading-snug whitespace-nowrap">
                       {item.title}
                     </h4>
-                    <p className="text-[11px] sm:text-xs text-slate-500 leading-relaxed">
+                    <p className="text-[11px] text-slate-500 leading-relaxed">
                       {item.desc}
                     </p>
                   </div>
                 );
               })}
-            </div>
+            </AutoSlidingRow>
           </div>
         </div>
       </section>

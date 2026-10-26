@@ -586,10 +586,10 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
         </div>
       </section>
 
-      {/* 2. CATEGORY FILTER TABS STRIP */}
-      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 -mt-6 relative z-20">
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-md p-2 overflow-x-auto scrollbar-none">
-          <div className="flex items-center gap-2 min-w-max">
+      {/* 2. CATEGORY FILTER TABS STRIP (Centered floating bar) */}
+      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 -mt-6 relative z-20 flex justify-center">
+        <div className="bg-white rounded-2xl border border-slate-200/90 shadow-lg p-1.5 sm:p-2 max-w-full overflow-x-auto scrollbar-none">
+          <div className="flex items-center justify-center gap-1.5 sm:gap-2 min-w-max mx-auto">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.name;
@@ -597,7 +597,7 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
                 <button
                   key={tab.name}
                   onClick={() => setActiveTab(tab.name)}
-                  className={`flex items-center gap-2 px-4 py-2.5 rounded-xl text-xs font-bold transition-all ${
+                  className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
                     isActive
                       ? 'bg-[#0052cc] text-white shadow-sm'
                       : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'

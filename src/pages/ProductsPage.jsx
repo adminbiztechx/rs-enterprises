@@ -602,7 +602,7 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
           <div className="flex flex-col lg:flex-row items-center justify-between gap-6">
             
             {/* Left: Icon + Text */}
-            <div className="flex items-center gap-4 text-center sm:text-left">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-4">
               <div className="flex-shrink-0 w-12 h-12 rounded-full bg-white flex items-center justify-center text-[#0052cc] shadow-md">
                 <Calendar className="w-6 h-6 stroke-[2.2]" />
               </div>
@@ -617,10 +617,10 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
             </div>
 
             {/* Right: Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 flex-shrink-0">
+            <div className="w-full sm:w-auto flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 flex-shrink-0">
               <button
                 onClick={() => onOpenDemoModal('General Product Recommendation')}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold text-[#0052cc] bg-white hover:bg-blue-50 active:scale-[0.98] transition-all shadow-md"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold text-[#0052cc] bg-white hover:bg-blue-50 active:scale-[0.98] transition-all shadow-md cursor-pointer"
               >
                 <Calendar className="w-4 h-4 text-[#0052cc]" />
                 <span>Book Free Demo</span>
@@ -628,7 +628,7 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
 
               <button
                 onClick={onOpenContactModal}
-                className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold text-white bg-[#004099] border border-white/80 hover:bg-[#003580] active:scale-[0.98] transition-all shadow-sm"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold text-white bg-[#004099] border border-white/80 hover:bg-[#003580] active:scale-[0.98] transition-all shadow-sm cursor-pointer"
               >
                 <PhoneCall className="w-4 h-4 text-white" />
                 <span>Talk to Expert</span>

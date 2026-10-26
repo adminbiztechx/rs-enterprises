@@ -149,7 +149,7 @@ export const ImplementationAndWhyUs = ({ onOpenDemoModal }) => {
 
               <button
                 onClick={onOpenDemoModal}
-                className="flex-shrink-0 inline-flex items-center gap-2 px-6 py-3 rounded-lg text-xs font-bold text-[#0052cc] bg-white hover:bg-blue-50 active:scale-[0.98] transition-all shadow-md"
+                className="w-full sm:w-auto flex-shrink-0 inline-flex items-center justify-center gap-2 px-6 py-3 rounded-lg text-xs font-bold text-[#0052cc] bg-white hover:bg-blue-50 active:scale-[0.98] transition-all shadow-md cursor-pointer"
               >
                 <Calendar className="w-4 h-4 text-[#0052cc]" />
                 <span>Book Free Demo</span>

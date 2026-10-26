@@ -110,11 +110,11 @@ export const Footer = ({ onNavigate }) => {
     <footer className="bg-[#061224] text-slate-300 pt-12 pb-6 border-t border-slate-800">
       <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
         
-        {/* Main Grid: 7 Columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 lg:gap-6 pb-12 border-b border-slate-800/80">
+        {/* Main Grid: Responsive 2-col on mobile, 4-col on tablet, 12-col on desktop */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-12 gap-8 lg:gap-6 pb-12 border-b border-slate-800/80">
           
-          {/* Column 1: Company Info (3 cols) */}
-          <div className="lg:col-span-3 space-y-4">
+          {/* Column 1: Company Info */}
+          <div className="col-span-2 sm:col-span-3 md:col-span-4 lg:col-span-3 space-y-4">
             <button
               onClick={() => {
                 if (onNavigate) onNavigate('home');
@@ -162,8 +162,8 @@ export const Footer = ({ onNavigate }) => {
             </div>
           </div>
 
-          {/* Column 2: Products (1.5 cols) */}
-          <div className="lg:col-span-2 space-y-3">
+          {/* Column 2: Products */}
+          <div className="col-span-1 lg:col-span-2 space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">
               Products
             </h4>
@@ -181,8 +181,8 @@ export const Footer = ({ onNavigate }) => {
             </ul>
           </div>
 
-          {/* Column 3: Services (1.5 cols) */}
-          <div className="lg:col-span-1.5 space-y-3">
+          {/* Column 3: Services */}
+          <div className="col-span-1 lg:col-span-1 space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">
               Services
             </h4>
@@ -200,8 +200,8 @@ export const Footer = ({ onNavigate }) => {
             </ul>
           </div>
 
-          {/* Column 4: Solutions (1.5 cols) */}
-          <div className="lg:col-span-1.5 space-y-3">
+          {/* Column 4: Solutions */}
+          <div className="col-span-1 lg:col-span-1 space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">
               Solutions
             </h4>
@@ -219,8 +219,8 @@ export const Footer = ({ onNavigate }) => {
             </ul>
           </div>
 
-          {/* Column 5: Industries (1.5 cols) */}
-          <div className="lg:col-span-1.5 space-y-3">
+          {/* Column 5: Industries */}
+          <div className="col-span-1 lg:col-span-1 space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">
               Industries
             </h4>
@@ -238,8 +238,8 @@ export const Footer = ({ onNavigate }) => {
             </ul>
           </div>
 
-          {/* Column 6: Resources (1.5 cols) */}
-          <div className="lg:col-span-1.5 space-y-3">
+          {/* Column 6: Resources */}
+          <div className="col-span-1 lg:col-span-1 space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">
               Resources
             </h4>
@@ -257,8 +257,8 @@ export const Footer = ({ onNavigate }) => {
             </ul>
           </div>
 
-          {/* Column 6: Support (1.5 cols) */}
-          <div className="lg:col-span-1.5 space-y-3">
+          {/* Column 7: Support */}
+          <div className="col-span-1 lg:col-span-1 space-y-3">
             <h4 className="text-xs font-bold text-white uppercase tracking-wider">
               Support
             </h4>
@@ -273,8 +273,8 @@ export const Footer = ({ onNavigate }) => {
             </ul>
           </div>
 
-          {/* Column 7: Contact Us (2 cols) */}
-          <div className="lg:col-span-2 space-y-3">
+          {/* Column 8: Contact Us */}
+          <div className="col-span-2 sm:col-span-3 md:col-span-4 lg:col-span-2 space-y-3 pt-2 lg:pt-0">
             <button
               onClick={() => {
                 if (onNavigate) onNavigate('contact');
@@ -315,12 +315,12 @@ export const Footer = ({ onNavigate }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3 text-center sm:text-left">
           <div>
             © 2025 R.S Enterprises. All Rights Reserved.
           </div>
 
-          <div className="flex items-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
             <button
               onClick={() => {
                 if (onNavigate) onNavigate('about');

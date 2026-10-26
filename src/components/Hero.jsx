@@ -60,23 +60,23 @@ export const Hero = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
           <div className="lg:col-span-5 space-y-6">
             
             {/* Main Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-[46px] xl:text-[52px] font-extrabold text-[#0a1a38] tracking-tight leading-[1.12]">
+            <h1 className="text-3xl sm:text-5xl lg:text-[46px] xl:text-[52px] font-extrabold text-[#0a1a38] tracking-tight leading-[1.12]">
               Your Trusted <br />
               <span className="text-[#0d5dd6]">Tally Partner</span> for <br />
               Smarter Business
             </h1>
 
             {/* Description */}
-            <p className="text-[14.5px] sm:text-[15.5px] text-slate-600 leading-relaxed max-w-lg">
+            <p className="text-[14px] sm:text-[15.5px] text-slate-600 leading-relaxed max-w-lg">
               We provide Tally Software, Implementation, Customization, Cloud Solutions, GST Compliance and End-to-End Support to help businesses grow with confidence.
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-3 pt-1">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
               {/* Primary Blue Button */}
               <button
                 onClick={onOpenDemoModal}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-xs font-bold text-white bg-[#0052cc] hover:bg-[#0043a8] active:scale-[0.98] transition-all shadow-md shadow-blue-600/25 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-xs font-bold text-white bg-[#0052cc] hover:bg-[#0043a8] active:scale-[0.98] transition-all shadow-md shadow-blue-600/25 cursor-pointer"
               >
                 <Calendar className="w-4 h-4" />
                 <span>Book Free Demo</span>
@@ -85,7 +85,7 @@ export const Hero = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
               {/* Secondary Outline Button */}
               <button
                 onClick={onOpenContactModal}
-                className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-xs font-bold text-[#0052cc] bg-white border border-[#0052cc] hover:bg-blue-50 active:scale-[0.98] transition-all shadow-sm cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-xs font-bold text-[#0052cc] bg-white border border-[#0052cc] hover:bg-blue-50 active:scale-[0.98] transition-all shadow-sm cursor-pointer"
               >
                 <PhoneCall className="w-4 h-4" />
                 <span>Talk to Expert</span>
@@ -97,7 +97,7 @@ export const Hero = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
                   onNavigate && onNavigate('products');
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#0052cc] hover:text-[#003bb3] transition-colors group pl-1 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-1.5 text-xs font-bold text-[#0052cc] hover:text-[#003bb3] transition-colors group py-2 sm:py-0 sm:pl-1 cursor-pointer"
               >
                 <span>Explore Products</span>
                 <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

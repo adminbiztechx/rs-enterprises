@@ -63,7 +63,7 @@ export const LatestInsights = ({ onNavigate }) => {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                   }
                 }}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold text-[#0052cc] bg-white border border-[#0052cc] hover:bg-blue-50 active:scale-[0.98] transition-all shadow-sm cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-lg text-xs font-bold text-[#0052cc] bg-white border border-[#0052cc] hover:bg-blue-50 active:scale-[0.98] transition-all shadow-sm cursor-pointer"
               >
                 <span>View All Blogs</span>
                 <ArrowRight className="w-3.5 h-3.5" />

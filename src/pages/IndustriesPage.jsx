@@ -563,10 +563,10 @@ export const IndustriesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal
               </div>
 
               {/* Right Buttons */}
-              <div className="flex flex-wrap items-center justify-center gap-4 flex-shrink-0">
+              <div className="w-full lg:w-auto flex flex-col sm:flex-row items-stretch sm:items-center justify-center gap-3 sm:gap-4 flex-shrink-0">
                 <button
                   onClick={() => onOpenDemoModal && onOpenDemoModal('General Industry Demo')}
-                  className="bg-white hover:bg-slate-100 text-[#071d3d] font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition flex items-center gap-2 cursor-pointer"
+                  className="w-full sm:w-auto bg-white hover:bg-slate-100 text-[#071d3d] font-bold text-sm px-6 py-3.5 rounded-xl shadow-md transition flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <Calendar className="w-4 h-4 text-blue-600" />
                   <span>Book Free Demo</span>
@@ -574,7 +574,7 @@ export const IndustriesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal
 
                 <button
                   onClick={() => onOpenContactModal && onOpenContactModal()}
-                  className="border-2 border-white/80 hover:bg-white/10 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition flex items-center gap-2 cursor-pointer"
+                  className="w-full sm:w-auto border-2 border-white/80 hover:bg-white/10 text-white font-bold text-sm px-6 py-3.5 rounded-xl transition flex items-center justify-center gap-2 cursor-pointer"
                 >
                   <PhoneCall className="w-4 h-4" />
                   <span>Talk to Expert</span>

@@ -15,7 +15,7 @@ export const TrustedClients = () => {
           </div>
 
           {/* Right: Client Logos */}
-          <div className="flex-1 flex flex-wrap md:flex-nowrap items-center justify-between gap-6 sm:gap-8 opacity-85 hover:opacity-100 transition-opacity">
+          <div className="flex-1 flex flex-wrap md:flex-nowrap items-center justify-center lg:justify-between gap-6 sm:gap-8 opacity-85 hover:opacity-100 transition-opacity">
             
             {/* 1. MEDICARE Hospitals & Clinics */}
             <div className="flex items-center gap-2 group cursor-pointer transition-transform hover:scale-105">

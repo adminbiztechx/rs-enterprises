@@ -25,11 +25,20 @@ function App() {
   const [demoModalOpen, setDemoModalOpen] = useState(false);
   const [contactModalOpen, setContactModalOpen] = useState(false);
   const [selectedService, setSelectedService] = useState('');
+  const [highlightedProduct, setHighlightedProduct] = useState(null);
 
-  // Sync with browser URL hash
+  // Sync with browser URL hash & query params (e.g. #products?item=TallyPrime)
   useEffect(() => {
     const handleHashChange = () => {
-      const hash = window.location.hash.toLowerCase();
+      const fullHash = window.location.hash;
+      const [hashPart, queryPart] = fullHash.split('?');
+      const hash = (hashPart || '').toLowerCase();
+
+      if (queryPart && queryPart.includes('item=')) {
+        const itemVal = decodeURIComponent(queryPart.split('item=')[1].split('&')[0]);
+        setHighlightedProduct({ name: itemVal, ts: Date.now() });
+      }
+
       if (hash === '#products' || hash === '#tally-products') {
         setCurrentPage('products');
       } else if (hash === '#services' || hash === '#our-services') {
@@ -54,26 +63,16 @@ function App() {
     return () => window.removeEventListener('hashchange', handleHashChange);
   }, []);
 
-  const navigateTo = (page) => {
+  const navigateTo = (page, targetItem = null) => {
     setCurrentPage(page);
-    if (page === 'home') {
-      window.location.hash = '#home';
-    } else if (page === 'products') {
-      window.location.hash = '#products';
-    } else if (page === 'services') {
-      window.location.hash = '#services';
-    } else if (page === 'solutions') {
-      window.location.hash = '#solutions';
-    } else if (page === 'industries') {
-      window.location.hash = '#industries';
-    } else if (page === 'resources') {
-      window.location.hash = '#resources';
-    } else if (page === 'about') {
-      window.location.hash = '#about';
-    } else if (page === 'contact') {
-      window.location.hash = '#contact';
+    if (targetItem) {
+      setHighlightedProduct({ name: targetItem, ts: Date.now() });
+      window.location.hash = `#${page}?item=${encodeURIComponent(targetItem)}`;
+    } else {
+      setHighlightedProduct(null);
+      window.location.hash = `#${page}`;
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     }
-    window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const handleOpenDemo = (serviceTitle = '') => {
@@ -142,6 +141,7 @@ function App() {
             onNavigate={navigateTo}
             onOpenDemoModal={handleOpenDemo}
             onOpenContactModal={handleOpenContact}
+            highlightedProduct={highlightedProduct}
           />
         )}
 

@@ -60,6 +60,10 @@ export const Navbar = ({ currentPage = 'home', onNavigate, onOpenDemoModal, onOp
         { title: 'TallyPrime Cloud', desc: 'Anywhere, anytime secure cloud access' },
         { title: 'TallyPrime Edit Log', desc: 'Audit compliance as per MCA norms' },
         { title: 'TSS Renewal', desc: 'Software services & regular updates' },
+        { title: 'TallyPrime Silver', desc: 'Single user edition for small businesses' },
+        { title: 'TallyPrime Gold', desc: 'Unlimited multi-user enterprise edition' },
+        { title: 'Tally Capital', desc: 'Working capital & business financing' },
+        { title: 'Tally Certification', desc: 'Official examination & skills test' },
       ],
     },
     {
@@ -184,20 +188,9 @@ export const Navbar = ({ currentPage = 'home', onNavigate, onOpenDemoModal, onOp
                           key={item.title}
                           onClick={() => {
                             setActiveDropdown(null);
-                            if (link.id === 'services') {
-                              onNavigate && onNavigate('services');
-                            } else if (link.id === 'solutions') {
-                              onNavigate && onNavigate('solutions');
-                            } else if (link.id === 'industries') {
-                              onNavigate && onNavigate('industries');
-                            } else if (link.id === 'resources') {
-                              onNavigate && onNavigate('resources');
-                            } else {
-                              onNavigate && onNavigate('products');
-                            }
-                            window.scrollTo({ top: 0, behavior: 'smooth' });
+                            onNavigate && onNavigate(link.id, item.title);
                           }}
-                          className="w-full text-left block px-3.5 py-2 hover:bg-blue-50/70 transition-colors group/item"
+                          className="w-full text-left block px-3.5 py-2 hover:bg-blue-50/70 transition-colors group/item cursor-pointer"
                         >
                           <div className="text-xs font-bold text-slate-800 group-hover/item:text-blue-600">
                             {item.title}

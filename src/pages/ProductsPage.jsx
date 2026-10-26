@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import AutoSlidingRow from '../components/AutoSlidingRow';
 import ProductDetailModal from '../components/ProductDetailModal';
 import {
@@ -21,12 +21,14 @@ import {
   BarChart3,
   Award,
   ArrowRight,
-  ArrowUpRight
+  ArrowUpRight,
+  Sparkles
 } from 'lucide-react';
 
-export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
+export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, highlightedProduct }) => {
   const [activeTab, setActiveTab] = useState('All Products');
   const [selectedProduct, setSelectedProduct] = useState(null);
+  const [currentHighlightId, setCurrentHighlightId] = useState(null);
 
   const tabs = [
     { name: 'All Products', icon: LayoutGrid },
@@ -230,6 +232,55 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
     ? allProducts
     : allProducts.filter(p => p.category === activeTab);
 
+  // Helper to match target product from navigation dropdown
+  const isProductMatch = (product, target) => {
+    if (!target) return false;
+    const t = (typeof target === 'string' ? target : target.name || '').toLowerCase().trim();
+    if (!t) return false;
+    const pTitle = product.title.toLowerCase();
+    const pId = product.id.toLowerCase();
+
+    if (pTitle === t || pId === t) return true;
+    if (t.includes('server') && pId.includes('server')) return true;
+    if (t.includes('cloud') && pId.includes('cloud')) return true;
+    if (t.includes('edit log') && pId.includes('edit-log')) return true;
+    if (t.includes('tss') && (pId === 'tss' || pTitle.includes('tss'))) return true;
+    if (t.includes('silver') && pId.includes('silver')) return true;
+    if (t.includes('gold') && pId.includes('gold')) return true;
+    if (t.includes('capital') && pId.includes('capital')) return true;
+    if (t.includes('certif') && pId.includes('certification')) return true;
+    if (t === 'tallyprime' && pId === 'tallyprime') return true;
+    return false;
+  };
+
+  // When a product is selected from the header dropdown, scroll to it and highlight it
+  useEffect(() => {
+    if (!highlightedProduct) return;
+    const target = typeof highlightedProduct === 'string' ? highlightedProduct : highlightedProduct.name;
+    const matched = allProducts.find(p => isProductMatch(p, target));
+
+    if (matched) {
+      if (activeTab !== 'All Products' && matched.category !== activeTab) {
+        setActiveTab('All Products');
+      }
+
+      setCurrentHighlightId(matched.id);
+
+      setTimeout(() => {
+        const el = document.getElementById(`product-card-${matched.id}`);
+        if (el) {
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 150);
+
+      // Keep highlight active for 7 seconds
+      const timer = setTimeout(() => {
+        setCurrentHighlightId(null);
+      }, 7000);
+      return () => clearTimeout(timer);
+    }
+  }, [highlightedProduct]);
+
   // Render high-polish custom branded product icons with squircle containers
   const renderProductIcon = (type) => {
     switch (type) {
@@ -419,78 +470,99 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
     }
   };
 
-  // Reusable card renderer with rich gradient look, ambient glow & animations
-  const renderProductCard = (p, isRow2 = false) => (
-    <div
-      key={p.id}
-      className={`group relative bg-white rounded-2xl ${isRow2 ? 'p-5' : 'p-6'} border border-slate-200/90 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col justify-between overflow-hidden hover:-translate-y-2 cursor-pointer ${p.glowShadow}`}
-      onClick={() => setSelectedProduct(p)}
-    >
-      {/* 1. Top Gradient Accent Line */}
-      <div className={`absolute top-0 left-0 right-0 h-[3.5px] bg-gradient-to-r ${p.gradientBorder} group-hover:h-[5px] transition-all duration-300`} />
+  // Reusable card renderer with rich gradient look, ambient glow, highlight state & animations
+  const renderProductCard = (p, isRow2 = false) => {
+    const isHighlighted = currentHighlightId === p.id;
 
-      {/* 2. Ambient Gradient Glow */}
-      <div className={`absolute -top-10 -right-10 w-36 h-36 bg-gradient-to-br ${p.ambientGradient} rounded-full blur-2xl pointer-events-none opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500`} />
+    return (
+      <div
+        key={p.id}
+        id={`product-card-${p.id}`}
+        className={`group relative bg-white rounded-2xl ${isRow2 ? 'p-5' : 'p-6'} border transition-all duration-500 flex flex-col justify-between overflow-hidden cursor-pointer ${
+          isHighlighted
+            ? 'ring-4 ring-[#0052cc] ring-offset-4 ring-offset-blue-50 shadow-2xl scale-[1.03] -translate-y-2.5 z-30 border-[#0052cc]'
+            : `border-slate-200/90 shadow-sm hover:shadow-xl hover:-translate-y-2 ${p.glowShadow}`
+        }`}
+        onClick={() => setSelectedProduct(p)}
+      >
+        {/* 1. Top Gradient Accent Line */}
+        <div className={`absolute top-0 left-0 right-0 ${isHighlighted ? 'h-[6px] shadow-sm' : 'h-[3.5px] group-hover:h-[5px]'} bg-gradient-to-r ${p.gradientBorder} transition-all duration-300`} />
 
-      {/* 3. Shimmer Sweep on Hover */}
-      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+        {/* 2. Ambient Gradient Glow */}
+        <div className={`absolute -top-10 -right-10 w-44 h-44 bg-gradient-to-br ${p.ambientGradient} rounded-full blur-2xl pointer-events-none ${isHighlighted ? 'opacity-100 scale-150' : 'opacity-40 group-hover:opacity-100 group-hover:scale-125'} transition-all duration-500`} />
 
-      {/* 4. Card Content */}
-      <div className="relative z-10">
-        {/* Header: Icon + Gradient Tag Badge */}
-        <div className="flex items-start justify-between gap-2 mb-4">
-          <div>
-            {renderProductIcon(p.iconType)}
-          </div>
-          <span className={`text-[9.5px] sm:text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded-full shadow-2xs border border-white/50 ${p.badgeGradient}`}>
-            {p.tag}
-          </span>
-        </div>
+        {/* 3. Shimmer Sweep on Hover */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
 
-        {/* Title */}
-        <h3 className={`${isRow2 ? 'text-[15px]' : 'text-base sm:text-[17px]'} font-black text-[#0a1a38] group-hover:text-[#0052cc] transition-colors duration-200 mb-1.5 tracking-tight`}>
-          {p.title}
-        </h3>
-
-        {/* Description */}
-        <p className={`${isRow2 ? 'text-[11px] min-h-[30px]' : 'text-xs min-h-[34px]'} text-slate-500 mb-4 leading-relaxed`}>
-          {p.desc}
-        </p>
-
-        {/* Feature Checklist */}
-        <div className={`${isRow2 ? 'space-y-1.5 mb-5' : 'space-y-2.5 mb-6'} pt-2 border-t border-slate-100/90`}>
-          {p.features.map((feat, idx) => (
-            <div key={idx} className="flex items-center gap-2">
-              <div className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 ${p.checkColor}`}>
-                <CheckCircle2 className="w-3 h-3" />
-              </div>
-              <span className={`${isRow2 ? 'text-[11px]' : 'text-[11.5px]'} font-semibold text-slate-700 group-hover:text-slate-900 transition-colors line-clamp-1`}>
-                {feat}
+        {/* 4. Card Content */}
+        <div className="relative z-10">
+          {/* Header: Icon + Gradient Tag Badge + Highlight Sparkle */}
+          <div className="flex items-start justify-between gap-2 mb-4">
+            <div className={isHighlighted ? 'scale-110' : ''}>
+              {renderProductIcon(p.iconType)}
+            </div>
+            <div className="flex items-center gap-1.5 flex-wrap justify-end">
+              {isHighlighted && (
+                <span className="inline-flex items-center gap-1 bg-[#0052cc] text-white text-[9.5px] font-black px-2.5 py-1 rounded-full shadow-md animate-bounce">
+                  <Sparkles className="w-3 h-3 text-amber-300 fill-amber-300" />
+                  <span>SELECTED</span>
+                </span>
+              )}
+              <span className={`text-[9.5px] sm:text-[10px] font-extrabold tracking-wider uppercase px-2.5 py-1 rounded-full shadow-2xs border border-white/50 ${p.badgeGradient}`}>
+                {p.tag}
               </span>
             </div>
-          ))}
+          </div>
+
+          {/* Title */}
+          <h3 className={`${isRow2 ? 'text-[15px]' : 'text-base sm:text-[17px]'} font-black text-[#0a1a38] group-hover:text-[#0052cc] transition-colors duration-200 mb-1.5 tracking-tight ${isHighlighted ? 'text-[#0052cc]' : ''}`}>
+            {p.title}
+          </h3>
+
+          {/* Description */}
+          <p className={`${isRow2 ? 'text-[11px] min-h-[30px]' : 'text-xs min-h-[34px]'} text-slate-500 mb-4 leading-relaxed`}>
+            {p.desc}
+          </p>
+
+          {/* Feature Checklist */}
+          <div className={`${isRow2 ? 'space-y-1.5 mb-5' : 'space-y-2.5 mb-6'} pt-2 border-t border-slate-100/90`}>
+            {p.features.map((feat, idx) => (
+              <div key={idx} className="flex items-center gap-2">
+                <div className={`w-4 h-4 rounded-full flex items-center justify-center flex-shrink-0 ${p.checkColor}`}>
+                  <CheckCircle2 className="w-3 h-3" />
+                </div>
+                <span className={`${isRow2 ? 'text-[11px]' : 'text-[11.5px]'} font-semibold text-slate-700 group-hover:text-slate-900 transition-colors line-clamp-1`}>
+                  {feat}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* 5. Bottom Actions */}
+        <div className="relative z-10 pt-2 flex flex-col gap-2.5" onClick={(e) => e.stopPropagation()}>
+          <button
+            onClick={() => setSelectedProduct(p)}
+            className={`w-full py-2.5 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer flex items-center justify-center gap-1.5 ${
+              isHighlighted
+                ? 'bg-[#0052cc] text-white shadow-md shadow-blue-500/30'
+                : 'text-[#0052cc] border border-blue-200 bg-blue-50/40 hover:bg-[#0052cc] hover:text-white hover:border-[#0052cc] hover:shadow-md hover:shadow-blue-500/20 active:scale-[0.98]'
+            }`}
+          >
+            <span>View Details</span>
+            <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
+          </button>
+          <button
+            onClick={() => onOpenDemoModal(p.title)}
+            className="group/btn inline-flex items-center justify-center sm:justify-start gap-1.5 text-xs font-bold text-[#0052cc] hover:text-[#003bb3] transition-colors cursor-pointer py-1"
+          >
+            <span>{p.linkText}</span>
+            <ArrowRight className="w-3.5 h-3.5 transform group-hover/btn:translate-x-1.5 transition-transform duration-200" />
+          </button>
         </div>
       </div>
-
-      {/* 5. Bottom Actions */}
-      <div className="relative z-10 pt-2 flex flex-col gap-2.5" onClick={(e) => e.stopPropagation()}>
-        <button
-          onClick={() => setSelectedProduct(p)}
-          className="w-full py-2.5 rounded-xl text-xs font-bold text-[#0052cc] border border-blue-200 bg-blue-50/40 hover:bg-[#0052cc] hover:text-white hover:border-[#0052cc] hover:shadow-md hover:shadow-blue-500/20 active:scale-[0.98] transition-all duration-200 cursor-pointer flex items-center justify-center gap-1.5"
-        >
-          <span>View Details</span>
-          <ArrowUpRight className="w-3.5 h-3.5 opacity-70 group-hover:opacity-100" />
-        </button>
-        <button
-          onClick={() => onOpenDemoModal(p.title)}
-          className="group/btn inline-flex items-center justify-center sm:justify-start gap-1.5 text-xs font-bold text-[#0052cc] hover:text-[#003bb3] transition-colors cursor-pointer py-1"
-        >
-          <span>{p.linkText}</span>
-          <ArrowRight className="w-3.5 h-3.5 transform group-hover/btn:translate-x-1.5 transition-transform duration-200" />
-        </button>
-      </div>
-    </div>
-  );
+    );
+  };
 
   return (
     <div className="bg-white min-h-screen">

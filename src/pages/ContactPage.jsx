@@ -100,18 +100,30 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
               <div className="space-y-5 pt-2">
                 
                 {/* 1. Phone */}
-                <div className="flex items-center gap-4 group">
-                  <div className="w-12 h-12 rounded-full bg-blue-50 text-[#0052cc] group-hover:bg-[#0052cc] group-hover:text-white transition-all duration-300 flex items-center justify-center flex-shrink-0 shadow-xs">
+                <div className="flex items-start gap-4 group">
+                  <div className="w-12 h-12 rounded-full bg-blue-50 text-[#0052cc] group-hover:bg-[#0052cc] group-hover:text-white transition-all duration-300 flex items-center justify-center flex-shrink-0 shadow-xs mt-0.5">
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-medium text-slate-500">Call Us</div>
-                    <a
-                      href="tel:+919876543210"
-                      className="text-base font-bold text-slate-900 group-hover:text-[#0052cc] transition-colors"
-                    >
-                      +91 98765 43210
-                    </a>
+                    <div className="text-xs font-medium text-slate-500">Call Us (Patna Head Office)</div>
+                    <div className="flex flex-wrap items-center gap-x-3 gap-y-1">
+                      <a
+                        href="tel:+919386896383"
+                        className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0052cc] transition-colors"
+                      >
+                        +91-9386896383
+                      </a>
+                      <span className="text-slate-300 hidden sm:inline">|</span>
+                      <a
+                        href="tel:+917004128603"
+                        className="text-sm sm:text-base font-bold text-slate-900 group-hover:text-[#0052cc] transition-colors"
+                      >
+                        +91-7004128603
+                      </a>
+                    </div>
+                    <div className="text-[11px] text-slate-500 mt-1">
+                      Branch (Sasaram): <a href="tel:+919060819603" className="font-semibold text-blue-700 hover:underline">+91-9060819603</a>
+                    </div>
                   </div>
                 </div>
 
@@ -123,10 +135,10 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
                   <div>
                     <div className="text-xs font-medium text-slate-500">Email Us</div>
                     <a
-                      href="mailto:info@rsenterprises.in"
+                      href="mailto:info@sysnsol.in"
                       className="text-base font-bold text-slate-900 group-hover:text-[#0052cc] transition-colors"
                     >
-                      info@rsenterprises.in
+                      info@sysnsol.in
                     </a>
                   </div>
                 </div>
@@ -307,121 +319,231 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
         </div>
       </section>
 
-      {/* 2. MIDDLE SECTION: VISIT US AT OUR OFFICE */}
+      {/* 2. MIDDLE SECTION: VISIT OUR OFFICES */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
           
           <div className="text-center max-w-xl mx-auto mb-10">
             <span className="text-xs font-bold text-[#0052cc] uppercase tracking-wider">
-              OUR OFFICE
+              OUR LOCATIONS
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0a1a38] tracking-tight mt-1.5">
-              Visit Us At Our Office
+              Visit Our Offices
             </h2>
+            <p className="text-xs sm:text-sm text-slate-500 mt-2">
+              Walk in or connect directly with our Tally certified teams at our Patna Head Office or Sasaram Branch.
+            </p>
           </div>
 
-          {/* Unified Office & Map Card */}
-          <div className="bg-white rounded-2xl border border-slate-200/90 shadow-sm overflow-hidden grid grid-cols-1 lg:grid-cols-12">
+          {/* Dual Offices Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 mb-8">
             
-            {/* Left Blue Details Panel */}
-            <div className="lg:col-span-4 bg-[#082a63] text-white p-6 sm:p-8 flex flex-col justify-between space-y-6">
-              
-              {/* Head Office */}
-              <div className="space-y-1.5">
-                <div className="flex items-center gap-2 text-blue-300 font-bold text-sm">
-                  <MapPin className="w-4 h-4 text-blue-400" />
-                  <span>Head Office</span>
-                </div>
-                <p className="text-xs sm:text-sm text-slate-200 leading-relaxed pl-6">
-                  123, Business Park, Andheri East, <br />
-                  Mumbai - 400069, Maharashtra, India
-                </p>
-              </div>
+            {/* Card 1: Head Office (Patna, Bihar) */}
+            <div className="bg-[#082a63] text-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-lg border border-blue-900/50 relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-36 h-36 bg-blue-500/10 rounded-full blur-2xl pointer-events-none"></div>
 
-              {/* Phone */}
-              <div className="space-y-1.5">
-                <div className="flex items-center gap-2 text-blue-300 font-bold text-sm">
-                  <Phone className="w-4 h-4 text-blue-400" />
-                  <span>Phone</span>
+              <div>
+                {/* Header Badge */}
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-blue-500/20 text-blue-200 text-xs font-bold tracking-wide uppercase border border-blue-400/30">
+                    <span className="w-2 h-2 rounded-full bg-blue-400 animate-pulse"></span>
+                    Head Office
+                  </span>
+                  <span className="text-xs text-blue-300 font-medium">Patna, Bihar</span>
                 </div>
-                <div className="text-xs sm:text-sm text-slate-200 pl-6 space-y-0.5">
-                  <div>+91 98765 43210</div>
-                  <div>+91 22 1234 5678</div>
-                </div>
-              </div>
 
-              {/* Email */}
-              <div className="space-y-1.5">
-                <div className="flex items-center gap-2 text-blue-300 font-bold text-sm">
-                  <Mail className="w-4 h-4 text-blue-400" />
-                  <span>Email</span>
-                </div>
-                <div className="text-xs sm:text-sm text-slate-200 pl-6 space-y-0.5">
-                  <div>info@rsenterprises.in</div>
-                  <div>support@rsenterprises.in</div>
-                </div>
-              </div>
+                <h3 className="text-xl sm:text-2xl font-black text-white tracking-tight mb-4">
+                  Syn N Sol — Patna
+                </h3>
 
-              {/* Website */}
-              <div className="space-y-1.5">
-                <div className="flex items-center gap-2 text-blue-300 font-bold text-sm">
-                  <Globe className="w-4 h-4 text-blue-400" />
-                  <span>Website</span>
-                </div>
-                <div className="text-xs sm:text-sm text-slate-200 pl-6">
-                  www.rsenterprises.in
-                </div>
-              </div>
-
-            </div>
-
-            {/* Right Map & Directions Panel */}
-            <div className="lg:col-span-8 flex flex-col justify-between bg-slate-50">
-              
-              {/* Map Graphic / View */}
-              <div className="relative w-full flex-1 min-h-[260px] sm:min-h-[300px] overflow-hidden bg-slate-100 group">
-                <img
-                  src="/assets/images/contact-map-hd.jpg"
-                  alt="Syn N Sol Location Map - Andheri East Mumbai"
-                  className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-102"
-                />
-
-                {/* Subtle Interactive Map Badge */}
-                <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-200/80 text-[11px] font-semibold text-slate-700 shadow-sm flex items-center gap-1.5">
-                  <span className="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-                  Syn N Sol • Andheri East
-                </div>
-              </div>
-
-              {/* Bottom Directions Bar */}
-              <div className="p-4 sm:p-6 bg-white border-t border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <div className="flex items-center gap-3">
-                  <div className="w-10 h-10 rounded-full bg-[#0052cc] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
-                    <Car className="w-5 h-5" />
-                  </div>
-                  <div>
-                    <div className="text-sm font-bold text-[#0a1a38]">
-                      Easy to Reach
+                {/* Details List */}
+                <div className="space-y-4 text-xs sm:text-sm">
+                  {/* Address */}
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-4 h-4 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-[11px] font-semibold text-blue-300 uppercase tracking-wider mb-0.5">Office Address</div>
+                      <p className="text-slate-100 leading-relaxed font-medium">
+                        1st Floor, Madhuri Bhawan, Jamal Road,<br />
+                        Patna, Bihar – 800001
+                      </p>
                     </div>
-                    <div className="text-xs text-slate-500 leading-snug">
-                      We are located in the heart of Andheri East with convenient access and parking.
+                  </div>
+
+                  {/* Phone */}
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-4 h-4 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-[11px] font-semibold text-blue-300 uppercase tracking-wider mb-0.5">Contact Numbers</div>
+                      <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-slate-100 font-bold">
+                        <a href="tel:+919386896383" className="hover:text-blue-300 transition-colors">+91-9386896383</a>
+                        <span className="text-blue-400/60">/</span>
+                        <a href="tel:+917004128603" className="hover:text-blue-300 transition-colors">+91-7004128603</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Email */}
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-4 h-4 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-[11px] font-semibold text-blue-300 uppercase tracking-wider mb-0.5">Email Support</div>
+                      <a href="mailto:info@sysnsol.in" className="text-slate-100 font-bold hover:text-blue-300 transition-colors">
+                        info@sysnsol.in
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Hours */}
+                  <div className="flex items-start gap-3">
+                    <Clock className="w-4 h-4 text-blue-300 flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-[11px] font-semibold text-blue-300 uppercase tracking-wider mb-0.5">Office Hours</div>
+                      <div className="text-slate-200">Mon – Sat: 9:30 AM to 7:00 PM</div>
                     </div>
                   </div>
                 </div>
+              </div>
 
+              {/* Action Buttons */}
+              <div className="pt-6 mt-6 border-t border-blue-800/60 flex flex-col sm:flex-row gap-3">
                 <a
-                  href="https://maps.google.com/?q=Andheri+East,+Mumbai,+Maharashtra"
+                  href="https://maps.google.com/?q=Madhuri+Bhawan,+Jamal+Road,+Patna,+Bihar+800001"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 border border-[#0052cc] text-[#0052cc] hover:bg-blue-50 text-xs sm:text-sm font-semibold px-5 py-2.5 rounded-lg transition-all"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#0052cc] hover:bg-[#0043a8] text-white py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md"
                 >
+                  <MapPin className="w-4 h-4" />
                   <span>Get Directions</span>
-                  <ArrowUpRight className="w-4 h-4" />
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href="https://wa.me/919386896383?text=Hello%20Syn%20N%20Sol%20Patna%20Office,%20I%20need%20assistance%20with%20Tally."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>WhatsApp</span>
                 </a>
               </div>
-
             </div>
 
+            {/* Card 2: Branch Office (Sasaram, Rohtas) */}
+            <div className="bg-white rounded-2xl p-6 sm:p-8 flex flex-col justify-between shadow-sm hover:shadow-md border border-slate-200/90 relative overflow-hidden group transition-all">
+              <div className="absolute top-0 right-0 w-36 h-36 bg-emerald-500/5 rounded-full blur-2xl pointer-events-none"></div>
+
+              <div>
+                {/* Header Badge */}
+                <div className="flex items-center justify-between gap-2 mb-4">
+                  <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold tracking-wide uppercase border border-emerald-200">
+                    <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                    Branch Office
+                  </span>
+                  <span className="text-xs text-slate-500 font-medium">Sasaram, Rohtas</span>
+                </div>
+
+                <h3 className="text-xl sm:text-2xl font-black text-[#0a1a38] tracking-tight mb-4">
+                  Syn N Sol — Sasaram
+                </h3>
+
+                {/* Details List */}
+                <div className="space-y-4 text-xs sm:text-sm">
+                  {/* Address */}
+                  <div className="flex items-start gap-3">
+                    <MapPin className="w-4 h-4 text-[#0052cc] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-0.5">Office Address</div>
+                      <p className="text-slate-800 leading-relaxed font-medium">
+                        Kumar Apartment, Kailash Nagar,<br />
+                        Old GT Road, Sasaram, Rohtas – 821115
+                      </p>
+                    </div>
+                  </div>
+
+                  {/* Phone */}
+                  <div className="flex items-start gap-3">
+                    <Phone className="w-4 h-4 text-[#0052cc] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-0.5">Contact Number</div>
+                      <div className="text-slate-900 font-bold">
+                        <a href="tel:+919060819603" className="hover:text-[#0052cc] transition-colors">+91-9060819603</a>
+                      </div>
+                    </div>
+                  </div>
+
+                  {/* Email */}
+                  <div className="flex items-start gap-3">
+                    <Mail className="w-4 h-4 text-[#0052cc] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-0.5">Email Support</div>
+                      <a href="mailto:info@sysnsol.in" className="text-slate-900 font-bold hover:text-[#0052cc] transition-colors">
+                        info@sysnsol.in
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Hours */}
+                  <div className="flex items-start gap-3">
+                    <Clock className="w-4 h-4 text-[#0052cc] flex-shrink-0 mt-0.5" />
+                    <div>
+                      <div className="text-[11px] font-semibold text-slate-500 uppercase tracking-wider mb-0.5">Office Hours</div>
+                      <div className="text-slate-600">Mon – Sat: 9:30 AM to 7:00 PM</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Action Buttons */}
+              <div className="pt-6 mt-6 border-t border-slate-100 flex flex-col sm:flex-row gap-3">
+                <a
+                  href="https://maps.google.com/?q=Kumar+Apartment,+Kailash+Nagar,+Old+GT+Road,+Sasaram,+Rohtas+821115"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-2 bg-[#0052cc] hover:bg-[#0043a8] text-white py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md"
+                >
+                  <MapPin className="w-4 h-4" />
+                  <span>Get Directions</span>
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </a>
+                <a
+                  href="https://wa.me/919060819603?text=Hello%20Syn%20N%20Sol%20Sasaram%20Office,%20I%20need%20assistance%20with%20Tally."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 bg-emerald-600 hover:bg-emerald-700 text-white py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all shadow-md"
+                >
+                  <MessageCircle className="w-4 h-4" />
+                  <span>WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+          {/* Unified Location Map Banner */}
+          <div className="bg-slate-50 rounded-2xl border border-slate-200/90 p-4 sm:p-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-3">
+              <div className="w-10 h-10 rounded-full bg-[#0052cc] text-white flex items-center justify-center flex-shrink-0 shadow-sm">
+                <Car className="w-5 h-5" />
+              </div>
+              <div>
+                <div className="text-sm font-bold text-[#0a1a38]">
+                  Serving Businesses Across Bihar, Jharkhand & Pan-India
+                </div>
+                <div className="text-xs text-slate-500 leading-snug">
+                  On-site visits available in Patna & Sasaram regions • 100% remote instant support pan-India.
+                </div>
+              </div>
+            </div>
+
+            <div className="flex items-center gap-2">
+              <span className="text-[11px] font-bold text-slate-600 bg-white border border-slate-200 px-3 py-1.5 rounded-lg shadow-2xs">
+                Patna Pin: 800001
+              </span>
+              <span className="text-[11px] font-bold text-slate-600 bg-white border border-slate-200 px-3 py-1.5 rounded-lg shadow-2xs">
+                Sasaram Pin: 821115
+              </span>
+            </div>
           </div>
 
         </div>
@@ -453,7 +575,7 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
               </div>
               <div className="w-full mt-auto">
                 <a
-                  href="https://wa.me/919876543210?text=Hello%20Syn%20N%20Sol,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions."
+                  href="https://wa.me/919386896383?text=Hello%20Syn%20N%20Sol,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-1.5 border border-emerald-500 text-emerald-600 hover:bg-emerald-50 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all"
@@ -557,7 +679,7 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
                 </div>
                 <div className="w-full mt-auto">
                   <a
-                    href="https://wa.me/919876543210?text=Hello%20Syn%20N%20Sol,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions."
+                    href="https://wa.me/919386896383?text=Hello%20Syn%20N%20Sol,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-1.5 border border-emerald-500 text-emerald-600 hover:bg-emerald-50 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all"

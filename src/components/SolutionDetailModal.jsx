@@ -113,7 +113,7 @@ export const SolutionDetailModal = ({ isOpen, onClose, solution, onBookDemo, onC
         {/* Modal Footer CTA */}
         <div className="bg-slate-50 p-5 sm:p-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="text-xs text-slate-500">
-            Speak to a Tally Solution Architect: <span className="font-semibold text-slate-800">+91 98765 43210</span>
+            Speak to a Tally Solution Architect: <a href="tel:+919386896383" className="font-semibold text-slate-800 hover:text-[#0052cc] transition-colors">+91-9386896383</a> / <a href="tel:+917004128603" className="font-semibold text-slate-800 hover:text-[#0052cc] transition-colors">+91-7004128603</a>
           </div>
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <button

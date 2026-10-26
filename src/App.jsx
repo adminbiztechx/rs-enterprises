@@ -18,6 +18,7 @@ import AboutUsPage from './pages/AboutUsPage';
 import ContactPage from './pages/ContactPage';
 import DemoModal from './components/DemoModal';
 import ContactModal from './components/ContactModal';
+import FloatingWhatsApp from './components/FloatingWhatsApp';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
@@ -207,6 +208,9 @@ function App() {
         isOpen={contactModalOpen}
         onClose={() => setContactModalOpen(false)}
       />
+
+      {/* Global Floating WhatsApp Support Button */}
+      <FloatingWhatsApp />
     </div>
   );
 }

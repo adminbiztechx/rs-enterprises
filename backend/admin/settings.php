@@ -95,15 +95,15 @@ require_once __DIR__ . '/includes/sidebar.php';
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
             <div>
               <label class="block text-xs font-bold text-slate-700 mb-1">Primary Phone</label>
-              <input type="text" name="phone_primary" value="<?= htmlspecialchars($settings['phone_primary'] ?? '+91 98765 43210') ?>" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#0052cc]">
+              <input type="text" name="phone_primary" value="<?= htmlspecialchars($settings['phone_primary'] ?? '+91-9386896383') ?>" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#0052cc]">
             </div>
             <div>
               <label class="block text-xs font-bold text-slate-700 mb-1">Secondary Phone</label>
-              <input type="text" name="phone_secondary" value="<?= htmlspecialchars($settings['phone_secondary'] ?? '') ?>" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#0052cc]">
+              <input type="text" name="phone_secondary" value="<?= htmlspecialchars($settings['phone_secondary'] ?? '+91-7004128603, +91-9060819603') ?>" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#0052cc]">
             </div>
             <div>
               <label class="block text-xs font-bold text-slate-700 mb-1">WhatsApp Number (with country code)</label>
-              <input type="text" name="whatsapp_number" value="<?= htmlspecialchars($settings['whatsapp_number'] ?? '+919876543210') ?>" placeholder="+919876543210" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#0052cc]">
+              <input type="text" name="whatsapp_number" value="<?= htmlspecialchars($settings['whatsapp_number'] ?? '+919386896383') ?>" placeholder="+919386896383" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#0052cc]">
             </div>
           </div>
         </div>
@@ -117,11 +117,11 @@ require_once __DIR__ . '/includes/sidebar.php';
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-bold text-slate-700 mb-1">Primary Email (Sales & Inquiries)</label>
-              <input type="email" name="email_primary" value="<?= htmlspecialchars($settings['email_primary'] ?? 'info@rsenterprises.com') ?>" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#0052cc]">
+              <input type="email" name="email_primary" value="<?= htmlspecialchars($settings['email_primary'] ?? 'info@sysnsol.in') ?>" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#0052cc]">
             </div>
             <div>
               <label class="block text-xs font-bold text-slate-700 mb-1">Support Email</label>
-              <input type="email" name="email_support" value="<?= htmlspecialchars($settings['email_support'] ?? 'support@rsenterprises.com') ?>" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#0052cc]">
+              <input type="email" name="email_support" value="<?= htmlspecialchars($settings['email_support'] ?? 'info@sysnsol.in') ?>" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#0052cc]">
             </div>
           </div>
         </div>

@@ -78,17 +78,31 @@ export const ContactModal = ({ isOpen, onClose }) => {
 
             {/* Direct Dial Banner */}
             <div className="bg-blue-50 rounded-2xl p-4 mb-5 border border-blue-100">
-              <div className="text-[11px] font-bold text-blue-800 uppercase tracking-wider mb-1">
-                Direct Helpdesk (Immediate Assistance)
+              <div className="text-[11px] font-bold text-blue-800 uppercase tracking-wider mb-1.5 flex items-center justify-between">
+                <span>Direct Helpdesk (Immediate Assistance)</span>
+                <span className="text-[10px] text-blue-600 bg-blue-100/60 px-2 py-0.5 rounded-full font-bold">Patna & Sasaram</span>
               </div>
-              <a
-                href="tel:+919876543210"
-                className="text-lg font-extrabold text-[#0052cc] hover:underline flex items-center gap-2"
-              >
-                <Phone className="w-4 h-4" />
-                <span>+91 98765 43210</span>
-              </a>
-              <div className="flex items-center gap-1.5 text-[11px] text-slate-500 mt-1">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-4 my-1">
+                <a
+                  href="tel:+919386896383"
+                  className="text-base sm:text-lg font-extrabold text-[#0052cc] hover:underline flex items-center gap-1.5"
+                >
+                  <Phone className="w-4 h-4 text-[#0052cc]" />
+                  <span>+91-9386896383</span>
+                </a>
+                <a
+                  href="tel:+917004128603"
+                  className="text-base sm:text-lg font-extrabold text-[#0052cc] hover:underline flex items-center gap-1.5"
+                >
+                  <Phone className="w-4 h-4 text-[#0052cc]" />
+                  <span>+91-7004128603</span>
+                </a>
+              </div>
+              <div className="text-[11px] text-slate-600 flex items-center gap-1 mt-1">
+                <span className="font-semibold text-slate-700">Branch:</span>
+                <a href="tel:+919060819603" className="text-blue-700 font-bold hover:underline">+91-9060819603</a>
+              </div>
+              <div className="flex items-center gap-1.5 text-[11px] text-slate-500 mt-2 pt-2 border-t border-blue-100/80">
                 <Clock className="w-3.5 h-3.5 text-slate-400" />
                 <span>Mon – Sat: 9:30 AM to 7:00 PM</span>
               </div>

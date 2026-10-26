@@ -77,19 +77,19 @@ CREATE TABLE IF NOT EXISTS `site_settings` (
 
 -- Insert default Admin (admin / admin123)
 INSERT INTO `admins` (`id`, `username`, `password_hash`, `name`, `email`, `role`)
-VALUES (1, 'admin', '$2y$12$Qm51IBTcef9WvxqAOLGHieM/.BIgIox6dgJtKLQDBLcqUO873QDK.', 'System Administrator', 'admin@rsenterprises.com', 'admin')
+VALUES (1, 'admin', '$2y$12$Qm51IBTcef9WvxqAOLGHieM/.BIgIox6dgJtKLQDBLcqUO873QDK.', 'System Administrator', 'admin@sysnsol.in', 'admin')
 ON DUPLICATE KEY UPDATE `username` = `username`;
 
 -- Insert Site Settings
 INSERT INTO `site_settings` (`setting_key`, `setting_value`) VALUES
-('company_name', 'R.S Enterprises'),
+('company_name', 'Syn N Sol'),
 ('tagline', 'Authorized Tally Partner for Smarter Business'),
-('phone_primary', '+91 98765 43210'),
-('phone_secondary', '+91 98765 43211'),
-('whatsapp_number', '+919876543210'),
-('email_primary', 'info@rsenterprises.com'),
-('email_support', 'support@rsenterprises.com'),
-('office_address', 'Shop No. 12, Commercial Complex, Near Main Market, New Delhi, India - 110001'),
+('phone_primary', '+91-9386896383'),
+('phone_secondary', '+91-7004128603, +91-9060819603'),
+('whatsapp_number', '+919386896383'),
+('email_primary', 'info@sysnsol.in'),
+('email_support', 'info@sysnsol.in'),
+('office_address', 'Head Office: 1st Floor, Madhuri Bhawan, Jamal Road, Patna, Bihar 800001 | Branch Office: Kumar Apartment, Kailash Nagar, Old GT Road, Sasaram, Rohtas-821115'),
 ('working_hours', 'Mon - Sat: 9:30 AM - 7:00 PM (Sunday Closed)'),
 ('experience_years', '20+'),
 ('happy_clients', '10,000+')

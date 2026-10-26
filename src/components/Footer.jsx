@@ -284,29 +284,63 @@ export const Footer = ({ onNavigate }) => {
             >
               Contact Us
             </button>
-            <ul className="space-y-2.5 text-[11.5px] text-slate-400">
-              <li className="flex items-start gap-2">
-                <MapPin className="w-3.5 h-3.5 text-slate-400 flex-shrink-0 mt-0.5" />
-                <span className="leading-snug">
-                  123, Business Park, Andheri East, Mumbai – 400069
-                </span>
+            <ul className="space-y-3 text-[11.5px] text-slate-400">
+              {/* Head Office */}
+              <li className="space-y-1">
+                <div className="text-[10px] font-bold text-blue-300 uppercase tracking-wider">Head Office:</div>
+                <div className="flex items-start gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-blue-400 flex-shrink-0 mt-0.5" />
+                  <span className="leading-snug text-slate-300">
+                    1st Floor, Madhuri Bhawan, Jamal Road, Patna, Bihar 800001
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 pl-5">
+                  <Phone className="w-3 h-3 text-slate-400 flex-shrink-0" />
+                  <a href="tel:+919386896383" className="hover:text-white transition-colors">
+                    +91-9386896383
+                  </a>
+                  <span>/</span>
+                  <a href="tel:+917004128603" className="hover:text-white transition-colors">
+                    7004128603
+                  </a>
+                </div>
               </li>
-              <li className="flex items-center gap-2">
-                <Phone className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
-                <a href="tel:+919876543210" className="hover:text-white transition-colors">
-                  +91 98765 43210
-                </a>
+
+              {/* Branch Office */}
+              <li className="space-y-1 border-t border-slate-800 pt-2">
+                <div className="text-[10px] font-bold text-blue-300 uppercase tracking-wider">Branch Office:</div>
+                <div className="flex items-start gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-blue-400 flex-shrink-0 mt-0.5" />
+                  <span className="leading-snug text-slate-300">
+                    Kumar Apartment, Kailash Nagar, Old GT Road, Sasaram, Rohtas–821115
+                  </span>
+                </div>
+                <div className="flex items-center gap-1.5 pl-5">
+                  <Phone className="w-3 h-3 text-slate-400 flex-shrink-0" />
+                  <a href="tel:+919060819603" className="hover:text-white transition-colors">
+                    +91-9060819603
+                  </a>
+                </div>
               </li>
-              <li className="flex items-center gap-2">
+
+              {/* Email */}
+              <li className="flex items-center gap-1.5 border-t border-slate-800 pt-2">
                 <Mail className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
-                <a href="mailto:info@rsenterprises.in" className="hover:text-white transition-colors">
-                  info@rsenterprises.in
+                <a href="mailto:info@sysnsol.in" className="hover:text-white text-slate-300 transition-colors">
+                  info@sysnsol.in
                 </a>
               </li>
-              <li className="flex items-center gap-2">
-                <Globe className="w-3.5 h-3.5 text-slate-400 flex-shrink-0" />
-                <a href="https://www.rsenterprises.in" className="hover:text-white transition-colors">
-                  www.rsenterprises.in
+
+              {/* WhatsApp Quick Link */}
+              <li className="flex items-center gap-1.5">
+                <MessageCircle className="w-3.5 h-3.5 text-emerald-400 flex-shrink-0" />
+                <a
+                  href="https://wa.me/919386896383?text=Hello%20Syn%20N%20Sol,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions."
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-emerald-400 hover:text-emerald-300 font-semibold transition-colors"
+                >
+                  WhatsApp: +91-9386896383
                 </a>
               </li>
             </ul>

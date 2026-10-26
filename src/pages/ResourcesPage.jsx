@@ -237,7 +237,7 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
               <div className="relative w-full rounded-2xl overflow-hidden border border-slate-700/70 shadow-2xl bg-slate-900 group">
                 <img
                   src="/assets/images/resources-hero-desk-hd.jpg"
-                  alt="R.S Enterprises Resource Center Portal"
+                  alt="Syn N Sol Resource Center Portal"
                   className="w-full h-auto object-cover transform transition-transform duration-700 group-hover:scale-105"
                   loading="eager"
                 />

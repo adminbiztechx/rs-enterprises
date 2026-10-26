@@ -50,7 +50,7 @@ export const ImpactAndTestimonials = () => {
               </h3>
 
               <blockquote className="text-xs sm:text-[13.5px] text-slate-600 leading-relaxed mb-3">
-                "R.S Enterprises has been instrumental in automating our accounting process. Their support team is excellent and always available whenever we need them."
+                "Syn N Sol has been instrumental in automating our accounting process. Their support team is excellent and always available whenever we need them."
               </blockquote>
 
               {/* 5 Golden Yellow Stars */}

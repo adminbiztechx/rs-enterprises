@@ -27,7 +27,7 @@ export const ProductDetailModal = ({ product, isOpen, onClose, onBookDemo }) => 
                 {product.title}
               </h3>
               <p className="text-xs text-slate-500">
-                Official Tally Solution by R.S Enterprises
+                Official Tally Solution by Syn N Sol
               </p>
             </div>
           </div>

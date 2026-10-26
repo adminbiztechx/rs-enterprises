@@ -7,11 +7,11 @@ $current = basename($_SERVER['PHP_SELF']);
 <!-- Mobile Topbar Header -->
 <header class="lg:hidden bg-[#0a1a38] text-white px-4 py-3.5 flex items-center justify-between border-b border-slate-800 sticky top-0 z-40">
   <div class="flex items-center gap-2.5">
-    <div class="w-8 h-8 rounded-lg bg-[#0052cc] flex items-center justify-center font-black text-white text-sm shadow-sm">
-      RS
+    <div class="w-8 h-8 rounded-lg bg-[#0052cc] flex items-center justify-center font-black text-white text-xs shadow-sm">
+      SnS
     </div>
     <div>
-      <h1 class="text-sm font-extrabold tracking-tight leading-none text-white">R.S Enterprises</h1>
+      <h1 class="text-sm font-extrabold tracking-tight leading-none text-white">Syn N Sol</h1>
       <span class="text-[10px] text-blue-300 font-semibold">Admin Panel</span>
     </div>
   </div>
@@ -30,11 +30,11 @@ $current = basename($_SERVER['PHP_SELF']);
     <!-- Logo & Brand -->
     <div class="p-5 border-b border-slate-800 flex items-center justify-between">
       <div class="flex items-center gap-3">
-        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#0052cc] to-sky-500 flex items-center justify-center font-black text-white text-base shadow-md">
-          RS
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#0052cc] to-sky-500 flex items-center justify-center font-black text-white text-sm shadow-md">
+          SnS
         </div>
         <div>
-          <h2 class="text-base font-black text-white tracking-tight leading-tight">R.S Enterprises</h2>
+          <h2 class="text-base font-black text-white tracking-tight leading-tight">Syn N Sol</h2>
           <span class="text-[11px] text-blue-300 font-semibold flex items-center gap-1.5 mt-0.5">
             <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
             Tally Partner Backend

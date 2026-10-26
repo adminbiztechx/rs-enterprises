@@ -49,7 +49,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Admin Login - R.S Enterprises</title>
+  <title>Admin Login - Syn N Sol</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -66,10 +66,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     
     <!-- Brand Box -->
     <div class="text-center mb-8">
-      <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#0052cc] to-sky-400 text-white flex items-center justify-center font-black text-2xl mx-auto mb-3 shadow-xl shadow-blue-500/20">
-        RS
+      <div class="w-16 h-16 rounded-2xl bg-gradient-to-tr from-[#0052cc] to-sky-400 text-white flex items-center justify-center font-black text-xl mx-auto mb-3 shadow-xl shadow-blue-500/20">
+        SnS
       </div>
-      <h1 class="text-2xl font-black text-white tracking-tight">R.S Enterprises</h1>
+      <h1 class="text-2xl font-black text-white tracking-tight">Syn N Sol</h1>
       <p class="text-xs font-semibold text-blue-200 mt-1">Authorized Tally Partner • Management Console</p>
     </div>
 

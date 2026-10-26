@@ -317,7 +317,7 @@ export const Footer = ({ onNavigate }) => {
         {/* Bottom Bar */}
         <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3 text-center sm:text-left">
           <div>
-            © 2025 R.S Enterprises. All Rights Reserved.
+            © 2025 Syn N Sol. All Rights Reserved.
           </div>
 
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4">

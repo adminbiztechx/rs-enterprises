@@ -53,7 +53,7 @@ export const SolutionDetailModal = ({ isOpen, onClose, solution, onBookDemo, onC
             </div>
             <div>
               <span className="text-xs font-semibold tracking-wider uppercase text-blue-300">
-                R.S Enterprises • Enterprise Business Solution
+                Syn N Sol • Enterprise Business Solution
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
                 {solution.title}

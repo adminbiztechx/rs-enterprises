@@ -253,7 +253,7 @@ export const AboutUsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
             <div className="lg:col-span-5 space-y-4">
               <h1 className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight leading-[1.15] text-[#0a1a38]">
                 About <br />
-                <span className="text-[#0052cc]">R.S Enterprises</span>
+                <span className="text-[#0052cc]">Syn N Sol</span>
               </h1>
 
               <p className="text-base sm:text-lg font-semibold text-slate-800 pt-1">
@@ -264,7 +264,7 @@ export const AboutUsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
               <div className="w-12 h-1 bg-[#0052cc] rounded-full"></div>
 
               <p className="text-sm sm:text-[15px] text-slate-600 leading-relaxed max-w-xl pt-2">
-                R.S Enterprises is a leading Authorized Tally Partner committed to empowering businesses with reliable accounting solutions, expert support and innovative technology. We help organizations streamline their operations, ensure compliance and drive sustainable growth.
+                Syn N Sol is a leading Authorized Tally Partner committed to empowering businesses with reliable accounting solutions, expert support and innovative technology. We help organizations streamline their operations, ensure compliance and drive sustainable growth.
               </p>
 
               <div className="pt-4">
@@ -283,7 +283,7 @@ export const AboutUsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
               <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-200/80 bg-white group">
                 <img
                   src="/assets/images/about-hero-reception-hd.jpg"
-                  alt="R.S Enterprises Corporate Office Reception"
+                  alt="Syn N Sol Corporate Office Reception"
                   className="w-full h-[280px] sm:h-[360px] lg:h-[420px] object-cover object-center transform transition-transform duration-700 group-hover:scale-102"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-900/30 via-transparent to-transparent pointer-events-none"></div>
@@ -336,7 +336,7 @@ export const AboutUsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
 
                 <div className="space-y-4 text-sm sm:text-[15px] text-slate-600 leading-relaxed">
                   <p>
-                    R.S Enterprises was founded with a simple vision — to deliver world-class accounting and business management solutions powered by Tally. Over the years, we have grown into a trusted technology partner for thousands of businesses across industries.
+                    Syn N Sol was founded with a simple vision — to deliver world-class accounting and business management solutions powered by Tally. Over the years, we have grown into a trusted technology partner for thousands of businesses across industries.
                   </p>
                   <p>
                     From humble beginnings to becoming a recognized name in the industry, our journey is driven by customer trust, innovative solutions and unwavering commitment to excellence.
@@ -357,7 +357,7 @@ export const AboutUsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
                     />
                   </svg>
                   <div className="text-xs font-bold text-slate-800 tracking-wide">
-                    Team R.S Enterprises
+                    Team Syn N Sol
                   </div>
                 </div>
               </div>
@@ -481,7 +481,7 @@ export const AboutUsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
           <div className="text-center max-w-2xl mx-auto mb-12">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0a1a38] tracking-tight">
-              Why Choose R.S Enterprises?
+              Why Choose Syn N Sol?
             </h2>
             <div className="w-12 h-1 bg-[#0052cc] rounded-full mx-auto mt-2"></div>
           </div>

@@ -10,7 +10,7 @@ $adminUser = $_SESSION['admin_username'] ?? 'admin';
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><?= htmlspecialchars($pageTitle ?? 'Admin Panel') ?> - R.S Enterprises</title>
+  <title><?= htmlspecialchars($pageTitle ?? 'Admin Panel') ?> - Syn N Sol</title>
   <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
   <!-- Font Awesome / Icons -->

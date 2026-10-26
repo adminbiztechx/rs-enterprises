@@ -51,7 +51,7 @@ export const ServiceDetailModal = ({ isOpen, onClose, service, onBookDemo, onCon
             </div>
             <div>
               <span className="text-xs font-semibold tracking-wider uppercase text-blue-300">
-                R.S Enterprises • Tally Certified Service
+                Syn N Sol • Tally Certified Service
               </span>
               <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
                 {service.title}

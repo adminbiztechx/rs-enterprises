@@ -382,14 +382,14 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
               <div className="relative w-full flex-1 min-h-[260px] sm:min-h-[300px] overflow-hidden bg-slate-100 group">
                 <img
                   src="/assets/images/contact-map-hd.jpg"
-                  alt="R.S Enterprises Location Map - Andheri East Mumbai"
+                  alt="Syn N Sol Location Map - Andheri East Mumbai"
                   className="w-full h-full object-cover object-center transform transition-transform duration-700 group-hover:scale-102"
                 />
 
                 {/* Subtle Interactive Map Badge */}
                 <div className="absolute top-3 right-3 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-lg border border-slate-200/80 text-[11px] font-semibold text-slate-700 shadow-sm flex items-center gap-1.5">
                   <span className="w-2 h-2 rounded-full bg-red-500 animate-ping"></span>
-                  R.S Enterprises • Andheri East
+                  Syn N Sol • Andheri East
                 </div>
               </div>
 
@@ -453,7 +453,7 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
               </div>
               <div className="w-full mt-auto">
                 <a
-                  href="https://wa.me/919876543210?text=Hello%20R.S%20Enterprises,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions."
+                  href="https://wa.me/919876543210?text=Hello%20Syn%20N%20Sol,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions."
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-full inline-flex items-center justify-center gap-1.5 border border-emerald-500 text-emerald-600 hover:bg-emerald-50 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all"
@@ -557,7 +557,7 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
                 </div>
                 <div className="w-full mt-auto">
                   <a
-                    href="https://wa.me/919876543210?text=Hello%20R.S%20Enterprises,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions."
+                    href="https://wa.me/919876543210?text=Hello%20Syn%20N%20Sol,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions."
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-full inline-flex items-center justify-center gap-1.5 border border-emerald-500 text-emerald-600 hover:bg-emerald-50 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all"

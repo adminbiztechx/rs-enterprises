@@ -569,14 +569,14 @@ export const ServicesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
         </div>
       </section>
 
-      {/* 3. Why Choose R.S Enterprises? Section */}
+      {/* 3. Why Choose Syn N Sol? Section */}
       <section className="pb-16 sm:pb-20 bg-white">
         <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
           <div className="bg-[#edf5ff] rounded-3xl p-8 sm:p-12 border border-blue-100/60 shadow-xs">
             {/* Heading */}
             <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
               <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0d2347] tracking-tight mb-2">
-                Why Choose R.S Enterprises?
+                Why Choose Syn N Sol?
               </h2>
               <p className="text-slate-600 text-xs sm:text-sm">
                 We deliver more than just software – we deliver peace of mind.

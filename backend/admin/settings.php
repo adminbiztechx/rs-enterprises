@@ -77,7 +77,7 @@ require_once __DIR__ . '/includes/sidebar.php';
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div>
               <label class="block text-xs font-bold text-slate-700 mb-1">Company Name</label>
-              <input type="text" name="company_name" value="<?= htmlspecialchars($settings['company_name'] ?? 'R.S Enterprises') ?>" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#0052cc]">
+              <input type="text" name="company_name" value="<?= htmlspecialchars($settings['company_name'] ?? 'Syn N Sol') ?>" class="w-full px-3 py-2 rounded-xl border border-slate-200 text-xs font-semibold focus:outline-none focus:border-[#0052cc]">
             </div>
             <div>
               <label class="block text-xs font-bold text-slate-700 mb-1">Tagline</label>

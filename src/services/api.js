@@ -1,4 +1,4 @@
-// Central API Service for R.S Enterprises Backend & Inquiries
+// Central API Service for Syn N Sol Backend & Inquiries
 const API_BASE = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1'
   ? 'http://localhost/rs-backend/api'
   : '/rs-backend/api';

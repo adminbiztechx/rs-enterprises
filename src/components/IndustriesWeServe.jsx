@@ -56,8 +56,8 @@ export const IndustriesWeServe = ({ onNavigate }) => {
                   }}
                   className="flex flex-col items-center justify-center gap-2 group cursor-pointer p-2 rounded-xl hover:bg-blue-50/50 transition-all duration-200"
                 >
-                  <div className="w-10 h-10 rounded-full flex items-center justify-center text-[#0d5dd6] group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6 stroke-[1.8]" />
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-50 via-white to-indigo-50/80 border-2 border-blue-200/80 flex items-center justify-center text-[#0052cc] shadow-2xs group-hover:scale-110 group-hover:border-blue-400 group-hover:shadow-md group-hover:shadow-blue-500/15 group-hover:bg-gradient-to-br group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:text-white transition-all duration-300">
+                    <Icon className="w-6 h-6 stroke-[1.9]" />
                   </div>
                   <span className="text-[12.5px] font-bold text-slate-800 group-hover:text-blue-600 transition-colors text-center whitespace-nowrap">
                     {ind.name}
@@ -84,8 +84,8 @@ export const IndustriesWeServe = ({ onNavigate }) => {
                   }}
                   className="flex flex-col items-center justify-center gap-2 group cursor-pointer py-2 px-5 rounded-xl hover:bg-blue-50/70 transition-all duration-200 flex-shrink-0 min-w-[100px]"
                 >
-                  <div className="w-12 h-12 rounded-full bg-blue-50/70 flex items-center justify-center text-[#0d5dd6] group-hover:scale-110 group-hover:bg-blue-100 transition-all">
-                    <Icon className="w-6 h-6 stroke-[1.8]" />
+                  <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-blue-50 via-white to-indigo-50/80 border-2 border-blue-200/80 flex items-center justify-center text-[#0052cc] shadow-2xs group-hover:scale-110 group-hover:border-blue-400 group-hover:shadow-md group-hover:shadow-blue-500/15 group-hover:bg-gradient-to-br group-hover:from-blue-600 group-hover:to-indigo-600 group-hover:text-white transition-all duration-300">
+                    <Icon className="w-6 h-6 stroke-[1.9]" />
                   </div>
                   <span className="text-[12.5px] font-bold text-slate-800 group-hover:text-blue-600 transition-colors text-center whitespace-nowrap">
                     {ind.name}

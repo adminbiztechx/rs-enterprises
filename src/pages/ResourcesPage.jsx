@@ -29,7 +29,8 @@ import {
   Compass,
   CheckCircle2,
   FileSpreadsheet,
-  Monitor
+  Monitor,
+  Sparkles
 } from 'lucide-react';
 
 export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
@@ -39,19 +40,508 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
   const [newsletterSubscribed, setNewsletterSubscribed] = useState(false);
 
   const categories = [
-    { name: 'GST Updates', icon: FileCheck, color: 'text-blue-600 bg-blue-50' },
-    { name: 'Tally Updates', iconType: 'tally-text', color: 'text-rose-600 bg-rose-50' },
-    { name: 'Accounting & Finance', icon: Calculator, color: 'text-amber-600 bg-amber-50' },
-    { name: 'Business Automation', icon: Sliders, color: 'text-indigo-600 bg-indigo-50' },
-    { name: 'Inventory Management', icon: Boxes, color: 'text-purple-600 bg-purple-50' },
-    { name: 'Payroll Management', icon: Users, color: 'text-sky-600 bg-sky-50' },
-    { name: 'Taxation', icon: Landmark, color: 'text-emerald-600 bg-emerald-50' },
-    { name: 'Compliance', icon: ShieldCheck, color: 'text-blue-600 bg-blue-50' },
-    { name: 'Cloud Accounting', icon: Cloud, color: 'text-cyan-600 bg-cyan-50' },
-    { name: 'MSME Growth', icon: TrendingUp, color: 'text-teal-600 bg-teal-50' },
-    { name: 'Case Studies', icon: FileText, color: 'text-orange-600 bg-orange-50' },
-    { name: 'Video Tutorials', icon: Video, color: 'text-violet-600 bg-violet-50' },
+    {
+      id: 'gst-updates',
+      name: 'GST Updates',
+      desc: 'Latest circulars & returns',
+      tag: 'Circulars & HSN',
+      icon: FileCheck,
+      badgeGradient: 'bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white',
+      gradientBorder: 'from-blue-600 via-indigo-500 to-amber-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(37,99,235,0.18)] hover:border-blue-400/80',
+      ambientGradient: 'from-blue-500/20 via-indigo-500/15 to-amber-500/10',
+      cardBg: 'bg-gradient-to-b from-blue-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-blue-50/90 via-white to-indigo-50/70 border-2 border-blue-200/90 shadow-blue-500/10 group-hover:border-blue-400',
+      titleHover: 'group-hover:text-blue-600',
+      arrowBtnStyle: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white',
+    },
+    {
+      id: 'tally-updates',
+      name: 'Tally Updates',
+      desc: 'Releases & new features',
+      tag: 'TallyPrime 5.0',
+      iconType: 'tally-3d',
+      badgeGradient: 'bg-gradient-to-r from-rose-600 via-red-600 to-amber-600 text-white',
+      gradientBorder: 'from-rose-500 via-red-500 to-amber-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(225,29,72,0.18)] hover:border-rose-400/80',
+      ambientGradient: 'from-rose-500/20 via-red-500/15 to-amber-500/10',
+      cardBg: 'bg-gradient-to-b from-rose-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-rose-50/90 via-white to-amber-50/70 border-2 border-rose-200/90 shadow-rose-500/10 group-hover:border-rose-400',
+      titleHover: 'group-hover:text-rose-600',
+      arrowBtnStyle: 'bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white',
+    },
+    {
+      id: 'accounting-finance',
+      name: 'Accounting & Finance',
+      desc: 'MIS, balance sheet & audit',
+      tag: 'MIS & Ledgers',
+      icon: Calculator,
+      badgeGradient: 'bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 text-white',
+      gradientBorder: 'from-amber-500 via-orange-400 to-blue-600',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(245,158,11,0.18)] hover:border-amber-400/80',
+      ambientGradient: 'from-amber-500/20 via-orange-500/15 to-blue-500/10',
+      cardBg: 'bg-gradient-to-b from-amber-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-amber-50/90 via-white to-orange-50/70 border-2 border-amber-200/90 shadow-amber-500/10 group-hover:border-amber-400',
+      titleHover: 'group-hover:text-amber-600',
+      arrowBtnStyle: 'bg-amber-50 text-amber-600 group-hover:bg-amber-600 group-hover:text-white',
+    },
+    {
+      id: 'business-automation',
+      name: 'Business Automation',
+      desc: 'Workflows & integrations',
+      tag: 'Auto Workflows',
+      icon: Sliders,
+      badgeGradient: 'bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-700 text-white',
+      gradientBorder: 'from-indigo-500 via-purple-500 to-cyan-400',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(79,70,229,0.18)] hover:border-indigo-400/80',
+      ambientGradient: 'from-indigo-500/20 via-purple-500/15 to-cyan-500/10',
+      cardBg: 'bg-gradient-to-b from-indigo-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-indigo-50/90 via-white to-purple-50/70 border-2 border-indigo-200/90 shadow-indigo-500/10 group-hover:border-indigo-400',
+      titleHover: 'group-hover:text-indigo-600',
+      arrowBtnStyle: 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white',
+    },
+    {
+      id: 'inventory-management',
+      name: 'Inventory Management',
+      desc: 'Batches, godowns & stock',
+      tag: 'Stock & Batches',
+      icon: Boxes,
+      badgeGradient: 'bg-gradient-to-r from-purple-600 via-violet-600 to-purple-700 text-white',
+      gradientBorder: 'from-purple-500 via-violet-400 to-blue-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(147,51,234,0.18)] hover:border-purple-400/80',
+      ambientGradient: 'from-purple-500/20 via-violet-500/15 to-blue-500/10',
+      cardBg: 'bg-gradient-to-b from-purple-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-purple-50/90 via-white to-violet-50/70 border-2 border-purple-200/90 shadow-purple-500/10 group-hover:border-purple-400',
+      titleHover: 'group-hover:text-purple-600',
+      arrowBtnStyle: 'bg-purple-50 text-purple-600 group-hover:bg-purple-600 group-hover:text-white',
+    },
+    {
+      id: 'payroll-management',
+      name: 'Payroll Management',
+      desc: 'Salary slips & PF/ESI laws',
+      tag: 'Salary & PF/ESI',
+      icon: Users,
+      badgeGradient: 'bg-gradient-to-r from-sky-600 via-blue-600 to-indigo-600 text-white',
+      gradientBorder: 'from-sky-500 via-blue-500 to-indigo-600',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(2,132,199,0.18)] hover:border-sky-400/80',
+      ambientGradient: 'from-sky-500/20 via-blue-500/15 to-indigo-500/10',
+      cardBg: 'bg-gradient-to-b from-sky-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-sky-50/90 via-white to-blue-50/70 border-2 border-sky-200/90 shadow-sky-500/10 group-hover:border-sky-400',
+      titleHover: 'group-hover:text-sky-600',
+      arrowBtnStyle: 'bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white',
+    },
+    {
+      id: 'taxation',
+      name: 'Taxation',
+      desc: 'TDS, TCS & corporate tax',
+      tag: 'TDS & Income Tax',
+      icon: Landmark,
+      badgeGradient: 'bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white',
+      gradientBorder: 'from-emerald-500 via-teal-400 to-amber-400',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(16,185,129,0.18)] hover:border-emerald-400/80',
+      ambientGradient: 'from-emerald-500/20 via-teal-500/15 to-amber-500/10',
+      cardBg: 'bg-gradient-to-b from-emerald-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-emerald-50/90 via-white to-teal-50/70 border-2 border-emerald-200/90 shadow-emerald-500/10 group-hover:border-emerald-400',
+      titleHover: 'group-hover:text-emerald-600',
+      arrowBtnStyle: 'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white',
+    },
+    {
+      id: 'compliance',
+      name: 'Compliance',
+      desc: 'MCA, audit trail & rules',
+      tag: 'MCA & Audit Trail',
+      icon: ShieldCheck,
+      badgeGradient: 'bg-gradient-to-r from-blue-700 via-indigo-700 to-blue-800 text-white',
+      gradientBorder: 'from-blue-600 via-indigo-500 to-amber-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(29,78,216,0.18)] hover:border-blue-400/80',
+      ambientGradient: 'from-blue-500/20 via-indigo-500/15 to-blue-500/10',
+      cardBg: 'bg-gradient-to-b from-blue-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-blue-50/90 via-white to-indigo-50/70 border-2 border-blue-200/90 shadow-blue-500/10 group-hover:border-blue-400',
+      titleHover: 'group-hover:text-blue-600',
+      arrowBtnStyle: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white',
+    },
+    {
+      id: 'cloud-accounting',
+      name: 'Cloud Accounting',
+      desc: 'Anywhere access & security',
+      tag: 'Anywhere 24/7',
+      icon: Cloud,
+      badgeGradient: 'bg-gradient-to-r from-cyan-600 via-blue-600 to-cyan-700 text-white',
+      gradientBorder: 'from-cyan-500 via-blue-400 to-indigo-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(6,182,212,0.18)] hover:border-cyan-400/80',
+      ambientGradient: 'from-cyan-500/20 via-blue-500/15 to-indigo-500/10',
+      cardBg: 'bg-gradient-to-b from-cyan-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-cyan-50/90 via-white to-blue-50/70 border-2 border-cyan-200/90 shadow-cyan-500/10 group-hover:border-cyan-400',
+      titleHover: 'group-hover:text-cyan-600',
+      arrowBtnStyle: 'bg-cyan-50 text-cyan-600 group-hover:bg-cyan-600 group-hover:text-white',
+    },
+    {
+      id: 'msme-growth',
+      name: 'MSME Growth',
+      desc: 'Working capital & scaling',
+      tag: 'Scaling & Growth',
+      icon: TrendingUp,
+      badgeGradient: 'bg-gradient-to-r from-teal-600 via-emerald-600 to-teal-700 text-white',
+      gradientBorder: 'from-teal-500 via-emerald-400 to-blue-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(20,184,166,0.18)] hover:border-teal-400/80',
+      ambientGradient: 'from-teal-500/20 via-emerald-500/15 to-blue-500/10',
+      cardBg: 'bg-gradient-to-b from-teal-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-teal-50/90 via-white to-emerald-50/70 border-2 border-teal-200/90 shadow-teal-500/10 group-hover:border-teal-400',
+      titleHover: 'group-hover:text-teal-600',
+      arrowBtnStyle: 'bg-teal-50 text-teal-600 group-hover:bg-teal-600 group-hover:text-white',
+    },
+    {
+      id: 'case-studies',
+      name: 'Case Studies',
+      desc: 'Real enterprise success',
+      tag: 'Success Stories',
+      icon: FileText,
+      badgeGradient: 'bg-gradient-to-r from-orange-600 via-amber-600 to-orange-700 text-white',
+      gradientBorder: 'from-orange-500 via-amber-400 to-blue-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(249,115,22,0.18)] hover:border-orange-400/80',
+      ambientGradient: 'from-orange-500/20 via-amber-500/15 to-blue-500/10',
+      cardBg: 'bg-gradient-to-b from-orange-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-orange-50/90 via-white to-amber-50/70 border-2 border-orange-200/90 shadow-orange-500/10 group-hover:border-orange-400',
+      titleHover: 'group-hover:text-orange-600',
+      arrowBtnStyle: 'bg-orange-50 text-orange-600 group-hover:bg-orange-600 group-hover:text-white',
+    },
+    {
+      id: 'video-tutorials',
+      name: 'Video Tutorials',
+      desc: 'Step-by-step masterclasses',
+      tag: 'Video Guides',
+      icon: Video,
+      badgeGradient: 'bg-gradient-to-r from-violet-600 via-purple-600 to-violet-700 text-white',
+      gradientBorder: 'from-violet-500 via-purple-400 to-indigo-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(139,92,246,0.18)] hover:border-violet-400/80',
+      ambientGradient: 'from-violet-500/20 via-purple-500/15 to-indigo-500/10',
+      cardBg: 'bg-gradient-to-b from-violet-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-violet-50/90 via-white to-purple-50/70 border-2 border-violet-200/90 shadow-violet-500/10 group-hover:border-violet-400',
+      titleHover: 'group-hover:text-violet-600',
+      arrowBtnStyle: 'bg-violet-50 text-violet-600 group-hover:bg-violet-600 group-hover:text-white',
+    }
   ];
+
+  // Custom 3D SVG emblem renderer for all 12 Resource categories
+  const renderCategoryIcon = (id, FallbackIcon) => {
+    switch (id) {
+      case 'gst-updates':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="gstDoc" x1="4" y1="3" x2="28" y2="29" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#3b82f6" />
+                <stop offset="100%" stopColor="#1d4ed8" />
+              </linearGradient>
+              <linearGradient id="gstRibbon" x1="16" y1="16" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#fbbf24" />
+                <stop offset="100%" stopColor="#d97706" />
+              </linearGradient>
+            </defs>
+            <rect x="5" y="3" width="18" height="24" rx="2.5" fill="url(#gstDoc)" stroke="#bfdbfe" strokeWidth="0.8" />
+            <line x1="8" y1="8" x2="16" y2="8" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" />
+            <line x1="8" y1="12" x2="19" y2="12" stroke="#bfdbfe" strokeWidth="1.2" strokeLinecap="round" />
+            <line x1="8" y1="16" x2="15" y2="16" stroke="#bfdbfe" strokeWidth="1.2" strokeLinecap="round" />
+            <path d="M17 3V8H23" fill="#60a5fa" />
+            <circle cx="21" cy="21" r="5" fill="url(#gstRibbon)" stroke="#ffffff" strokeWidth="1" />
+            <path d="M19.5 21L20.8 22.3L23 19.8" stroke="#ffffff" strokeWidth="1.4" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        );
+
+      case 'tally-updates':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="tallyTopR" x1="8" y1="3" x2="24" y2="12" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#60a5fa" />
+                <stop offset="100%" stopColor="#0052cc" />
+              </linearGradient>
+              <linearGradient id="tallyLeftR" x1="4" y1="11" x2="16" y2="27" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#0052cc" />
+                <stop offset="100%" stopColor="#0a1a38" />
+              </linearGradient>
+              <linearGradient id="tallyRightR" x1="16" y1="11" x2="28" y2="27" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#38bdf8" />
+                <stop offset="100%" stopColor="#0284c7" />
+              </linearGradient>
+            </defs>
+            <path d="M16 3L27 9.5L16 16L5 9.5L16 3Z" fill="url(#tallyTopR)" stroke="#ffffff" strokeWidth="0.8" />
+            <path d="M5 9.5L16 16V29L5 22.5V9.5Z" fill="url(#tallyLeftR)" stroke="#ffffff" strokeWidth="0.8" />
+            <path d="M16 16L27 9.5V22.5L16 29V16Z" fill="url(#tallyRightR)" stroke="#ffffff" strokeWidth="0.8" />
+            <circle cx="16" cy="16" r="3.2" fill="#f59e0b" stroke="#ffffff" strokeWidth="0.8" />
+            <text x="16" y="18" textAnchor="middle" fontSize="5.5" fontWeight="900" fill="#ffffff">T</text>
+          </svg>
+        );
+
+      case 'accounting-finance':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="calcGradR" x1="5" y1="3" x2="27" y2="29" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#fbbf24" />
+                <stop offset="50%" stopColor="#f59e0b" />
+                <stop offset="100%" stopColor="#d97706" />
+              </linearGradient>
+            </defs>
+            <rect x="6" y="3" width="20" height="26" rx="4" fill="url(#calcGradR)" stroke="#fef3c7" strokeWidth="0.8" />
+            <rect x="8.5" y="6" width="15" height="6.5" rx="1.5" fill="#0f172a" />
+            <text x="21" y="11" textAnchor="end" fontSize="5" fontWeight="bold" fill="#34d399">88,500</text>
+            <rect x="8.5" y="15" width="3.5" height="3" rx="0.8" fill="#ffffff" />
+            <rect x="14.2" y="15" width="3.5" height="3" rx="0.8" fill="#ffffff" />
+            <rect x="20" y="15" width="3.5" height="3" rx="0.8" fill="#1e3a8a" />
+            <rect x="8.5" y="19.5" width="3.5" height="3" rx="0.8" fill="#ffffff" />
+            <rect x="14.2" y="19.5" width="3.5" height="3" rx="0.8" fill="#ffffff" />
+            <rect x="20" y="19.5" width="3.5" height="3" rx="0.8" fill="#1e3a8a" />
+            <rect x="8.5" y="24" width="3.5" height="3" rx="0.8" fill="#ffffff" />
+            <rect x="14.2" y="24" width="9.3" height="3" rx="0.8" fill="#0052cc" />
+          </svg>
+        );
+
+      case 'business-automation':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="autoGearR" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#818cf8" />
+                <stop offset="50%" stopColor="#6366f1" />
+                <stop offset="100%" stopColor="#4338ca" />
+              </linearGradient>
+            </defs>
+            <rect x="7" y="5" width="2" height="22" rx="1" fill="#c7d2fe" />
+            <rect x="15" y="5" width="2" height="22" rx="1" fill="#c7d2fe" />
+            <rect x="23" y="5" width="2" height="22" rx="1" fill="#c7d2fe" />
+            <circle cx="8" cy="11" r="3.5" fill="url(#autoGearR)" stroke="#ffffff" strokeWidth="1.2" />
+            <circle cx="16" cy="20" r="3.5" fill="url(#autoGearR)" stroke="#ffffff" strokeWidth="1.2" />
+            <circle cx="24" cy="9" r="3.5" fill="url(#autoGearR)" stroke="#ffffff" strokeWidth="1.2" />
+            <circle cx="8" cy="11" r="1.2" fill="#fbbf24" />
+            <circle cx="16" cy="20" r="1.2" fill="#fbbf24" />
+            <circle cx="24" cy="9" r="1.2" fill="#fbbf24" />
+          </svg>
+        );
+
+      case 'inventory-management':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="boxTopR" x1="6" y1="4" x2="26" y2="14" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#c084fc" />
+                <stop offset="100%" stopColor="#9333ea" />
+              </linearGradient>
+              <linearGradient id="boxLftR" x1="6" y1="14" x2="16" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#9333ea" />
+                <stop offset="100%" stopColor="#581c87" />
+              </linearGradient>
+              <linearGradient id="boxRgtR" x1="16" y1="14" x2="26" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#a855f7" />
+                <stop offset="100%" stopColor="#7e22ce" />
+              </linearGradient>
+            </defs>
+            <path d="M16 4L26 9.5L16 15L6 9.5L16 4Z" fill="url(#boxTopR)" stroke="#f3e8ff" strokeWidth="0.8" />
+            <path d="M6 9.5L16 15V27L6 21.5V9.5Z" fill="url(#boxLftR)" stroke="#f3e8ff" strokeWidth="0.8" />
+            <path d="M16 15L26 9.5V21.5L16 27V15Z" fill="url(#boxRgtR)" stroke="#f3e8ff" strokeWidth="0.8" />
+            <line x1="16" y1="4" x2="16" y2="15" stroke="#f59e0b" strokeWidth="2.2" />
+            <line x1="16" y1="15" x2="16" y2="22" stroke="#f59e0b" strokeWidth="2.2" />
+            <rect x="18" y="18" width="5" height="3" rx="0.5" fill="#ffffff" />
+          </svg>
+        );
+
+      case 'payroll-management':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="payGradR" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#38bdf8" />
+                <stop offset="50%" stopColor="#0284c7" />
+                <stop offset="100%" stopColor="#0369a1" />
+              </linearGradient>
+            </defs>
+            <circle cx="16" cy="10" r="4.5" fill="url(#payGradR)" stroke="#e0f2fe" strokeWidth="0.8" />
+            <path d="M9 24C9 20 12 18 16 18C20 18 23 20 23 24V26H9V24Z" fill="url(#payGradR)" stroke="#e0f2fe" strokeWidth="0.8" />
+            <circle cx="8" cy="12" r="3" fill="#bae6fd" />
+            <path d="M3 24C3 21 5.5 19.5 8 19.5C9.5 19.5 10.8 20.1 11.5 21" stroke="#38bdf8" strokeWidth="1.5" strokeLinecap="round" />
+            <circle cx="23" cy="21" r="4.5" fill="#f59e0b" stroke="#ffffff" strokeWidth="1" />
+            <text x="23" y="23.5" textAnchor="middle" fontSize="6" fontWeight="bold" fill="#ffffff">₹</text>
+          </svg>
+        );
+
+      case 'taxation':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="taxGradR" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#34d399" />
+                <stop offset="50%" stopColor="#10b981" />
+                <stop offset="100%" stopColor="#047857" />
+              </linearGradient>
+            </defs>
+            <path d="M16 4L4 10H28L16 4Z" fill="url(#taxGradR)" stroke="#d1fae5" strokeWidth="0.8" />
+            <rect x="5" y="10" width="22" height="2" fill="#047857" />
+            <rect x="7" y="12" width="2.5" height="11" rx="0.5" fill="url(#taxGradR)" />
+            <rect x="12" y="12" width="2.5" height="11" rx="0.5" fill="url(#taxGradR)" />
+            <rect x="17.5" y="12" width="2.5" height="11" rx="0.5" fill="url(#taxGradR)" />
+            <rect x="22.5" y="12" width="2.5" height="11" rx="0.5" fill="url(#taxGradR)" />
+            <rect x="4" y="23" width="24" height="2" fill="#047857" />
+            <rect x="2" y="25" width="28" height="3" rx="1" fill="url(#taxGradR)" />
+            <circle cx="16" cy="8" r="1.5" fill="#f59e0b" />
+          </svg>
+        );
+
+      case 'compliance':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="compGradR" x1="5" y1="3" x2="27" y2="29" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#60a5fa" />
+                <stop offset="50%" stopColor="#2563eb" />
+                <stop offset="100%" stopColor="#1e3a8a" />
+              </linearGradient>
+            </defs>
+            <path d="M16 3L5 7.5V14.5C5 22 9.5 27.5 16 30C22.5 27.5 27 22 27 14.5V7.5L16 3Z" fill="url(#compGradR)" stroke="#bfdbfe" strokeWidth="0.8" />
+            <path d="M16 5.5L7.5 9V14.5C7.5 20.5 11 25 16 27.5V5.5Z" fill="#3b82f6" opacity="0.35" />
+            <path d="M11 15.5L14.5 19L21.5 12" stroke="#ffffff" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="22" cy="7" r="1.5" fill="#f59e0b" />
+          </svg>
+        );
+
+      case 'cloud-accounting':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="cloudGradR" x1="2" y1="4" x2="30" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#67e8f9" />
+                <stop offset="50%" stopColor="#06b6d4" />
+                <stop offset="100%" stopColor="#0284c7" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M8.5 24C5.186 24 2.5 21.314 2.5 18C2.5 14.92 4.805 12.38 7.82 12.04C8.57 7.44 12.56 4 17.43 4C22.88 4 27.29 8.41 27.29 13.86C29.93 14.45 31.82 16.8 31.82 19.6C31.82 22.77 29.25 25.33 26.08 25.33H9"
+              fill="url(#cloudGradR)"
+              stroke="#cffafe"
+              strokeWidth="0.8"
+            />
+            <path d="M16 12V20M16 12L12.5 15.5M16 12L19.5 15.5" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="9" cy="18" r="1.2" fill="#ffffff" opacity="0.9" />
+            <circle cx="24" cy="19" r="1.2" fill="#ffffff" opacity="0.9" />
+          </svg>
+        );
+
+      case 'msme-growth':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="msmeGradR" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#2dd4bf" />
+                <stop offset="50%" stopColor="#0d9488" />
+                <stop offset="100%" stopColor="#115e59" />
+              </linearGradient>
+            </defs>
+            <rect x="5" y="19" width="4.5" height="9" rx="1.2" fill="#99f6e4" />
+            <rect x="13.5" y="13" width="4.5" height="15" rx="1.2" fill="#2dd4bf" />
+            <rect x="22" y="7" width="4.5" height="21" rx="1.2" fill="url(#msmeGradR)" />
+            <path d="M4 17L12 11L18 14L27 4" stroke="#0f766e" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M21 4H27V10" stroke="#0f766e" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="27" cy="4" r="2.2" fill="#f59e0b" stroke="#ffffff" strokeWidth="1" />
+          </svg>
+        );
+
+      case 'case-studies':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="csGradR" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#fb923c" />
+                <stop offset="50%" stopColor="#ea580c" />
+                <stop offset="100%" stopColor="#c2410c" />
+              </linearGradient>
+            </defs>
+            <path d="M4 7C4 5.9 4.9 5 6 5H12L15 8H26C27.1 8 28 8.9 28 10V25C28 26.1 27.1 27 26 27H6C4.9 27 4 26.1 4 25V7Z" fill="url(#csGradR)" stroke="#ffedd5" strokeWidth="0.8" />
+            <rect x="8" y="11" width="16" height="13" rx="1.5" fill="#ffffff" />
+            <line x1="11" y1="14" x2="19" y2="14" stroke="#ea580c" strokeWidth="1.4" strokeLinecap="round" />
+            <line x1="11" y1="17" x2="21" y2="17" stroke="#cbd5e1" strokeWidth="1" strokeLinecap="round" />
+            <rect x="11" y="20" width="2" height="3" fill="#3b82f6" />
+            <rect x="14" y="19" width="2" height="4" fill="#3b82f6" />
+            <rect x="17" y="18" width="2" height="5" fill="#f59e0b" />
+          </svg>
+        );
+
+      case 'video-tutorials':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="vidGradR" x1="4" y1="5" x2="28" y2="27" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#a78bfa" />
+                <stop offset="50%" stopColor="#7c3aed" />
+                <stop offset="100%" stopColor="#5b21b6" />
+              </linearGradient>
+            </defs>
+            <rect x="4" y="7" width="17" height="18" rx="3.5" fill="url(#vidGradR)" stroke="#ede9fe" strokeWidth="0.8" />
+            <path d="M21 12L28 8V24L21 20V12Z" fill="#7c3aed" stroke="#ede9fe" strokeWidth="0.8" />
+            <path d="M10.5 12.5L16 16L10.5 19.5V12.5Z" fill="#ffffff" />
+            <circle cx="8" cy="10" r="1.3" fill="#f59e0b" />
+            <circle cx="25" cy="5" r="1.5" fill="#38bdf8" />
+          </svg>
+        );
+
+      default:
+        return FallbackIcon ? <FallbackIcon className="w-6 h-6 text-blue-600" /> : null;
+    }
+  };
+
+  // Reusable Category Card Renderer with Logo Gradient Styling, Ambient Glow & Micro-Interactions
+  const renderCategoryCard = (cat, isMobile = false) => {
+    return (
+      <div
+        key={cat.id || cat.name}
+        onClick={() => setSelectedResource({ title: cat.name, category: 'Category Guide', desc: `Explore detailed articles, guides, and tools related to ${cat.name}.` })}
+        className={`group relative ${cat.cardBg} rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-slate-200/90 transition-all duration-300 flex flex-col items-center text-center justify-between overflow-hidden cursor-pointer shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1.5 ${cat.glowShadow} ${
+          isMobile ? 'w-[200px] sm:w-[220px] flex-shrink-0' : ''
+        }`}
+      >
+        {/* 1. Top Gradient Accent Line */}
+        <div className={`absolute top-0 left-0 right-0 h-[4px] group-hover:h-[5px] bg-gradient-to-r ${cat.gradientBorder} transition-all duration-300`} />
+
+        {/* 2. Ambient Gradient Glow in Corner */}
+        <div className={`absolute -top-8 -right-8 w-32 h-32 bg-gradient-to-br ${cat.ambientGradient} rounded-full blur-xl pointer-events-none opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500`} />
+
+        {/* 3. Specular Shimmer Sweep on Hover */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
+        {/* 4. Top Row: Micro Tag Badge */}
+        <div className="w-full flex justify-end mb-2 relative z-10">
+          <span className={`text-[9px] sm:text-[9.5px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full shadow-2xs border border-white/60 ${cat.badgeGradient}`}>
+            {cat.tag}
+          </span>
+        </div>
+
+        {/* 5. Squircle Icon Box */}
+        <div className="relative z-10 mb-3">
+          <div className={`w-13 h-13 sm:w-14 sm:h-14 rounded-2xl p-2.5 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-1 ${cat.iconBoxBg}`}>
+            {renderCategoryIcon(cat.id, cat.icon)}
+          </div>
+        </div>
+
+        {/* 6. Title & Short Description */}
+        <div className="relative z-10 w-full mb-3">
+          <h4 className={`text-xs sm:text-[13.5px] font-extrabold text-[#0a1a38] ${cat.titleHover} transition-colors duration-200 mb-1 leading-snug`}>
+            {cat.name}
+          </h4>
+          <p className="text-[10.5px] sm:text-[11px] text-slate-500 leading-tight line-clamp-1">
+            {cat.desc}
+          </p>
+        </div>
+
+        {/* 7. Footer: Subtle Explore Arrow Link */}
+        <div className="relative z-10 pt-2 border-t border-slate-100/90 w-full flex items-center justify-between mt-auto">
+          <span className={`text-[11px] font-bold text-[#0a1a38] ${cat.titleHover} transition-colors`}>
+            Explore
+          </span>
+          <span className={`w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-2xs ${cat.arrowBtnStyle}`}>
+            <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+          </span>
+        </div>
+      </div>
+    );
+  };
 
   const featuredArticles = [
     {
@@ -179,7 +669,7 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
         <div className="absolute top-0 left-0 w-64 h-64 opacity-15 bg-[radial-gradient(#ffffff_2px,transparent_2px)] [background-size:16px_16px] pointer-events-none" />
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 mb-6 sm:mb-8 font-medium">
             <button
@@ -249,62 +739,29 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
       {/* 2. Explore Resources by Category (12 Badges Grid) */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
-          <div className="text-center max-w-2xl mx-auto mb-12 sm:mb-16">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0a1a38] tracking-tight">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-14">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-[#0052cc] text-xs font-black uppercase tracking-wider mb-3 shadow-2xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#0052cc]" />
+              <span>RESOURCE DIRECTORY</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0a1a38] tracking-tight mb-2">
               Explore Resources by Category
             </h2>
+            <p className="text-slate-600 text-xs sm:text-sm">
+              Discover in-depth knowledge, regulatory guidelines, masterclasses and tools.
+            </p>
           </div>
 
           {/* Desktop View: Exact Original 6-Column Static Grid */}
-          <div className="hidden lg:grid grid-cols-6 gap-4 sm:gap-5">
-            {categories.map((cat, idx) => {
-              const Icon = cat.icon;
-              return (
-                <div
-                  key={idx}
-                  onClick={() => setSelectedResource({ title: cat.name, category: 'Category Guide', desc: `Explore detailed articles, guides, and tools related to ${cat.name}.` })}
-                  className="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-lg hover:border-blue-200 hover:-translate-y-1 transition duration-200 flex flex-col items-center text-center justify-center space-y-3 cursor-pointer group"
-                >
-                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 ${cat.color}`}>
-                    {cat.iconType === 'tally-text' ? (
-                      <span className="font-black text-xs tracking-tight text-[#e11d48]">Tally</span>
-                    ) : (
-                      Icon && <Icon className="w-6 h-6" />
-                    )}
-                  </div>
-                  <h4 className="text-xs sm:text-[13px] font-bold text-[#0a1a38] group-hover:text-blue-600 transition-colors leading-snug">
-                    {cat.name}
-                  </h4>
-                </div>
-              );
-            })}
+          <div className="hidden lg:grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5">
+            {categories.map((cat) => renderCategoryCard(cat, false))}
           </div>
 
           {/* Mobile View: Single Row Auto-Sliding Categories */}
           <div className="block lg:hidden">
-            <AutoSlidingRow speed={0.7} gap="gap-4">
-              {categories.map((cat, idx) => {
-                const Icon = cat.icon;
-                return (
-                  <div
-                    key={idx}
-                    onClick={() => setSelectedResource({ title: cat.name, category: 'Category Guide', desc: `Explore detailed articles, guides, and tools related to ${cat.name}.` })}
-                    className="w-[180px] sm:w-[200px] flex-shrink-0 bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-lg hover:border-blue-200 transition duration-200 flex flex-col items-center text-center justify-center space-y-3 cursor-pointer group"
-                  >
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center transition-transform group-hover:scale-110 ${cat.color}`}>
-                      {cat.iconType === 'tally-text' ? (
-                        <span className="font-black text-xs tracking-tight text-[#e11d48]">Tally</span>
-                      ) : (
-                        Icon && <Icon className="w-6 h-6" />
-                      )}
-                    </div>
-                    <h4 className="text-xs sm:text-[13px] font-bold text-[#0a1a38] group-hover:text-blue-600 transition-colors leading-snug whitespace-nowrap">
-                      {cat.name}
-                    </h4>
-                  </div>
-                );
-              })}
+            <AutoSlidingRow speed={0.75} gap="gap-4">
+              {categories.map((cat) => renderCategoryCard(cat, true))}
             </AutoSlidingRow>
           </div>
         </div>
@@ -312,7 +769,7 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
       {/* 3. Latest from Our Resource Center (4 Featured Articles) */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0a1a38] tracking-tight">
               Latest from Our Resource Center
@@ -420,7 +877,7 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
       {/* 4. Resource Types (4 Types in a Row) */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0a1a38] tracking-tight">
               Resource Types
@@ -463,7 +920,7 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
       {/* 5. Popular Downloads (4 Download Cards) */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0a1a38] tracking-tight">
               Popular Downloads
@@ -518,7 +975,7 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
       {/* 6. "Stay Informed. Stay Ahead." Newsletter Subscription Banner */}
       <section className="pb-12 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
           <div className="bg-[#071d3d] rounded-3xl p-8 sm:p-12 text-white shadow-xl">
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8">
               {/* Left Content with circular mail icon */}
@@ -569,7 +1026,7 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
       {/* 7. 4 Trust Badges Strip */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 pt-6 border-t border-slate-100">
             {/* Badge 1 */}
             <div className="flex items-center justify-center gap-3">

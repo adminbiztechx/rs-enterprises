@@ -219,17 +219,17 @@ export const HeroMockup = () => {
       {/* Dynamic Ambient Background Lighting with Pulsing Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[115%] bg-gradient-to-tr from-blue-200/35 via-sky-100/30 to-amber-100/20 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-glow" />
 
-      {/* Main Glassmorphic Slide Frame */}
-      <div className="relative rounded-2xl sm:rounded-3xl p-1.5 sm:p-2.5 bg-white/70 backdrop-blur-md border border-slate-200/90 shadow-[0_16px_45px_rgba(10,26,56,0.12)] overflow-hidden transition-all duration-300">
+      {/* Main Glassmorphic Slide Frame with Soft Blended Edges */}
+      <div className="relative rounded-2xl sm:rounded-3xl p-2 sm:p-3 bg-white/80 backdrop-blur-xl border border-blue-100/60 shadow-[0_20px_60px_-15px_rgba(0,82,204,0.08),0_0_40px_rgba(56,189,248,0.12)] overflow-hidden transition-all duration-300">
         
         {/* Top Tag & Status Header Bar */}
-        <div className="flex items-center justify-between px-3 sm:px-4 py-2 border-b border-slate-100/90 mb-1">
+        <div className="flex items-center justify-between px-3 sm:px-4 py-2 border-b border-blue-50/80 mb-1">
           <div className="flex items-center gap-2">
             <span className={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] sm:text-[11px] font-black uppercase tracking-wider border shadow-2xs ${current.tagColor}`}>
               <span className="w-1.5 h-1.5 rounded-full bg-current animate-pulse" />
               <span>{current.tag}</span>
             </span>
-            <span className="text-slate-400 text-xs hidden sm:inline">•</span>
+            <span className="text-slate-300 text-xs hidden sm:inline">•</span>
             <span className="text-[11.5px] font-bold text-slate-700 hidden sm:inline truncate max-w-[260px]">
               {current.title}
             </span>
@@ -245,32 +245,42 @@ export const HeroMockup = () => {
                 className={`h-2 rounded-full transition-all duration-300 cursor-pointer ${
                   activeSlide === idx
                     ? 'w-7 sm:w-8 bg-[#0052cc] shadow-xs'
-                    : 'w-2 sm:w-2.5 bg-slate-300 hover:bg-slate-400'
+                    : 'w-2 sm:w-2.5 bg-slate-200 hover:bg-slate-300'
                 }`}
               />
             ))}
           </div>
         </div>
 
-        {/* Viewport for Sliding Images & Animated Hotspots */}
-        <div className="relative aspect-[16/10.5] sm:aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-gradient-to-b from-slate-50 to-blue-50/20">
+        {/* Viewport for Sliding Images & Animated Hotspots with Soft Feathered Edge Blending */}
+        <div className="relative aspect-[16/10.5] sm:aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-blue-50/20">
           
-          {/* Images Stack with Smooth Crossfade & Slight Zoom */}
+          {/* Edge Blend Gradients - Eliminates Any Hard Image Edges or Rectangular Cutoffs */}
+          <div className="absolute inset-y-0 left-0 w-8 sm:w-16 bg-gradient-to-r from-white/90 via-white/40 to-transparent pointer-events-none z-20" />
+          <div className="absolute inset-y-0 right-0 w-8 sm:w-16 bg-gradient-to-l from-white/90 via-white/40 to-transparent pointer-events-none z-20" />
+          <div className="absolute inset-x-0 top-0 h-6 sm:h-12 bg-gradient-to-b from-white/85 via-white/30 to-transparent pointer-events-none z-20" />
+          <div className="absolute inset-x-0 bottom-0 h-8 sm:h-16 bg-gradient-to-t from-white/95 via-white/50 to-transparent pointer-events-none z-20" />
+
+          {/* Images Stack with Smooth Crossfade, Feathered Mask & Slight Zoom */}
           {slides.map((s, idx) => {
             const isActive = activeSlide === idx;
             return (
               <div
                 key={s.id}
-                className={`absolute inset-0 transition-all duration-700 ease-out flex items-center justify-center p-2 sm:p-4 ${
+                style={{
+                  WebkitMaskImage: 'radial-gradient(ellipse 96% 92% at 50% 50%, black 82%, transparent 100%)',
+                  maskImage: 'radial-gradient(ellipse 96% 92% at 50% 50%, black 82%, transparent 100%)',
+                }}
+                className={`absolute inset-0 transition-all duration-700 ease-out flex items-center justify-center ${
                   isActive
                     ? 'opacity-100 scale-100 z-10 pointer-events-auto'
-                    : 'opacity-0 scale-[1.03] z-0 pointer-events-none'
+                    : 'opacity-0 scale-[1.02] z-0 pointer-events-none'
                 }`}
               >
                 <img
                   src={s.image}
                   alt={s.alt}
-                  className="w-full h-full object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,0.08)] rounded-xl transition-transform duration-500 hover:scale-[1.01]"
+                  className="w-full h-full object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,0.06)] transition-transform duration-500 hover:scale-[1.01]"
                   loading={idx === 0 ? 'eager' : 'lazy'}
                 />
 
@@ -281,7 +291,7 @@ export const HeroMockup = () => {
                     return (
                       <div
                         key={h.id}
-                        className={`absolute ${h.position} hidden sm:flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.09)] border border-slate-200/90 text-slate-800 scale-95 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer ${h.animClass}`}
+                        className={`absolute ${h.position} hidden sm:flex items-center gap-1.5 bg-white/95 backdrop-blur-md px-3 py-1.5 rounded-full shadow-[0_8px_20px_rgba(0,0,0,0.09)] border border-slate-200/80 text-slate-800 scale-95 hover:scale-105 active:scale-95 transition-all duration-300 cursor-pointer z-30 ${h.animClass}`}
                       >
                         <span className={`w-2 h-2 rounded-full ${h.dotColor} animate-pulse flex-shrink-0`} />
                         <HIcon className="w-3.5 h-3.5 text-slate-600 flex-shrink-0" />
@@ -291,22 +301,6 @@ export const HeroMockup = () => {
                       </div>
                     );
                   })}
-
-                {/* Floating Tally Authorized Partner Badge on Active Slide */}
-                {isActive && s.showPartnerBadge && (
-                  <div className="absolute left-2 sm:left-4 bottom-2 sm:bottom-4 z-20 bg-white/95 backdrop-blur-md rounded-xl p-2 sm:p-3 shadow-lg border border-slate-200/90 flex flex-col items-center scale-90 sm:scale-100 animate-float-delay">
-                    <span className="font-serif italic text-base sm:text-lg font-black text-[#8b1515] leading-none mb-0.5">
-                      Tally
-                    </span>
-                    <span className="text-[6.5px] sm:text-[7.5px] font-extrabold tracking-widest text-slate-600 uppercase">
-                      POWER OF SIMPLICITY
-                    </span>
-                    <div className="mt-1 px-2 py-0.5 rounded bg-emerald-50 border border-emerald-300 text-emerald-800 text-[7px] sm:text-[8px] font-black uppercase tracking-wider flex items-center gap-0.5">
-                      <span className="text-amber-500">★</span>
-                      <span>AUTHORIZED PARTNER</span>
-                    </div>
-                  </div>
-                )}
               </div>
             );
           })}
@@ -315,7 +309,7 @@ export const HeroMockup = () => {
           <button
             onClick={prevSlide}
             aria-label="Previous slide"
-            className="absolute left-2.5 sm:left-3.5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 backdrop-blur-md border border-slate-200/90 text-slate-700 hover:text-[#0052cc] hover:bg-white shadow-md flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer z-30 opacity-80 sm:opacity-0 group-hover/slider:opacity-100"
+            className="absolute left-2.5 sm:left-3.5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 backdrop-blur-md border border-slate-200/80 text-slate-700 hover:text-[#0052cc] hover:bg-white shadow-md flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer z-30 opacity-80 sm:opacity-0 group-hover/slider:opacity-100"
           >
             <ChevronLeft className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
@@ -324,14 +318,14 @@ export const HeroMockup = () => {
           <button
             onClick={nextSlide}
             aria-label="Next slide"
-            className="absolute right-2.5 sm:right-3.5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 backdrop-blur-md border border-slate-200/90 text-slate-700 hover:text-[#0052cc] hover:bg-white shadow-md flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer z-30 opacity-80 sm:opacity-0 group-hover/slider:opacity-100"
+            className="absolute right-2.5 sm:right-3.5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-white/90 backdrop-blur-md border border-slate-200/80 text-slate-700 hover:text-[#0052cc] hover:bg-white shadow-md flex items-center justify-center transition-all duration-200 hover:scale-110 active:scale-95 cursor-pointer z-30 opacity-80 sm:opacity-0 group-hover/slider:opacity-100"
           >
             <ChevronRight className="w-4 h-4 sm:w-5 sm:h-5" />
           </button>
         </div>
 
-        {/* Bottom Interactive Thumbnail / Tab Pills */}
-        <div className="mt-2 pt-2 border-t border-slate-100/90 grid grid-cols-4 gap-1.5 sm:gap-2">
+        {/* Bottom Interactive Thumbnail / Tab Pills with Soft Rounded Borders */}
+        <div className="mt-2 pt-2 border-t border-blue-50/80 grid grid-cols-4 gap-1.5 sm:gap-2">
           {slides.map((s, idx) => {
             const isActive = activeSlide === idx;
             return (
@@ -340,8 +334,8 @@ export const HeroMockup = () => {
                 onClick={() => setActiveSlide(idx)}
                 className={`py-1.5 px-1.5 sm:px-2 rounded-xl text-center transition-all duration-200 cursor-pointer flex flex-col items-center justify-center ${
                   isActive
-                    ? 'bg-blue-50/90 border border-blue-300/80 shadow-2xs'
-                    : 'bg-slate-50/60 hover:bg-slate-100/80 border border-slate-200/60'
+                    ? 'bg-blue-50/90 border border-blue-200/80 shadow-2xs'
+                    : 'bg-slate-50/50 hover:bg-slate-100/70 border border-slate-100'
                 }`}
               >
                 <span

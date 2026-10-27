@@ -480,7 +480,7 @@ export const ProductsAndServices = ({ onNavigate, onSelectService }) => {
 
   return (
     <section id="services" className="py-12 sm:py-16 bg-gradient-to-b from-white via-slate-50/40 to-white relative">
-      <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+      <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
         
         {/* Section Heading with Enterprise Pill */}
         <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-12">

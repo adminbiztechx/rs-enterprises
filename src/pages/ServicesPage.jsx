@@ -900,7 +900,7 @@ export const ServicesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 mb-6 sm:mb-8 font-medium">
             <button
@@ -1007,7 +1007,7 @@ export const ServicesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
 
       {/* 2. Main "Our Services" Grid Section (15 Cards) */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           {/* Section Header */}
           <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-[#0052cc] text-xs font-black uppercase tracking-wider mb-3 shadow-2xs">
@@ -1050,7 +1050,7 @@ export const ServicesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
 
       {/* 3. Why Choose Syn N Sol? Section */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="bg-[#edf5ff] rounded-3xl p-8 sm:p-12 border border-blue-100/60 shadow-xs">
             {/* Heading */}
             <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
@@ -1115,7 +1115,7 @@ export const ServicesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
 
       {/* 4. Our Process Section */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="bg-white rounded-3xl border border-slate-200/80 p-8 sm:p-12 shadow-sm">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
               {/* Left Column: Heading & CTA */}
@@ -1188,7 +1188,7 @@ export const ServicesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }
 
       {/* 5. "Let's Simplify Your Business Together" CTA Banner */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="relative bg-gradient-to-r from-[#071d3d] via-[#09264f] to-[#0d346b] rounded-3xl p-8 sm:p-12 text-white shadow-xl overflow-hidden">
             {/* Decorative dot matrix pattern */}
             <div className="absolute top-0 right-0 w-64 h-full opacity-10 bg-[radial-gradient(#ffffff_2px,transparent_2px)] [background-size:16px_16px] pointer-events-none" />

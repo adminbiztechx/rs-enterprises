@@ -71,6 +71,11 @@ export const Hero = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
               We provide Tally Software, Implementation, Customization, Cloud Solutions, GST Compliance and End-to-End Support to help businesses grow with confidence.
             </p>
 
+            {/* Mobile View Only: Hero Mockup Slider placed right above Book Free Demo */}
+            <div className="block lg:hidden pt-2 pb-1">
+              <HeroMockup />
+            </div>
+
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
               {/* Primary Blue Button */}
@@ -124,8 +129,8 @@ export const Hero = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
 
           </div>
 
-          {/* Right Column: Hero Visual Mockup (7 cols) with comfortable spacing */}
-          <div className="lg:col-span-7 relative flex justify-center lg:justify-end items-center lg:pl-6 xl:pl-10">
+          {/* Desktop View Only: Hero Visual Mockup (7 cols) with comfortable spacing */}
+          <div className="hidden lg:flex lg:col-span-7 relative justify-center lg:justify-end items-center lg:pl-6 xl:pl-10">
             <HeroMockup />
           </div>
 

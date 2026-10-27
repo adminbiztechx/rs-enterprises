@@ -23,6 +23,7 @@ import {
   Coins,
   Headphones,
   Zap,
+  Sparkles,
   Factory,
   ShoppingCart,
   Truck,
@@ -39,7 +40,15 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
       title: 'Accounting Automation',
       desc: 'Automate your day-to-day accounting tasks, reduce manual effort and improve accuracy.',
       icon: Calculator,
-      iconBg: 'bg-blue-50 text-blue-600',
+      tag: 'Smart Accounts',
+      badgeGradient: 'bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600 text-white',
+      gradientBorder: 'from-blue-600 via-sky-400 to-amber-500',
+      glowShadow: 'hover:shadow-[0_12px_32px_rgba(37,99,235,0.15)] hover:border-blue-400/80',
+      ambientGradient: 'from-blue-500/15 via-sky-400/10 to-transparent',
+      cardBg: 'bg-gradient-to-b from-blue-50/30 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-blue-50/90 via-white to-amber-50/70 border-2 border-blue-200/90 shadow-blue-500/10 group-hover:border-blue-400',
+      arrowBtnStyle: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white',
+      titleHover: 'group-hover:text-blue-600',
       detailDesc: 'Eliminate repetitive manual accounting tasks with automated bank reconciliation, voucher numbering, recurrent billing, and auto-posting of recurring entries into TallyPrime.',
       features: [
         'Automated bank statement reconciliation (BRS)',
@@ -55,7 +64,15 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
       title: 'GST Compliance Solution',
       desc: 'Stay 100% GST compliant with automated GST returns, e-invoice, e-way bill and reporting.',
       icon: FileCheck,
-      iconBg: 'bg-emerald-50 text-emerald-600',
+      tag: '100% Tax Ready',
+      badgeGradient: 'bg-gradient-to-r from-teal-600 to-emerald-600 text-white',
+      gradientBorder: 'from-teal-500 via-emerald-400 to-teal-600',
+      glowShadow: 'hover:shadow-[0_12px_32px_rgba(20,184,166,0.15)] hover:border-teal-400/80',
+      ambientGradient: 'from-teal-500/15 via-emerald-400/10 to-transparent',
+      cardBg: 'bg-gradient-to-b from-teal-50/30 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-teal-50/90 via-white to-emerald-50/70 border-2 border-teal-200/90 shadow-teal-500/10 group-hover:border-teal-400',
+      arrowBtnStyle: 'bg-teal-50 text-teal-600 group-hover:bg-teal-600 group-hover:text-white',
+      titleHover: 'group-hover:text-teal-600',
       detailDesc: 'End-to-end GST compliance suite built into TallyPrime for automated GSTR-1, GSTR-3B preparation, real-time GSTR-2B reconciliation, and one-click E-Invoice & E-Way Bill generation.',
       features: [
         'Direct API integration with GSTN & NIC e-Invoice portal',
@@ -71,7 +88,15 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
       title: 'Inventory Management',
       desc: 'Real-time inventory tracking, stock valuation, batch & serial management and reorder alerts.',
       icon: Boxes,
-      iconBg: 'bg-purple-50 text-purple-600',
+      tag: 'Real-Time Stock',
+      badgeGradient: 'bg-gradient-to-r from-purple-600 to-indigo-500 text-white',
+      gradientBorder: 'from-purple-500 via-violet-400 to-indigo-500',
+      glowShadow: 'hover:shadow-[0_12px_32px_rgba(168,85,247,0.15)] hover:border-purple-400/80',
+      ambientGradient: 'from-purple-500/15 via-indigo-400/10 to-transparent',
+      cardBg: 'bg-gradient-to-b from-purple-50/30 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-purple-50/90 via-white to-indigo-50/70 border-2 border-purple-200/90 shadow-purple-500/10 group-hover:border-purple-400',
+      arrowBtnStyle: 'bg-purple-50 text-purple-600 group-hover:bg-purple-600 group-hover:text-white',
+      titleHover: 'group-hover:text-purple-600',
       detailDesc: 'Precision inventory optimization enabling multi-location godown management, FIFO/LIFO/Average stock valuation, batch-wise tracking with manufacturing/expiry dates, and automated reorder alerts.',
       features: [
         'Real-time multi-warehouse & godown visibility',
@@ -87,7 +112,15 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
       title: 'Payroll Management',
       desc: 'Complete payroll processing, salary slips, tax calculations and statutory compliance made easy.',
       icon: Users,
-      iconBg: 'bg-amber-50 text-amber-600',
+      tag: 'Salary & PF/ESI',
+      badgeGradient: 'bg-gradient-to-r from-rose-500 via-pink-500 to-rose-600 text-white',
+      gradientBorder: 'from-rose-500 via-pink-400 to-orange-400',
+      glowShadow: 'hover:shadow-[0_12px_32px_rgba(244,63,94,0.15)] hover:border-rose-400/80',
+      ambientGradient: 'from-rose-500/15 via-pink-400/10 to-transparent',
+      cardBg: 'bg-gradient-to-b from-rose-50/30 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-rose-50/90 via-white to-pink-50/70 border-2 border-rose-200/90 shadow-rose-500/10 group-hover:border-rose-400',
+      arrowBtnStyle: 'bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white',
+      titleHover: 'group-hover:text-rose-600',
       detailDesc: 'Comprehensive human resource and payroll automation in TallyPrime covering employee attendance, pay heads, statutory PF/ESI/PT/TDS deductions, and automated payslip generation.',
       features: [
         'Biometric attendance machine integration',
@@ -103,7 +136,15 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
       title: 'Cloud Accounting',
       desc: 'Access your business data securely from anywhere, anytime on any device.',
       icon: Cloud,
-      iconBg: 'bg-orange-50 text-orange-600',
+      tag: 'Anywhere 24/7',
+      badgeGradient: 'bg-gradient-to-r from-sky-500 via-blue-500 to-indigo-600 text-white',
+      gradientBorder: 'from-sky-500 via-cyan-400 to-blue-600',
+      glowShadow: 'hover:shadow-[0_12px_32px_rgba(14,165,233,0.15)] hover:border-sky-400/80',
+      ambientGradient: 'from-sky-500/15 via-cyan-400/10 to-transparent',
+      cardBg: 'bg-gradient-to-b from-sky-50/30 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-sky-50/90 via-white to-blue-50/70 border-2 border-sky-200/90 shadow-sky-500/10 group-hover:border-sky-400',
+      arrowBtnStyle: 'bg-sky-50 text-sky-600 group-hover:bg-sky-600 group-hover:text-white',
+      titleHover: 'group-hover:text-sky-600',
       detailDesc: 'Empower your finance team and leadership with secure cloud-hosted Tally accessible 24/7 from laptops, Macs, iPads, and smartphones with zero latency.',
       features: [
         'Ultra-fast cloud infrastructure hosted in Indian Tier-IV data centers',
@@ -119,7 +160,15 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
       title: 'Business Intelligence & Reporting',
       desc: 'Powerful dashboards, MIS reports and insights to make faster, data-driven decisions.',
       icon: TrendingUp,
-      iconBg: 'bg-teal-50 text-teal-600',
+      tag: 'Smart Analytics',
+      badgeGradient: 'bg-gradient-to-r from-emerald-600 to-teal-500 text-white',
+      gradientBorder: 'from-emerald-500 via-teal-400 to-cyan-500',
+      glowShadow: 'hover:shadow-[0_12px_32px_rgba(16,185,129,0.15)] hover:border-emerald-400/80',
+      ambientGradient: 'from-emerald-500/15 via-teal-400/10 to-transparent',
+      cardBg: 'bg-gradient-to-b from-emerald-50/30 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-emerald-50/90 via-white to-teal-50/70 border-2 border-emerald-200/90 shadow-emerald-500/10 group-hover:border-emerald-400',
+      arrowBtnStyle: 'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white',
+      titleHover: 'group-hover:text-emerald-600',
       detailDesc: 'Transform raw accounting ledgers into dynamic visual management dashboards, cash flow forecasts, debtor aging curves, and revenue growth analytics.',
       features: [
         'Interactive executive KPI & MIS dashboards',
@@ -135,7 +184,15 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
       title: 'Mobile Access',
       desc: 'Manage your business on-the-go with Tally mobile apps and remote access solutions.',
       icon: Smartphone,
-      iconBg: 'bg-rose-50 text-rose-600',
+      tag: 'iOS & Android',
+      badgeGradient: 'bg-gradient-to-r from-fuchsia-600 to-pink-600 text-white',
+      gradientBorder: 'from-fuchsia-500 via-pink-400 to-purple-600',
+      glowShadow: 'hover:shadow-[0_12px_32px_rgba(217,70,239,0.15)] hover:border-fuchsia-400/80',
+      ambientGradient: 'from-fuchsia-500/15 via-pink-400/10 to-transparent',
+      cardBg: 'bg-gradient-to-b from-fuchsia-50/30 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-fuchsia-50/90 via-white to-pink-50/70 border-2 border-fuchsia-200/90 shadow-fuchsia-500/10 group-hover:border-fuchsia-400',
+      arrowBtnStyle: 'bg-fuchsia-50 text-fuchsia-600 group-hover:bg-fuchsia-600 group-hover:text-white',
+      titleHover: 'group-hover:text-fuchsia-600',
       detailDesc: 'Access real-time business health, pending sales orders, customer balances, and create orders directly on the field via native Android and iOS Tally mobile apps.',
       features: [
         'Native iOS & Android mobile applications',
@@ -151,7 +208,15 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
       title: 'Security & Data Protection',
       desc: 'Role-based access, data encryption, audit trails and secure backup.',
       icon: ShieldCheck,
-      iconBg: 'bg-blue-50 text-blue-600',
+      tag: 'AES-256 Vault',
+      badgeGradient: 'bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white',
+      gradientBorder: 'from-blue-600 via-indigo-500 to-cyan-500',
+      glowShadow: 'hover:shadow-[0_12px_32px_rgba(79,70,229,0.15)] hover:border-indigo-400/80',
+      ambientGradient: 'from-blue-600/15 via-indigo-400/10 to-transparent',
+      cardBg: 'bg-gradient-to-b from-blue-50/30 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-blue-50/90 via-white to-indigo-50/70 border-2 border-indigo-200/90 shadow-indigo-500/10 group-hover:border-indigo-400',
+      arrowBtnStyle: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white',
+      titleHover: 'group-hover:text-blue-600',
       detailDesc: 'Enterprise-grade cybersecurity architecture protecting your sensitive financial records from ransomware, unauthorized employee tampering, and accidental data corruption.',
       features: [
         'Granular role-based user permissions (voucher-level controls)',
@@ -163,6 +228,270 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
       ]
     }
   ];
+
+  // Render authentic branded solution emblems matching logo themes & rich gradients
+  const renderSolutionIcon = (id, iconBoxBg, FallbackIcon) => {
+    return (
+      <div className={`w-14 h-14 sm:w-15 sm:h-15 rounded-2xl p-2 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-1 ${iconBoxBg}`}>
+        {(() => {
+          switch (id) {
+            case 'accounting-automation':
+              return (
+                <svg className="w-10 h-10" viewBox="0 0 32 32" fill="none">
+                  <defs>
+                    <linearGradient id="calcGrad" x1="5" y1="2" x2="27" y2="30" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#3b82f6" />
+                      <stop offset="50%" stopColor="#2563eb" />
+                      <stop offset="100%" stopColor="#1d4ed8" />
+                    </linearGradient>
+                    <linearGradient id="keyAmber" x1="0" y1="0" x2="1" y2="1">
+                      <stop offset="0%" stopColor="#fbbf24" />
+                      <stop offset="100%" stopColor="#f59e0b" />
+                    </linearGradient>
+                  </defs>
+                  {/* Calculator Body */}
+                  <rect x="5" y="2" width="22" height="28" rx="4" fill="url(#calcGrad)" stroke="#bfdbfe" strokeWidth="0.8" />
+                  {/* Digital Display Screen */}
+                  <rect x="8" y="5.5" width="16" height="6.5" rx="2" fill="#0a1a38" />
+                  <circle cx="10.5" cy="8.7" r="1" fill="#10b981" />
+                  <line x1="14" y1="8.7" x2="21.5" y2="8.7" stroke="#38bdf8" strokeWidth="2" strokeLinecap="round" />
+
+                  {/* Keypad Buttons with Tally Colors */}
+                  {/* Row 1 */}
+                  <rect x="8" y="14.5" width="4" height="3" rx="1" fill="url(#keyAmber)" />
+                  <rect x="14" y="14.5" width="4" height="3" rx="1" fill="#60a5fa" />
+                  <rect x="20" y="14.5" width="4" height="3" rx="1" fill="#38bdf8" />
+
+                  {/* Row 2 */}
+                  <rect x="8" y="19.5" width="4" height="3" rx="1" fill="#ffffff" />
+                  <rect x="14" y="19.5" width="4" height="3" rx="1" fill="#ffffff" />
+                  <rect x="20" y="19.5" width="4" height="3" rx="1" fill="#ffffff" />
+
+                  {/* Row 3 */}
+                  <rect x="8" y="24.5" width="4" height="3" rx="1" fill="#ffffff" />
+                  <rect x="14" y="24.5" width="4" height="3" rx="1" fill="#ffffff" />
+                  <rect x="20" y="24.5" width="4" height="3" rx="1" fill="url(#keyAmber)" />
+                </svg>
+              );
+
+            case 'gst-compliance':
+              return (
+                <svg className="w-10 h-10" viewBox="0 0 32 32" fill="none">
+                  <defs>
+                    <linearGradient id="gstSolGrad" x1="5" y1="2" x2="27" y2="30" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#34d399" />
+                      <stop offset="50%" stopColor="#10b981" />
+                      <stop offset="100%" stopColor="#059669" />
+                    </linearGradient>
+                  </defs>
+                  {/* Document & Shield */}
+                  <path d="M16 2.5L5 7.2V14.5C5 22 9.5 28.2 16 30.5C22.5 28.2 27 22 27 14.5V7.2L16 2.5Z" fill="url(#gstSolGrad)" stroke="#ccfbf1" strokeWidth="0.8" />
+                  <path d="M10.5 16L14.5 20L22 12" stroke="#ffffff" strokeWidth="2.8" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="16" cy="16.5" r="8.5" stroke="#ffffff" strokeWidth="1" strokeDasharray="2 2" opacity="0.5" />
+                </svg>
+              );
+
+            case 'inventory-management':
+              return (
+                <svg className="w-10 h-10" viewBox="0 0 32 32" fill="none">
+                  <defs>
+                    <linearGradient id="invTopPurple" x1="9" y1="2" x2="23" y2="10" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#e9d5ff" />
+                      <stop offset="100%" stopColor="#c084fc" />
+                    </linearGradient>
+                    <linearGradient id="invLeftPurple" x1="9" y1="6" x2="16" y2="17" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#a855f7" />
+                      <stop offset="100%" stopColor="#7e22ce" />
+                    </linearGradient>
+                    <linearGradient id="invRightPurple" x1="16" y1="6" x2="23" y2="17" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#6366f1" />
+                      <stop offset="100%" stopColor="#3730a3" />
+                    </linearGradient>
+                  </defs>
+                  {/* Top Warehouse Cube */}
+                  <polygon points="16,2 23,6 16,10 9,6" fill="url(#invTopPurple)" />
+                  <polygon points="9,6 16,10 16,17 9,13" fill="url(#invLeftPurple)" />
+                  <polygon points="16,10 23,6 23,13 16,17" fill="url(#invRightPurple)" />
+
+                  {/* Bottom-Left Cube */}
+                  <polygon points="8.5,15 15,18.5 8.5,22 2,18.5" fill="#c084fc" />
+                  <polygon points="2,18.5 8.5,22 8.5,29 2,25.5" fill="#a855f7" />
+                  <polygon points="8.5,22 15,18.5 15,25.5 8.5,29" fill="#7e22ce" />
+
+                  {/* Bottom-Right Cube */}
+                  <polygon points="23.5,15 30,18.5 23.5,22 17,18.5" fill="#818cf8" />
+                  <polygon points="17,18.5 23.5,22 23.5,29 17,25.5" fill="#6366f1" />
+                  <polygon points="23.5,22 30,18.5 30,25.5 23.5,29" fill="#4338ca" />
+
+                  {/* Scan beam */}
+                  <line x1="2" y1="18.5" x2="30" y2="18.5" stroke="#38bdf8" strokeWidth="1" strokeDasharray="2 1" />
+                </svg>
+              );
+
+            case 'payroll-management':
+              return (
+                <svg className="w-10 h-10" viewBox="0 0 32 32" fill="none">
+                  <defs>
+                    <linearGradient id="paySolGrad" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#fda4af" />
+                      <stop offset="40%" stopColor="#f43f5e" />
+                      <stop offset="100%" stopColor="#e11d48" />
+                    </linearGradient>
+                  </defs>
+                  <circle cx="21" cy="9.5" r="3.5" fill="#fca5a5" />
+                  <path d="M17 20C17 17 19.2 15.5 22 15.5C24.8 15.5 27 17 27 20" fill="#fca5a5" />
+                  <circle cx="11.5" cy="10" r="4.5" fill="url(#paySolGrad)" stroke="#ffe4e6" strokeWidth="0.8" />
+                  <path d="M4 25.5C4 20.5 7.5 18 11.5 18C15.5 18 19 20.5 19 25.5" fill="url(#paySolGrad)" stroke="#ffe4e6" strokeWidth="0.8" />
+                  <circle cx="23" cy="22.5" r="6" fill="#f59e0b" stroke="#ffffff" strokeWidth="1.5" />
+                  <text x="23" y="25.5" textAnchor="middle" fill="#ffffff" fontSize="8" fontWeight="900" fontFamily="system-ui, sans-serif">₹</text>
+                </svg>
+              );
+
+            case 'cloud-accounting':
+              return (
+                <svg className="w-10 h-10" viewBox="0 0 32 32" fill="none">
+                  <defs>
+                    <linearGradient id="cldSolGrad" x1="2" y1="3" x2="30" y2="26" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#7dd3fc" />
+                      <stop offset="40%" stopColor="#38bdf8" />
+                      <stop offset="80%" stopColor="#0ea5e9" />
+                      <stop offset="100%" stopColor="#2563eb" />
+                    </linearGradient>
+                  </defs>
+                  <path
+                    d="M8.5 24C5.186 24 2.5 21.314 2.5 18C2.5 14.92 4.805 12.38 7.82 12.04C8.57 7.44 12.56 4 17.43 4C22.88 4 27.29 8.41 27.29 13.86C29.93 14.45 31.82 16.8 31.82 19.6C31.82 22.77 29.25 25.33 26.08 25.33H9"
+                    fill="url(#cldSolGrad)"
+                    stroke="#e0f2fe"
+                    strokeWidth="0.8"
+                  />
+                  <path d="M16.5 11.5V19.5M16.5 11.5L12.5 15.5M16.5 11.5L20.5 15.5" stroke="#ffffff" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="8.5" cy="18.5" r="1.5" fill="#ffffff" opacity="0.9" />
+                  <circle cx="24.5" cy="20" r="1.5" fill="#ffffff" opacity="0.9" />
+                </svg>
+              );
+
+            case 'bi-reporting':
+              return (
+                <svg className="w-10 h-10" viewBox="0 0 32 32" fill="none">
+                  <defs>
+                    <linearGradient id="biSolGrad" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#34d399" />
+                      <stop offset="50%" stopColor="#10b981" />
+                      <stop offset="100%" stopColor="#0d9488" />
+                    </linearGradient>
+                  </defs>
+                  {/* Chart Bars */}
+                  <rect x="5" y="19" width="5" height="9" rx="1.5" fill="#a7f3d0" />
+                  <rect x="13.5" y="13" width="5" height="15" rx="1.5" fill="#34d399" />
+                  <rect x="22" y="7" width="5" height="21" rx="1.5" fill="url(#biSolGrad)" />
+                  {/* Ascending Trend Line */}
+                  <path d="M6 15L15 9L25 4" stroke="#047857" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="25" cy="4" r="2.2" fill="#f59e0b" stroke="#ffffff" strokeWidth="1" />
+                </svg>
+              );
+
+            case 'mobile-access':
+              return (
+                <svg className="w-10 h-10" viewBox="0 0 32 32" fill="none">
+                  <defs>
+                    <linearGradient id="phoneSolGrad" x1="7" y1="2" x2="25" y2="30" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#f472b6" />
+                      <stop offset="50%" stopColor="#e11d48" />
+                      <stop offset="100%" stopColor="#be123c" />
+                    </linearGradient>
+                  </defs>
+                  {/* Phone Body */}
+                  <rect x="8" y="2" width="16" height="28" rx="4" fill="url(#phoneSolGrad)" stroke="#fce7f3" strokeWidth="0.8" />
+                  {/* Screen */}
+                  <rect x="10.5" y="5.5" width="11" height="19" rx="2" fill="#ffffff" />
+                  {/* Tally Micro Chart on Phone Screen */}
+                  <path d="M12 18L14.5 15L17 16.5L20 12" stroke="#e11d48" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                  <circle cx="20" cy="12" r="1" fill="#e11d48" />
+                  {/* Home Button Indicator */}
+                  <circle cx="16" cy="27" r="1.3" fill="#ffffff" />
+                  {/* Earpiece Speaker */}
+                  <line x1="14" y1="3.8" x2="18" y2="3.8" stroke="#ffffff" strokeWidth="1" strokeLinecap="round" />
+                </svg>
+              );
+
+            case 'security-data-protection':
+              return (
+                <svg className="w-10 h-10" viewBox="0 0 32 32" fill="none">
+                  <defs>
+                    <linearGradient id="secSolGrad" x1="5" y1="2.5" x2="27" y2="29.5" gradientUnits="userSpaceOnUse">
+                      <stop offset="0%" stopColor="#60a5fa" />
+                      <stop offset="50%" stopColor="#2563eb" />
+                      <stop offset="100%" stopColor="#1e3a8a" />
+                    </linearGradient>
+                  </defs>
+                  {/* Cyber Security Shield */}
+                  <path d="M16 2.5L5 7.2V14.5C5 22 9.5 28.2 16 30.5C22.5 28.2 27 22 27 14.5V7.2L16 2.5Z" fill="url(#secSolGrad)" stroke="#bfdbfe" strokeWidth="0.8" />
+                  {/* Keyhole / Lock Core */}
+                  <circle cx="16" cy="14" r="3.5" fill="#ffffff" />
+                  <path d="M14.5 14H17.5L18.5 20H13.5L14.5 14Z" fill="#ffffff" />
+                  <circle cx="16" cy="14" r="1.2" fill="#1e3a8a" />
+                </svg>
+              );
+
+            default:
+              return FallbackIcon ? <FallbackIcon className="w-6 h-6 text-blue-600" /> : null;
+          }
+        })()}
+      </div>
+    );
+  };
+
+  // Reusable card renderer with rich gradient borders, ambient glow & micro-animations
+  const renderSolutionCard = (sol, isMobile = false) => {
+    return (
+      <div
+        key={sol.id}
+        onClick={() => handleExploreSolution(sol)}
+        className={`group relative ${sol.cardBg} rounded-2xl sm:rounded-3xl p-6 border border-slate-200/90 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1.5 ${sol.glowShadow} ${
+          isMobile ? 'w-[285px] sm:w-[315px] flex-shrink-0' : ''
+        }`}
+      >
+        {/* 1. Top Gradient Accent Line */}
+        <div className={`absolute top-0 left-0 right-0 h-[4px] group-hover:h-[6px] bg-gradient-to-r ${sol.gradientBorder} transition-all duration-300`} />
+
+        {/* 2. Ambient Gradient Glow in Corner */}
+        <div className={`absolute -top-10 -right-10 w-44 h-44 bg-gradient-to-br ${sol.ambientGradient} rounded-full blur-2xl pointer-events-none opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500`} />
+
+        {/* 3. Specular Shimmer Sweep on Hover */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
+        {/* 4. Card Header: Icon Container + Micro Tag Badge */}
+        <div className="relative z-10">
+          <div className="flex items-start justify-between gap-3 mb-4">
+            {renderSolutionIcon(sol.id, sol.iconBoxBg, sol.icon)}
+            <span className={`text-[10px] sm:text-[10.5px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow-2xs border border-white/60 ${sol.badgeGradient}`}>
+              {sol.tag}
+            </span>
+          </div>
+
+          {/* Title */}
+          <h3 className={`text-base sm:text-[17px] font-extrabold text-[#0a1a38] ${sol.titleHover} transition-colors duration-200 mb-1.5 tracking-tight`}>
+            {sol.title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4 min-h-[36px]">
+            {sol.desc}
+          </p>
+        </div>
+
+        {/* 5. Card Footer: Action Link + Gradient Arrow Circle */}
+        <div className="relative z-10 pt-3 border-t border-slate-100/90 flex items-center justify-between mt-auto">
+          <span className={`text-xs font-bold text-[#0a1a38] ${sol.titleHover} transition-colors`}>
+            Explore Solution
+          </span>
+          <span className={`w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-2xs ${sol.arrowBtnStyle}`}>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+          </span>
+        </div>
+      </div>
+    );
+  };
 
   const whyChooseSolutions = [
     {
@@ -242,7 +571,7 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
         <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pointer-events-none" />
         <div className="absolute bottom-0 left-10 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
 
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           {/* Breadcrumb */}
           <nav className="flex items-center gap-2 text-xs sm:text-sm text-slate-400 mb-6 sm:mb-8 font-medium">
             <button
@@ -337,12 +666,13 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
       {/* 2. Main "Complete Business Solutions with Tally" (8 Cards) */}
       <section className="py-16 sm:py-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           {/* Header */}
-          <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16">
-            <span className="text-xs sm:text-sm font-bold tracking-wider text-[#0052cc] uppercase block mb-2">
-              Our Solutions
-            </span>
+          <div className="text-center max-w-3xl mx-auto mb-10 sm:mb-14">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-[#0052cc] text-xs font-black uppercase tracking-wider mb-3 shadow-2xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#0052cc]" />
+              <span>ENTERPRISE TALLY SOLUTIONS</span>
+            </div>
             <h2 className="text-3xl sm:text-4xl font-extrabold text-[#0d2347] tracking-tight mb-3">
               Complete Business Solutions with Tally
             </h2>
@@ -353,81 +683,13 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
           {/* Desktop View: Exact Original 8 Cards Grid (4 columns) */}
           <div className="hidden lg:grid grid-cols-4 gap-5 sm:gap-6">
-            {solutionsList.map((sol) => {
-              const Icon = sol.icon;
-              return (
-                <div
-                  key={sol.id}
-                  onClick={() => handleExploreSolution(sol)}
-                  className="group bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between cursor-pointer"
-                >
-                  <div>
-                    {/* Icon container */}
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110 ${sol.iconBg}`}>
-                      <Icon className="w-6 h-6" />
-                    </div>
-
-                    {/* Title */}
-                    <h3 className="text-base font-bold text-[#0d2347] mb-2 group-hover:text-blue-600 transition-colors">
-                      {sol.title}
-                    </h3>
-
-                    {/* Description */}
-                    <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4">
-                      {sol.desc}
-                    </p>
-                  </div>
-
-                  {/* Explore link */}
-                  <div className="pt-2 border-t border-slate-50">
-                    <span className="inline-flex items-center gap-1 text-xs font-bold text-[#0052cc] group-hover:text-[#003bb3] transition-colors">
-                      <span>Explore Solution</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
+            {solutionsList.map((sol) => renderSolutionCard(sol, false))}
           </div>
 
           {/* Mobile View: Single Row Auto-Sliding Solutions (Right to Left) */}
           <div className="block lg:hidden">
             <AutoSlidingRow speed={0.85} gap="gap-5">
-              {solutionsList.map((sol) => {
-                const Icon = sol.icon;
-                return (
-                  <div
-                    key={sol.id}
-                    onClick={() => handleExploreSolution(sol)}
-                    className="w-[280px] sm:w-[310px] flex-shrink-0 group bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:border-blue-200 transition-all duration-300 flex flex-col justify-between cursor-pointer"
-                  >
-                    <div>
-                      {/* Icon container */}
-                      <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110 ${sol.iconBg}`}>
-                        <Icon className="w-6 h-6" />
-                      </div>
-
-                      {/* Title */}
-                      <h3 className="text-base font-bold text-[#0d2347] mb-2 group-hover:text-blue-600 transition-colors">
-                        {sol.title}
-                      </h3>
-
-                      {/* Description */}
-                      <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4 min-h-[36px]">
-                        {sol.desc}
-                      </p>
-                    </div>
-
-                    {/* Explore link */}
-                    <div className="pt-2 border-t border-slate-50">
-                      <span className="inline-flex items-center gap-1 text-xs font-bold text-[#0052cc] group-hover:text-[#003bb3] transition-colors">
-                        <span>Explore Solution</span>
-                        <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </div>
-                  </div>
-                );
-              })}
+              {solutionsList.map((sol) => renderSolutionCard(sol, true))}
             </AutoSlidingRow>
           </div>
 
@@ -447,7 +709,7 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
       {/* 3. Why Our Solutions Make a Difference? */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="bg-[#edf5ff] rounded-3xl p-8 sm:p-12 border border-blue-100/60 shadow-xs">
             {/* Heading */}
             <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
@@ -509,7 +771,7 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
       {/* 4. Solutions for Every Industry */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0d2347] tracking-tight mb-2">
@@ -556,7 +818,7 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
       {/* 5. Real Results from Real Businesses (Case Studies) */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
             {/* Left Column: Heading, 4 Stats in 2x2 grid, & Link */}
             <div className="lg:col-span-4 bg-gradient-to-br from-blue-50/70 via-slate-50 to-white rounded-3xl p-8 border border-slate-100 flex flex-col justify-between shadow-xs">
@@ -643,7 +905,7 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
       {/* 6. "Ready to Transform Your Business?" CTA Banner */}
       <section className="pb-16 sm:pb-20 bg-white">
-        <div className="max-w-[1440px] mx-auto px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           <div className="relative bg-gradient-to-r from-[#071d3d] via-[#09264f] to-[#0d346b] rounded-3xl p-8 sm:p-12 text-white shadow-xl overflow-hidden">
             {/* Decorative dot matrix pattern */}
             <div className="absolute top-0 right-0 w-64 h-full opacity-10 bg-[radial-gradient(#ffffff_2px,transparent_2px)] [background-size:16px_16px] pointer-events-none" />

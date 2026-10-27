@@ -588,28 +588,64 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
 
   const resourceTypes = [
     {
+      id: 'guides-ebooks',
       title: 'Guides & eBooks',
       desc: 'In-depth guides to help you master business processes.',
+      tag: 'E-Books & Guides',
       icon: BookOpen,
-      iconBg: 'bg-blue-50 text-blue-600'
+      badgeGradient: 'bg-gradient-to-r from-blue-600 via-sky-500 to-indigo-600 text-white',
+      gradientBorder: 'from-blue-600 via-sky-400 to-amber-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(37,99,235,0.18)] hover:border-blue-400/80',
+      ambientGradient: 'from-blue-500/20 via-sky-500/15 to-amber-500/10',
+      cardBg: 'bg-gradient-to-b from-blue-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-blue-50/90 via-white to-sky-50/70 border-2 border-blue-200/90 shadow-blue-500/10 group-hover:border-blue-400',
+      titleHover: 'group-hover:text-blue-600',
+      arrowBtnStyle: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white',
     },
     {
+      id: 'templates-tools',
       title: 'Templates & Tools',
       desc: 'Download free templates, checklists and calculators.',
+      tag: 'Ready Tools',
       icon: ClipboardCheck,
-      iconBg: 'bg-emerald-50 text-emerald-600'
+      badgeGradient: 'bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white',
+      gradientBorder: 'from-emerald-500 via-teal-400 to-amber-400',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(16,185,129,0.18)] hover:border-emerald-400/80',
+      ambientGradient: 'from-emerald-500/20 via-teal-500/15 to-amber-500/10',
+      cardBg: 'bg-gradient-to-b from-emerald-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-emerald-50/90 via-white to-teal-50/70 border-2 border-emerald-200/90 shadow-emerald-500/10 group-hover:border-emerald-400',
+      titleHover: 'group-hover:text-emerald-600',
+      arrowBtnStyle: 'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white',
     },
     {
+      id: 'videos',
       title: 'Videos',
       desc: 'Step-by-step videos and tutorials for easy learning.',
+      tag: 'Tutorials',
       icon: PlayCircle,
-      iconBg: 'bg-amber-50 text-amber-600'
+      badgeGradient: 'bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 text-white',
+      gradientBorder: 'from-amber-500 via-orange-400 to-rose-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(245,158,11,0.18)] hover:border-amber-400/80',
+      ambientGradient: 'from-amber-500/20 via-orange-500/15 to-blue-500/10',
+      cardBg: 'bg-gradient-to-b from-amber-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-amber-50/90 via-white to-orange-50/70 border-2 border-amber-200/90 shadow-amber-500/10 group-hover:border-amber-400',
+      titleHover: 'group-hover:text-amber-600',
+      arrowBtnStyle: 'bg-amber-50 text-amber-600 group-hover:bg-amber-600 group-hover:text-white',
     },
     {
+      id: 'downloads',
       title: 'Downloads',
       desc: 'Useful downloads, updates and reference documents.',
+      tag: 'Resources',
       icon: CloudDownload,
-      iconBg: 'bg-purple-50 text-purple-600'
+      badgeGradient: 'bg-gradient-to-r from-purple-600 via-violet-600 to-purple-700 text-white',
+      gradientBorder: 'from-purple-500 via-violet-400 to-indigo-600',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(147,51,234,0.18)] hover:border-purple-400/80',
+      ambientGradient: 'from-purple-500/20 via-violet-500/15 to-blue-500/10',
+      cardBg: 'bg-gradient-to-b from-purple-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-purple-50/90 via-white to-violet-50/70 border-2 border-purple-200/90 shadow-purple-500/10 group-hover:border-purple-400',
+      titleHover: 'group-hover:text-purple-600',
+      arrowBtnStyle: 'bg-purple-50 text-purple-600 group-hover:bg-purple-600 group-hover:text-white',
     }
   ];
 
@@ -619,34 +655,342 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
       title: 'GST Compliance Checklist 2025',
       desc: 'Complete checklist to stay GST compliant.',
       meta: 'PDF • 512 KB',
+      tag: 'Checklist',
       icon: FileText,
-      iconColor: 'bg-rose-50 text-rose-600'
+      badgeGradient: 'bg-gradient-to-r from-rose-500 to-red-600 text-white',
+      gradientBorder: 'from-rose-500 via-red-500 to-amber-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(244,63,94,0.18)] hover:border-rose-400/80',
+      ambientGradient: 'from-rose-500/20 via-red-500/15 to-amber-500/10',
+      cardBg: 'bg-gradient-to-b from-rose-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-rose-50/90 via-white to-red-50/70 border-2 border-rose-200/90 shadow-rose-500/10 group-hover:border-rose-400',
+      titleHover: 'group-hover:text-rose-600',
+      downloadBtnStyle: 'bg-rose-50 text-rose-600 border border-rose-200 hover:bg-rose-600 hover:text-white',
     },
     {
       id: 'dl-2',
       title: 'Tally Shortcut Keys PDF',
       desc: 'Boost your productivity with essential Tally shortcuts.',
       meta: 'PDF • 1.2 MB',
+      tag: 'Shortcuts',
       icon: FileText,
-      iconColor: 'bg-amber-50 text-amber-600'
+      badgeGradient: 'bg-gradient-to-r from-amber-600 to-orange-600 text-white',
+      gradientBorder: 'from-amber-500 via-orange-400 to-blue-600',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(245,158,11,0.18)] hover:border-amber-400/80',
+      ambientGradient: 'from-amber-500/20 via-orange-500/15 to-blue-500/10',
+      cardBg: 'bg-gradient-to-b from-amber-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-amber-50/90 via-white to-orange-50/70 border-2 border-amber-200/90 shadow-amber-500/10 group-hover:border-amber-400',
+      titleHover: 'group-hover:text-amber-600',
+      downloadBtnStyle: 'bg-amber-50 text-amber-600 border border-amber-200 hover:bg-amber-600 hover:text-white',
     },
     {
       id: 'dl-3',
       title: 'Chart of Accounts Template',
       desc: 'Ready-to-use COA template for your business.',
       meta: 'XLSX • 198 KB',
+      tag: 'Excel COA',
       icon: FileSpreadsheet,
-      iconColor: 'bg-emerald-50 text-emerald-600'
+      badgeGradient: 'bg-gradient-to-r from-emerald-600 to-teal-600 text-white',
+      gradientBorder: 'from-emerald-500 via-teal-400 to-blue-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(16,185,129,0.18)] hover:border-emerald-400/80',
+      ambientGradient: 'from-emerald-500/20 via-teal-500/15 to-blue-500/10',
+      cardBg: 'bg-gradient-to-b from-emerald-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-emerald-50/90 via-white to-emerald-50/70 border-2 border-emerald-200/90 shadow-emerald-500/10 group-hover:border-emerald-400',
+      titleHover: 'group-hover:text-emerald-600',
+      downloadBtnStyle: 'bg-emerald-50 text-emerald-600 border border-emerald-200 hover:bg-emerald-600 hover:text-white',
     },
     {
       id: 'dl-4',
       title: 'TallyPrime System Requirements',
       desc: 'Check system requirements for smooth Tally performance.',
       meta: 'PDF • 245 KB',
+      tag: 'Tech Spec',
       icon: Monitor,
-      iconColor: 'bg-blue-50 text-blue-600'
+      badgeGradient: 'bg-gradient-to-r from-blue-600 to-indigo-600 text-white',
+      gradientBorder: 'from-blue-600 via-sky-400 to-indigo-600',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(37,99,235,0.18)] hover:border-blue-400/80',
+      ambientGradient: 'from-blue-500/20 via-sky-500/15 to-indigo-500/10',
+      cardBg: 'bg-gradient-to-b from-blue-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-blue-50/90 via-white to-blue-50/70 border-2 border-blue-200/90 shadow-blue-500/10 group-hover:border-blue-400',
+      titleHover: 'group-hover:text-blue-600',
+      downloadBtnStyle: 'bg-blue-50 text-blue-600 border border-blue-200 hover:bg-blue-600 hover:text-white',
     }
   ];
+
+  // 3D SVG emblem renderer for Resource Types
+  const renderResourceTypeEmblem = (id, FallbackIcon) => {
+    switch (id) {
+      case 'guides-ebooks':
+        return (
+          <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="bookLft" x1="4" y1="6" x2="16" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#3b82f6" />
+                <stop offset="100%" stopColor="#1d4ed8" />
+              </linearGradient>
+              <linearGradient id="bookRgt" x1="16" y1="6" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#60a5fa" />
+                <stop offset="100%" stopColor="#2563eb" />
+              </linearGradient>
+            </defs>
+            <path d="M16 8C12 6 6 6.5 4 8V25C6 23.5 12 23 16 25V8Z" fill="url(#bookLft)" stroke="#bfdbfe" strokeWidth="0.8" />
+            <path d="M16 8C20 6 26 6.5 28 8V25C26 23.5 20 23 16 25V8Z" fill="url(#bookRgt)" stroke="#bfdbfe" strokeWidth="0.8" />
+            <line x1="16" y1="8" x2="16" y2="25" stroke="#0a1a38" strokeWidth="1.2" />
+            <line x1="7" y1="12" x2="13" y2="12" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+            <line x1="7" y1="16" x2="13" y2="16" stroke="#bfdbfe" strokeWidth="1" strokeLinecap="round" />
+            <line x1="7" y1="20" x2="11" y2="20" stroke="#bfdbfe" strokeWidth="1" strokeLinecap="round" />
+            <line x1="19" y1="12" x2="25" y2="12" stroke="#ffffff" strokeWidth="1.2" strokeLinecap="round" />
+            <line x1="19" y1="16" x2="25" y2="16" stroke="#bfdbfe" strokeWidth="1" strokeLinecap="round" />
+            <path d="M16 8V17L18.5 15L21 17V8" fill="#f59e0b" />
+          </svg>
+        );
+
+      case 'templates-tools':
+        return (
+          <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="clipBrd" x1="6" y1="4" x2="26" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#34d399" />
+                <stop offset="50%" stopColor="#10b981" />
+                <stop offset="100%" stopColor="#047857" />
+              </linearGradient>
+            </defs>
+            <rect x="6" y="5" width="20" height="24" rx="3" fill="url(#clipBrd)" stroke="#a7f3d0" strokeWidth="0.8" />
+            <rect x="11" y="2" width="10" height="5" rx="1.5" fill="#f59e0b" stroke="#ffffff" strokeWidth="0.8" />
+            <circle cx="16" cy="4.5" r="1.2" fill="#ffffff" />
+            <rect x="9" y="8" width="14" height="18" rx="1.5" fill="#ffffff" />
+            <circle cx="12" cy="13" r="1.5" fill="#10b981" />
+            <line x1="15" y1="13" x2="20" y2="13" stroke="#64748b" strokeWidth="1.2" strokeLinecap="round" />
+            <circle cx="12" cy="17" r="1.5" fill="#10b981" />
+            <line x1="15" y1="17" x2="20" y2="17" stroke="#64748b" strokeWidth="1.2" strokeLinecap="round" />
+            <circle cx="12" cy="21" r="1.5" fill="#f59e0b" />
+            <line x1="15" y1="21" x2="18" y2="21" stroke="#64748b" strokeWidth="1.2" strokeLinecap="round" />
+          </svg>
+        );
+
+      case 'videos':
+        return (
+          <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="vidPlr" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#fbbf24" />
+                <stop offset="50%" stopColor="#f59e0b" />
+                <stop offset="100%" stopColor="#d97706" />
+              </linearGradient>
+            </defs>
+            <rect x="4" y="6" width="24" height="18" rx="4" fill="url(#vidPlr)" stroke="#fef3c7" strokeWidth="0.8" />
+            <rect x="13" y="24" width="6" height="3" fill="#0f172a" rx="0.5" />
+            <rect x="10" y="27" width="12" height="2" fill="#d97706" rx="1" />
+            <rect x="6.5" y="8.5" width="19" height="13" rx="2" fill="#0a1a38" />
+            <path d="M14 11.5L20 15L14 18.5V11.5Z" fill="#ffffff" />
+            <circle cx="24" cy="5" r="1.8" fill="#f59e0b" />
+          </svg>
+        );
+
+      case 'downloads':
+        return (
+          <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="cldDown" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#c084fc" />
+                <stop offset="50%" stopColor="#9333ea" />
+                <stop offset="100%" stopColor="#6b21a8" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M8.5 23C5.5 23 3 20.5 3 17.5C3 14.7 5.1 12.4 7.8 12.1C8.5 7.8 12.2 4.5 16.7 4.5C21.7 4.5 25.8 8.6 25.8 13.6C28.2 14.1 30 16.3 30 18.9C30 21.8 27.6 24.2 24.7 24.2H9"
+              fill="url(#cldDown)"
+              stroke="#f3e8ff"
+              strokeWidth="0.8"
+            />
+            <path d="M16 11V21M16 21L12 17M16 21L20 17" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M11 25H21" stroke="#fbbf24" strokeWidth="2.2" strokeLinecap="round" />
+          </svg>
+        );
+
+      default:
+        return FallbackIcon ? <FallbackIcon className="w-6 h-6 text-blue-600" /> : null;
+    }
+  };
+
+  // 3D SVG emblem renderer for Popular Downloads
+  const renderDownloadEmblem = (id, FallbackIcon) => {
+    switch (id) {
+      case 'dl-1':
+        return (
+          <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="gstDlGrad" x1="5" y1="3" x2="27" y2="29" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#fb7185" />
+                <stop offset="50%" stopColor="#f43f5e" />
+                <stop offset="100%" stopColor="#be123c" />
+              </linearGradient>
+            </defs>
+            <path d="M7 3H19L25 9V27C25 28.1 24.1 29 23 29H7C5.9 29 5 28.1 5 27V5C5 3.9 5.9 3 7 3Z" fill="url(#gstDlGrad)" stroke="#ffe4e6" strokeWidth="0.8" />
+            <path d="M19 3V9H25" fill="#fda4af" />
+            <rect x="7" y="12" width="13" height="5" rx="1" fill="#ffffff" />
+            <text x="13.5" y="16" textAnchor="middle" fontSize="3.8" fontWeight="900" fill="#be123c">GST</text>
+            <path d="M8 22L11 25L17 19" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        );
+
+      case 'dl-2':
+        return (
+          <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="scDlGrad" x1="5" y1="3" x2="27" y2="29" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#fbbf24" />
+                <stop offset="50%" stopColor="#f59e0b" />
+                <stop offset="100%" stopColor="#d97706" />
+              </linearGradient>
+            </defs>
+            <path d="M7 3H19L25 9V27C25 28.1 24.1 29 23 29H7C5.9 29 5 28.1 5 27V5C5 3.9 5.9 3 7 3Z" fill="url(#scDlGrad)" stroke="#fef3c7" strokeWidth="0.8" />
+            <path d="M19 3V9H25" fill="#fde68a" />
+            <rect x="7" y="13" width="7" height="6" rx="1.5" fill="#ffffff" />
+            <text x="10.5" y="17.2" textAnchor="middle" fontSize="4.2" fontWeight="900" fill="#0a1a38">F1</text>
+            <rect x="15" y="13" width="7" height="6" rx="1.5" fill="#ffffff" />
+            <text x="18.5" y="17.2" textAnchor="middle" fontSize="4.2" fontWeight="900" fill="#0a1a38">F2</text>
+            <path d="M15 21L12 25H16L14 28L19 23H15L17 21H15Z" fill="#ffffff" />
+          </svg>
+        );
+
+      case 'dl-3':
+        return (
+          <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="coaDlGrad" x1="5" y1="3" x2="27" y2="29" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#34d399" />
+                <stop offset="50%" stopColor="#10b981" />
+                <stop offset="100%" stopColor="#047857" />
+              </linearGradient>
+            </defs>
+            <path d="M7 3H19L25 9V27C25 28.1 24.1 29 23 29H7C5.9 29 5 28.1 5 27V5C5 3.9 5.9 3 7 3Z" fill="url(#coaDlGrad)" stroke="#a7f3d0" strokeWidth="0.8" />
+            <path d="M19 3V9H25" fill="#6ee7b7" />
+            <rect x="8" y="13" width="14" height="12" rx="1" fill="#ffffff" />
+            <line x1="8" y1="17" x2="22" y2="17" stroke="#047857" strokeWidth="0.8" />
+            <line x1="8" y1="21" x2="22" y2="21" stroke="#cbd5e1" strokeWidth="0.8" />
+            <line x1="13" y1="13" x2="13" y2="25" stroke="#cbd5e1" strokeWidth="0.8" />
+            <line x1="17.5" y1="13" x2="17.5" y2="25" stroke="#cbd5e1" strokeWidth="0.8" />
+            <rect x="6" y="10" width="5" height="4" rx="0.5" fill="#047857" />
+            <text x="8.5" y="13" textAnchor="middle" fontSize="3" fontWeight="bold" fill="#ffffff">X</text>
+          </svg>
+        );
+
+      case 'dl-4':
+        return (
+          <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="monDlGrad" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#60a5fa" />
+                <stop offset="50%" stopColor="#2563eb" />
+                <stop offset="100%" stopColor="#1e3a8a" />
+              </linearGradient>
+            </defs>
+            <rect x="4" y="5" width="24" height="17" rx="3" fill="url(#monDlGrad)" stroke="#bfdbfe" strokeWidth="0.8" />
+            <rect x="6.5" y="7.5" width="19" height="12" rx="1.5" fill="#0f172a" />
+            <rect x="13.5" y="22" width="5" height="4" fill="#0a1a38" />
+            <rect x="10" y="26" width="12" height="2" rx="1" fill="#3b82f6" />
+            <path d="M8 13.5H12L14 10L17 17L19 12L21 13.5H24" stroke="#38bdf8" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="22" cy="6" r="2.5" fill="#10b981" stroke="#ffffff" strokeWidth="0.8" />
+          </svg>
+        );
+
+      default:
+        return FallbackIcon ? <FallbackIcon className="w-6 h-6 text-blue-600" /> : null;
+    }
+  };
+
+  // Reusable card renderer for Resource Types
+  const renderResourceTypeCard = (rt, isMobile = false) => {
+    return (
+      <div
+        key={rt.id || rt.title}
+        onClick={() => setSelectedResource({ title: rt.title, category: 'Resource Type', desc: rt.desc })}
+        className={`group relative ${rt.cardBg} rounded-2xl sm:rounded-3xl p-6 border border-slate-200/90 transition-all duration-300 flex flex-col justify-between overflow-hidden cursor-pointer shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1.5 ${rt.glowShadow} ${
+          isMobile ? 'w-[285px] sm:w-[315px] flex-shrink-0' : ''
+        }`}
+      >
+        <div className={`absolute top-0 left-0 right-0 h-[4px] group-hover:h-[6px] bg-gradient-to-r ${rt.gradientBorder} transition-all duration-300`} />
+        <div className={`absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br ${rt.ambientGradient} rounded-full blur-2xl pointer-events-none opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500`} />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
+        <div className="relative z-10">
+          <div className="flex items-start justify-between gap-3 mb-4">
+            <div className={`w-14 h-14 sm:w-15 sm:h-15 rounded-2xl p-2.5 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-1 ${rt.iconBoxBg}`}>
+              {renderResourceTypeEmblem(rt.id, rt.icon)}
+            </div>
+            <span className={`text-[10px] sm:text-[10.5px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow-2xs border border-white/60 ${rt.badgeGradient}`}>
+              {rt.tag}
+            </span>
+          </div>
+
+          <h3 className={`text-base sm:text-[17px] font-extrabold text-[#0a1a38] ${rt.titleHover} transition-colors duration-200 mb-1.5 tracking-tight`}>
+            {rt.title}
+          </h3>
+
+          <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4 min-h-[36px]">
+            {rt.desc}
+          </p>
+        </div>
+
+        <div className="relative z-10 pt-3 border-t border-slate-100/90 flex items-center justify-between mt-auto">
+          <span className={`text-xs font-bold text-[#0a1a38] ${rt.titleHover} transition-colors`}>
+            Explore
+          </span>
+          <span className={`w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-2xs ${rt.arrowBtnStyle}`}>
+            <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 transition-transform" />
+          </span>
+        </div>
+      </div>
+    );
+  };
+
+  // Reusable card renderer for Popular Downloads
+  const renderDownloadCard = (dl, isMobile = false) => {
+    return (
+      <div
+        key={dl.id}
+        className={`group relative ${dl.cardBg} rounded-2xl sm:rounded-3xl p-6 border border-slate-200/90 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1.5 ${dl.glowShadow} ${
+          isMobile ? 'w-[285px] sm:w-[315px] flex-shrink-0' : ''
+        }`}
+      >
+        <div className={`absolute top-0 left-0 right-0 h-[4px] group-hover:h-[6px] bg-gradient-to-r ${dl.gradientBorder} transition-all duration-300`} />
+        <div className={`absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br ${dl.ambientGradient} rounded-full blur-2xl pointer-events-none opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500`} />
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
+        <div className="relative z-10">
+          <div className="flex items-start justify-between gap-3 mb-4">
+            <div className={`w-14 h-14 sm:w-15 sm:h-15 rounded-2xl p-2.5 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-1 ${dl.iconBoxBg}`}>
+              {renderDownloadEmblem(dl.id, dl.icon)}
+            </div>
+            <span className={`text-[10px] sm:text-[10.5px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow-2xs border border-white/60 ${dl.badgeGradient}`}>
+              {dl.tag}
+            </span>
+          </div>
+
+          <h4 className={`text-base sm:text-[17px] font-extrabold text-[#0a1a38] ${dl.titleHover} transition-colors duration-200 mb-1.5 leading-snug`}>
+            {dl.title}
+          </h4>
+
+          <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-4 min-h-[36px]">
+            {dl.desc}
+          </p>
+        </div>
+
+        <div className="relative z-10 pt-3 border-t border-slate-100/90 flex items-center justify-between mt-auto">
+          <span className="text-[11px] font-bold text-slate-400 uppercase tracking-wider">
+            {dl.meta}
+          </span>
+          <button
+            onClick={() => handleDownloadClick(dl)}
+            className={`w-8 h-8 rounded-xl flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-2xs cursor-pointer ${dl.downloadBtnStyle}`}
+            title="Download file"
+          >
+            <Download className="w-4 h-4" />
+          </button>
+        </div>
+      </div>
+    );
+  };
 
   const handleNewsletterSubmit = (e) => {
     e.preventDefault();
@@ -879,41 +1223,28 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
       <section className="pb-16 sm:pb-20 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0a1a38] tracking-tight">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-[#0052cc] text-xs font-black uppercase tracking-wider mb-3 shadow-2xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#0052cc]" />
+              <span>CURATED LEARNING & TOOLS</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0a1a38] tracking-tight mb-2">
               Resource Types
             </h2>
+            <p className="text-slate-600 text-xs sm:text-sm">
+              Everything you need to learn, evaluate, and scale your business with Tally.
+            </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {resourceTypes.map((rt, idx) => {
-              const Icon = rt.icon;
-              return (
-                <div
-                  key={idx}
-                  onClick={() => setSelectedResource({ title: rt.title, category: 'Resource Type', desc: rt.desc })}
-                  className="bg-white rounded-2xl p-6 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-lg hover:border-blue-200 hover:-translate-y-1 transition duration-200 flex flex-col justify-between cursor-pointer group"
-                >
-                  <div>
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-transform group-hover:scale-110 ${rt.iconBg}`}>
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <h3 className="text-base font-bold text-[#0a1a38] mb-2 group-hover:text-blue-600 transition-colors">
-                      {rt.title}
-                    </h3>
-                    <p className="text-xs text-slate-500 leading-relaxed mb-4">
-                      {rt.desc}
-                    </p>
-                  </div>
+          {/* Desktop 4-column Grid */}
+          <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {resourceTypes.map((rt) => renderResourceTypeCard(rt, false))}
+          </div>
 
-                  <div className="pt-2">
-                    <span className="inline-flex items-center gap-1 text-xs font-bold text-[#0052cc] group-hover:text-[#003bb3] transition-colors">
-                      <span>Explore</span>
-                      <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-                    </span>
-                  </div>
-                </div>
-              );
-            })}
+          {/* Mobile Auto Sliding Row Carousel */}
+          <div className="block lg:hidden">
+            <AutoSlidingRow speed={0.8} gap="gap-5">
+              {resourceTypes.map((rt) => renderResourceTypeCard(rt, true))}
+            </AutoSlidingRow>
           </div>
         </div>
       </section>
@@ -922,9 +1253,15 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
       <section className="pb-16 sm:pb-20 bg-white">
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-10">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0a1a38] tracking-tight">
-              Popular Downloads
-            </h2>
+            <div>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-[#0052cc] text-xs font-black uppercase tracking-wider mb-2 shadow-2xs">
+                <Sparkles className="w-3.5 h-3.5 text-[#0052cc]" />
+                <span>READY-TO-USE ASSETS</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0a1a38] tracking-tight">
+                Popular Downloads
+              </h2>
+            </div>
             <button
               onClick={() => onOpenDemoModal && onOpenDemoModal('All Downloads Inquiry')}
               className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#0052cc] hover:text-[#0747a6] transition cursor-pointer"
@@ -934,41 +1271,16 @@ export const ResourcesPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
             </button>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {popularDownloads.map((dl) => {
-              const Icon = dl.icon;
-              return (
-                <div
-                  key={dl.id}
-                  className="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-lg hover:border-blue-200 transition duration-200 flex flex-col justify-between"
-                >
-                  <div>
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 ${dl.iconColor}`}>
-                      <Icon className="w-6 h-6" />
-                    </div>
-                    <h4 className="text-sm sm:text-base font-bold text-[#0a1a38] mb-1.5 leading-snug">
-                      {dl.title}
-                    </h4>
-                    <p className="text-xs text-slate-500 leading-relaxed mb-4">
-                      {dl.desc}
-                    </p>
-                  </div>
+          {/* Desktop 4-column Grid */}
+          <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {popularDownloads.map((dl) => renderDownloadCard(dl, false))}
+          </div>
 
-                  <div className="pt-3 border-t border-slate-50 flex items-center justify-between">
-                    <span className="text-[11px] font-semibold text-slate-400 uppercase tracking-wide">
-                      {dl.meta}
-                    </span>
-                    <button
-                      onClick={() => handleDownloadClick(dl)}
-                      className="w-8 h-8 rounded-lg border border-slate-200 hover:border-blue-500 hover:bg-blue-50 text-slate-600 hover:text-blue-600 flex items-center justify-center transition cursor-pointer"
-                      title="Download file"
-                    >
-                      <Download className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              );
-            })}
+          {/* Mobile Auto Sliding Row Carousel */}
+          <div className="block lg:hidden">
+            <AutoSlidingRow speed={0.8} gap="gap-5">
+              {popularDownloads.map((dl) => renderDownloadCard(dl, true))}
+            </AutoSlidingRow>
           </div>
         </div>
       </section>

@@ -252,25 +252,15 @@ export const HeroMockup = () => {
           </div>
         </div>
 
-        {/* Viewport for Sliding Images & Animated Hotspots with Soft Feathered Edge Blending */}
-        <div className="relative aspect-[16/10.5] sm:aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-gradient-to-b from-white via-slate-50/50 to-blue-50/20">
+        {/* Viewport for Sliding Images & Animated Hotspots */}
+        <div className="relative aspect-[16/10.5] sm:aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900/5">
           
-          {/* Edge Blend Gradients - Eliminates Any Hard Image Edges or Rectangular Cutoffs */}
-          <div className="absolute inset-y-0 left-0 w-8 sm:w-16 bg-gradient-to-r from-white/90 via-white/40 to-transparent pointer-events-none z-20" />
-          <div className="absolute inset-y-0 right-0 w-8 sm:w-16 bg-gradient-to-l from-white/90 via-white/40 to-transparent pointer-events-none z-20" />
-          <div className="absolute inset-x-0 top-0 h-6 sm:h-12 bg-gradient-to-b from-white/85 via-white/30 to-transparent pointer-events-none z-20" />
-          <div className="absolute inset-x-0 bottom-0 h-8 sm:h-16 bg-gradient-to-t from-white/95 via-white/50 to-transparent pointer-events-none z-20" />
-
-          {/* Images Stack with Smooth Crossfade, Feathered Mask & Slight Zoom */}
+          {/* Images Stack with Smooth Crossfade & Slight Zoom */}
           {slides.map((s, idx) => {
             const isActive = activeSlide === idx;
             return (
               <div
                 key={s.id}
-                style={{
-                  WebkitMaskImage: 'radial-gradient(ellipse 96% 92% at 50% 50%, black 82%, transparent 100%)',
-                  maskImage: 'radial-gradient(ellipse 96% 92% at 50% 50%, black 82%, transparent 100%)',
-                }}
                 className={`absolute inset-0 transition-all duration-700 ease-out flex items-center justify-center ${
                   isActive
                     ? 'opacity-100 scale-100 z-10 pointer-events-auto'
@@ -280,7 +270,7 @@ export const HeroMockup = () => {
                 <img
                   src={s.image}
                   alt={s.alt}
-                  className="w-full h-full object-contain drop-shadow-[0_12px_28px_rgba(0,0,0,0.06)] transition-transform duration-500 hover:scale-[1.01]"
+                  className="w-full h-full object-cover sm:object-contain rounded-xl transition-transform duration-500 hover:scale-[1.01]"
                   loading={idx === 0 ? 'eager' : 'lazy'}
                 />
 

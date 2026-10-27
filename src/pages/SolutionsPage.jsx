@@ -527,13 +527,312 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
   ];
 
   const industriesList = [
-    { name: 'Manufacturing', icon: Factory },
-    { name: 'Retail', icon: ShoppingCart },
-    { name: 'Wholesale & Distribution', icon: Truck },
-    { name: 'Trading', icon: TrendingUp },
-    { name: 'Healthcare', icon: HeartPulse },
-    { name: 'Education', icon: GraduationCap }
+    {
+      id: 'manufacturing',
+      name: 'Manufacturing',
+      desc: 'BOM & Costing',
+      tag: 'BOM & Costing',
+      icon: Factory,
+      badgeGradient: 'bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-700 text-white',
+      gradientBorder: 'from-blue-600 via-indigo-500 to-amber-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(37,99,235,0.18)] hover:border-blue-400/80',
+      ambientGradient: 'from-blue-500/20 via-indigo-500/15 to-amber-500/10',
+      cardBg: 'bg-gradient-to-b from-blue-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-blue-50/90 via-white to-indigo-50/70 border-2 border-blue-200/90 shadow-blue-500/10 group-hover:border-blue-400',
+      titleHover: 'group-hover:text-blue-600',
+      arrowBtnStyle: 'bg-blue-50 text-blue-600 group-hover:bg-blue-600 group-hover:text-white',
+    },
+    {
+      id: 'retail',
+      name: 'Retail',
+      desc: 'POS & Multi-Store',
+      tag: 'POS & Sync',
+      icon: ShoppingCart,
+      badgeGradient: 'bg-gradient-to-r from-emerald-600 via-teal-600 to-emerald-700 text-white',
+      gradientBorder: 'from-emerald-500 via-teal-400 to-amber-400',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(16,185,129,0.18)] hover:border-emerald-400/80',
+      ambientGradient: 'from-emerald-500/20 via-teal-500/15 to-amber-500/10',
+      cardBg: 'bg-gradient-to-b from-emerald-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-emerald-50/90 via-white to-teal-50/70 border-2 border-emerald-200/90 shadow-emerald-500/10 group-hover:border-emerald-400',
+      titleHover: 'group-hover:text-emerald-600',
+      arrowBtnStyle: 'bg-emerald-50 text-emerald-600 group-hover:bg-emerald-600 group-hover:text-white',
+    },
+    {
+      id: 'wholesale-distribution',
+      name: 'Wholesale & Distribution',
+      desc: 'Supply Chain & Slabs',
+      tag: 'Supply Chain',
+      icon: Truck,
+      badgeGradient: 'bg-gradient-to-r from-amber-600 via-orange-600 to-amber-700 text-white',
+      gradientBorder: 'from-amber-500 via-orange-400 to-blue-600',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(245,158,11,0.18)] hover:border-amber-400/80',
+      ambientGradient: 'from-amber-500/20 via-orange-500/15 to-blue-500/10',
+      cardBg: 'bg-gradient-to-b from-amber-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-amber-50/90 via-white to-orange-50/70 border-2 border-amber-200/90 shadow-amber-500/10 group-hover:border-amber-400',
+      titleHover: 'group-hover:text-amber-600',
+      arrowBtnStyle: 'bg-amber-50 text-amber-600 group-hover:bg-amber-600 group-hover:text-white',
+    },
+    {
+      id: 'trading',
+      name: 'Trading',
+      desc: 'GST & Profit MIS',
+      tag: 'GST & Profit',
+      icon: TrendingUp,
+      badgeGradient: 'bg-gradient-to-r from-purple-600 via-violet-600 to-purple-700 text-white',
+      gradientBorder: 'from-purple-500 via-violet-400 to-blue-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(147,51,234,0.18)] hover:border-purple-400/80',
+      ambientGradient: 'from-purple-500/20 via-violet-500/15 to-blue-500/10',
+      cardBg: 'bg-gradient-to-b from-purple-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-purple-50/90 via-white to-violet-50/70 border-2 border-purple-200/90 shadow-purple-500/10 group-hover:border-purple-400',
+      titleHover: 'group-hover:text-purple-600',
+      arrowBtnStyle: 'bg-purple-50 text-purple-600 group-hover:bg-purple-600 group-hover:text-white',
+    },
+    {
+      id: 'healthcare',
+      name: 'Healthcare',
+      desc: 'Clinics & Pharmacy',
+      tag: 'OPD & Clinics',
+      icon: HeartPulse,
+      badgeGradient: 'bg-gradient-to-r from-rose-500 via-pink-600 to-rose-600 text-white',
+      gradientBorder: 'from-rose-500 via-pink-400 to-red-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(244,63,94,0.18)] hover:border-rose-400/80',
+      ambientGradient: 'from-rose-500/20 via-pink-500/15 to-red-500/10',
+      cardBg: 'bg-gradient-to-b from-rose-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-rose-50/90 via-white to-pink-50/70 border-2 border-rose-200/90 shadow-rose-500/10 group-hover:border-rose-400',
+      titleHover: 'group-hover:text-rose-600',
+      arrowBtnStyle: 'bg-rose-50 text-rose-600 group-hover:bg-rose-600 group-hover:text-white',
+    },
+    {
+      id: 'education',
+      name: 'Education',
+      desc: 'Fee Plans & Payroll',
+      tag: 'Campus & Fees',
+      icon: GraduationCap,
+      badgeGradient: 'bg-gradient-to-r from-indigo-600 via-blue-600 to-indigo-700 text-white',
+      gradientBorder: 'from-indigo-500 via-blue-400 to-cyan-500',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(79,70,229,0.18)] hover:border-indigo-400/80',
+      ambientGradient: 'from-indigo-500/20 via-blue-500/15 to-cyan-500/10',
+      cardBg: 'bg-gradient-to-b from-indigo-50/40 via-white to-white',
+      iconBoxBg: 'bg-gradient-to-br from-indigo-50/90 via-white to-blue-50/70 border-2 border-indigo-200/90 shadow-indigo-500/10 group-hover:border-indigo-400',
+      titleHover: 'group-hover:text-indigo-600',
+      arrowBtnStyle: 'bg-indigo-50 text-indigo-600 group-hover:bg-indigo-600 group-hover:text-white',
+    }
   ];
+
+  // 3D SVG emblem renderer for the 6 industry row cards
+  const renderIndustryEmblem = (id, FallbackIcon) => {
+    switch (id) {
+      case 'manufacturing':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="mfgRowGrad" x1="2" y1="2" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#3b82f6" />
+                <stop offset="60%" stopColor="#1d4ed8" />
+                <stop offset="100%" stopColor="#0a1a38" />
+              </linearGradient>
+              <linearGradient id="gearRowM" x1="18" y1="18" x2="30" y2="30" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#fbbf24" />
+                <stop offset="100%" stopColor="#d97706" />
+              </linearGradient>
+            </defs>
+            <path d="M4 27V15L11 20V15L18 20V11L25 16V27H4Z" fill="url(#mfgRowGrad)" />
+            <path d="M6 15V8H9V15" fill="#2563eb" />
+            <circle cx="7.5" cy="5.5" r="1.5" fill="#93c5fd" opacity="0.85" />
+            <circle cx="9" cy="3" r="1.2" fill="#bfdbfe" opacity="0.7" />
+            <rect x="7" y="21" width="3" height="3" rx="0.5" fill="#fde047" />
+            <rect x="13" y="21" width="3" height="3" rx="0.5" fill="#fde047" />
+            <rect x="7" y="16" width="3" height="2" rx="0.5" fill="#fde047" />
+            <g transform="translate(16, 15) scale(0.55)">
+              <circle cx="12" cy="12" r="11" fill="url(#gearRowM)" stroke="#ffffff" strokeWidth="1.5" />
+              <circle cx="12" cy="12" r="5" fill="#0a1a38" />
+              <circle cx="12" cy="12" r="2.5" fill="#ffffff" />
+              <path d="M12 0V4M12 20V24M0 12H4M20 12H24" stroke="#ffffff" strokeWidth="2.5" strokeLinecap="round" />
+            </g>
+          </svg>
+        );
+
+      case 'retail':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="retRowGrad" x1="2" y1="4" x2="30" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#34d399" />
+                <stop offset="60%" stopColor="#059669" />
+                <stop offset="100%" stopColor="#064e3b" />
+              </linearGradient>
+              <linearGradient id="boxRow1" x1="11" y1="7" x2="19" y2="15" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#f59e0b" />
+                <stop offset="100%" stopColor="#d97706" />
+              </linearGradient>
+              <linearGradient id="boxRow2" x1="17" y1="7" x2="26" y2="16" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#60a5fa" />
+                <stop offset="100%" stopColor="#2563eb" />
+              </linearGradient>
+            </defs>
+            <rect x="11" y="9" width="7" height="6" rx="1.2" fill="url(#boxRow1)" />
+            <rect x="17" y="7" width="8" height="8" rx="1.2" fill="url(#boxRow2)" />
+            <line x1="21" y1="7" x2="21" y2="15" stroke="#ffffff" strokeWidth="0.8" />
+            <path d="M4 5H7.5L10.5 19H25L28 9H9" stroke="url(#retRowGrad)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="12" cy="24.5" r="2.5" fill="#059669" stroke="#ffffff" strokeWidth="1" />
+            <circle cx="23" cy="24.5" r="2.5" fill="#059669" stroke="#ffffff" strokeWidth="1" />
+            <circle cx="12" cy="24.5" r="0.8" fill="#ffffff" />
+            <circle cx="23" cy="24.5" r="0.8" fill="#ffffff" />
+            <circle cx="26" cy="4" r="1.5" fill="#f59e0b" />
+          </svg>
+        );
+
+      case 'wholesale-distribution':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="trkRowTruck" x1="3" y1="8" x2="29" y2="24" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#fb923c" />
+                <stop offset="50%" stopColor="#f97316" />
+                <stop offset="100%" stopColor="#ea580c" />
+              </linearGradient>
+              <linearGradient id="cargoRowCont" x1="3" y1="7" x2="19" y2="22" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#3b82f6" />
+                <stop offset="100%" stopColor="#1e3a8a" />
+              </linearGradient>
+            </defs>
+            <path d="M1 11H3M1 15H4M1 19H2" stroke="#fdba74" strokeWidth="1.6" strokeLinecap="round" />
+            <rect x="4" y="7" width="15" height="13" rx="1.5" fill="url(#cargoRowCont)" stroke="#bfdbfe" strokeWidth="0.6" />
+            <line x1="9" y1="7" x2="9" y2="20" stroke="#93c5fd" strokeWidth="0.8" />
+            <line x1="14" y1="7" x2="14" y2="20" stroke="#93c5fd" strokeWidth="0.8" />
+            <rect x="6" y="11" width="11" height="2" fill="#f59e0b" rx="0.5" />
+            <path d="M19 11H23L27 15V20H19V11Z" fill="url(#trkRowTruck)" />
+            <path d="M20 12.5H22.5L25 15H20V12.5Z" fill="#e0f2fe" />
+            <circle cx="27" cy="18" r="1.2" fill="#fef08a" />
+            <rect x="4" y="19" width="23" height="2" fill="#0f172a" />
+            <circle cx="9" cy="22.5" r="2.8" fill="#1e293b" stroke="#ffffff" strokeWidth="1" />
+            <circle cx="23" cy="22.5" r="2.8" fill="#1e293b" stroke="#ffffff" strokeWidth="1" />
+            <circle cx="9" cy="22.5" r="1" fill="#f97316" />
+            <circle cx="23" cy="22.5" r="1" fill="#f97316" />
+          </svg>
+        );
+
+      case 'trading':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="trdRowGrad" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#a855f7" />
+                <stop offset="50%" stopColor="#7e22ce" />
+                <stop offset="100%" stopColor="#581c87" />
+              </linearGradient>
+              <linearGradient id="coinRowGrad" x1="18" y1="16" x2="28" y2="26" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#fbbf24" />
+                <stop offset="100%" stopColor="#d97706" />
+              </linearGradient>
+            </defs>
+            <rect x="5" y="18" width="4.5" height="10" rx="1.5" fill="#c084fc" />
+            <rect x="12" y="13" width="4.5" height="15" rx="1.5" fill="#9333ea" />
+            <rect x="19" y="8" width="4.5" height="20" rx="1.5" fill="url(#trdRowGrad)" />
+            <path d="M4 17L11 11L18 14L27 4" stroke="#7e22ce" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M21 4H27V10" stroke="#7e22ce" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="23" cy="21" r="5" fill="url(#coinRowGrad)" stroke="#ffffff" strokeWidth="1" />
+            <text x="23" y="24" textAnchor="middle" fontSize="7" fontWeight="bold" fill="#ffffff">₹</text>
+          </svg>
+        );
+
+      case 'healthcare':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="hcRowGrad" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#fb7185" />
+                <stop offset="50%" stopColor="#f43f5e" />
+                <stop offset="100%" stopColor="#be123c" />
+              </linearGradient>
+            </defs>
+            <path d="M16 3L5 7.5V15C5 22.5 9.5 28 16 30C22.5 28 27 22.5 27 15V7.5L16 3Z" fill="url(#hcRowGrad)" stroke="#ffe4e6" strokeWidth="0.8" />
+            <path d="M16 8V22M9 15H23" stroke="#ffffff" strokeWidth="3.2" strokeLinecap="round" />
+            <path d="M7 16H11L13 12L16 20L19 14L21 16H25" stroke="#fef08a" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="16" cy="20" r="1.2" fill="#ffffff" />
+          </svg>
+        );
+
+      case 'education':
+        return (
+          <svg className="w-8 h-8 sm:w-9 sm:h-9" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="eduRowGrad" x1="4" y1="4" x2="28" y2="26" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#6366f1" />
+                <stop offset="50%" stopColor="#4f46e5" />
+                <stop offset="100%" stopColor="#312e81" />
+              </linearGradient>
+            </defs>
+            <path d="M16 4L3 10L16 16L29 10L16 4Z" fill="url(#eduRowGrad)" stroke="#c7d2fe" strokeWidth="0.8" />
+            <path d="M8 13.5V19.5C8 23 11.5 25.5 16 25.5C20.5 25.5 24 23 24 19.5V13.5L16 17.5L8 13.5Z" fill="#3730a3" />
+            <path d="M25 11.5V20.5M25 20.5C25 21.5 23.5 22 23.5 23" stroke="#f59e0b" strokeWidth="1.8" strokeLinecap="round" />
+            <circle cx="16" cy="10" r="1.8" fill="#fbbf24" />
+            <circle cx="24" cy="22" r="1.5" fill="#f59e0b" />
+            <rect x="9" y="26.5" width="14" height="3" rx="1.5" fill="#f8fafc" stroke="#e2e8f0" strokeWidth="0.6" />
+            <rect x="14" y="26.5" width="4" height="3" fill="#ef4444" />
+          </svg>
+        );
+
+      default:
+        return FallbackIcon ? <FallbackIcon className="w-6 h-6 text-blue-600" /> : null;
+    }
+  };
+
+  // Reusable card renderer for the Industry Row with Logo Gradients & micro-interactions
+  const renderIndustryRowCard = (ind, isMobile = false) => {
+    return (
+      <div
+        key={ind.id || ind.name}
+        onClick={() => onOpenDemoModal && onOpenDemoModal(`${ind.name} Industry Solution`)}
+        className={`group relative ${ind.cardBg} rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-slate-200/90 transition-all duration-300 flex flex-col items-center text-center justify-between overflow-hidden cursor-pointer shadow-[0_2px_10px_rgba(0,0,0,0.03)] hover:shadow-xl hover:-translate-y-1.5 ${ind.glowShadow} ${
+          isMobile ? 'w-[185px] sm:w-[200px] flex-shrink-0' : ''
+        }`}
+      >
+        {/* 1. Top Gradient Accent Line */}
+        <div className={`absolute top-0 left-0 right-0 h-[4px] group-hover:h-[5px] bg-gradient-to-r ${ind.gradientBorder} transition-all duration-300`} />
+
+        {/* 2. Ambient Gradient Glow in Corner */}
+        <div className={`absolute -top-8 -right-8 w-28 h-28 bg-gradient-to-br ${ind.ambientGradient} rounded-full blur-xl pointer-events-none opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500`} />
+
+        {/* 3. Specular Shimmer Sweep on Hover */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
+        {/* 4. Top Row: Micro Tag Badge */}
+        <div className="w-full flex justify-end mb-2 relative z-10">
+          <span className={`text-[9px] sm:text-[9.5px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full shadow-2xs border border-white/60 ${ind.badgeGradient}`}>
+            {ind.tag}
+          </span>
+        </div>
+
+        {/* 5. Squircle Icon Box */}
+        <div className="relative z-10 mb-3">
+          <div className={`w-13 h-13 sm:w-14 sm:h-14 rounded-2xl p-2.5 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-1 ${ind.iconBoxBg}`}>
+            {renderIndustryEmblem(ind.id, ind.icon)}
+          </div>
+        </div>
+
+        {/* 6. Title & Short Description */}
+        <div className="relative z-10 w-full mb-3">
+          <h4 className={`text-xs sm:text-[13.5px] font-extrabold text-[#0a1a38] ${ind.titleHover} transition-colors duration-200 mb-1 leading-snug`}>
+            {ind.name}
+          </h4>
+          <p className="text-[10.5px] sm:text-[11px] text-slate-500 leading-tight line-clamp-1">
+            {ind.desc}
+          </p>
+        </div>
+
+        {/* 7. Footer: Subtle Explore Arrow Link */}
+        <div className="relative z-10 pt-2 border-t border-slate-100/90 w-full flex items-center justify-between mt-auto">
+          <span className={`text-[11px] font-bold text-[#0a1a38] ${ind.titleHover} transition-colors`}>
+            Explore
+          </span>
+          <span className={`w-6 h-6 rounded-full flex items-center justify-center transition-all duration-300 group-hover:scale-110 shadow-2xs ${ind.arrowBtnStyle}`}>
+            <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+          </span>
+        </div>
+      </div>
+    );
+  };
 
   const caseStudies = [
     {
@@ -774,7 +1073,11 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
         <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10">
           {/* Header */}
           <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0d2347] tracking-tight mb-2">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-[#0052cc] text-xs font-black uppercase tracking-wider mb-3 shadow-2xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#0052cc]" />
+              <span>INDUSTRY EXPERTISE</span>
+            </div>
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0d2347] tracking-tight mb-2">
               Solutions for Every Industry
             </h2>
             <p className="text-slate-600 text-xs sm:text-sm">
@@ -782,36 +1085,113 @@ export const SolutionsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal 
             </p>
           </div>
 
-          {/* 6 Industries + 1 "View All" link card */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-7 gap-4">
-            {industriesList.map((ind, idx) => {
-              const Icon = ind.icon;
-              return (
-                <div
-                  key={idx}
-                  onClick={() => onOpenDemoModal && onOpenDemoModal(`${ind.name} Industry Solution`)}
-                  className="bg-white rounded-2xl p-5 border border-slate-100 shadow-[0_2px_8px_rgba(0,0,0,0.03)] hover:shadow-md hover:border-blue-200 hover:-translate-y-1 transition duration-200 flex flex-col items-center text-center justify-center space-y-3 cursor-pointer group"
-                >
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center group-hover:scale-110 transition-transform">
-                    <Icon className="w-6 h-6" />
-                  </div>
-                  <h4 className="text-xs sm:text-sm font-bold text-[#0d2347] group-hover:text-blue-600 transition-colors">
-                    {ind.name}
-                  </h4>
-                </div>
-              );
-            })}
+          {/* Desktop View: Exact Original 7-Column Grid (6 Industries + 1 "View All" card) */}
+          <div className="hidden lg:grid grid-cols-7 gap-4">
+            {industriesList.map((ind) => renderIndustryRowCard(ind, false))}
 
-            {/* View All Industries Link Card */}
+            {/* 7th View All Industries Card */}
             <div
-              onClick={() => onOpenContactModal && onOpenContactModal()}
-              className="bg-blue-50/50 rounded-2xl p-5 border border-blue-100 hover:border-blue-300 hover:bg-blue-50 transition duration-200 flex flex-col items-center text-center justify-center space-y-2 cursor-pointer group"
+              onClick={() => {
+                if (onNavigate) {
+                  onNavigate('industries');
+                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                } else if (onOpenContactModal) {
+                  onOpenContactModal();
+                }
+              }}
+              className="group relative bg-gradient-to-br from-[#0a1a38] via-[#0d2b59] to-[#0052cc] rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-blue-400/30 transition-all duration-300 flex flex-col items-center text-center justify-between overflow-hidden cursor-pointer shadow-[0_4px_16px_rgba(0,82,204,0.18)] hover:shadow-2xl hover:shadow-blue-600/30 hover:-translate-y-1.5 hover:border-blue-400"
             >
-              <span className="text-xs sm:text-sm font-bold text-[#0052cc] group-hover:text-[#003bb3] transition-colors leading-snug">
-                View All <br /> Industries
-              </span>
-              <ArrowRight className="w-4 h-4 text-[#0052cc] group-hover:translate-x-1 transition-transform" />
+              {/* Top Golden Accent Line */}
+              <div className="absolute top-0 left-0 right-0 h-[4px] group-hover:h-[5px] bg-gradient-to-r from-amber-400 via-yellow-400 to-sky-400 transition-all duration-300" />
+
+              {/* Ambient Glow */}
+              <div className="absolute -top-8 -right-8 w-28 h-28 bg-blue-400/25 rounded-full blur-xl pointer-events-none group-hover:scale-125 transition-all duration-500" />
+
+              {/* Shimmer */}
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
+              {/* Top Tag Badge */}
+              <div className="w-full flex justify-end mb-2 relative z-10">
+                <span className="text-[9px] sm:text-[9.5px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-400 text-[#0a1a38] shadow-2xs font-bold">
+                  ALL 12+
+                </span>
+              </div>
+
+              {/* Squircle Icon Box */}
+              <div className="relative z-10 mb-3">
+                <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl p-2.5 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/25 text-white shadow-md group-hover:scale-110 group-hover:bg-[#0052cc] group-hover:border-white/50 transition-all duration-300">
+                  <ArrowRight className="w-6 h-6 group-hover:translate-x-0.5 transition-transform" />
+                </div>
+              </div>
+
+              {/* Title & Short Description */}
+              <div className="relative z-10 w-full mb-3">
+                <h4 className="text-xs sm:text-[13.5px] font-extrabold text-white group-hover:text-amber-300 transition-colors duration-200 mb-1 leading-snug">
+                  View All Industries
+                </h4>
+                <p className="text-[10.5px] sm:text-[11px] text-blue-100/80 leading-tight">
+                  Tailored Tally ERP
+                </p>
+              </div>
+
+              {/* Footer */}
+              <div className="relative z-10 pt-2 border-t border-white/15 w-full flex items-center justify-between mt-auto">
+                <span className="text-[11px] font-bold text-white group-hover:text-amber-300 transition-colors">
+                  Explore
+                </span>
+                <span className="w-6 h-6 rounded-full flex items-center justify-center bg-white/20 text-white transition-all duration-300 group-hover:scale-110 group-hover:bg-amber-400 group-hover:text-[#0a1a38] shadow-2xs">
+                  <ArrowRight className="w-3 h-3 group-hover:translate-x-0.5 transition-transform" />
+                </span>
+              </div>
             </div>
+          </div>
+
+          {/* Mobile View: Single Row Auto-Sliding */}
+          <div className="block lg:hidden">
+            <AutoSlidingRow speed={0.75} gap="gap-4">
+              {industriesList.map((ind) => renderIndustryRowCard(ind, true))}
+
+              {/* 7th View All Industries Card for Mobile */}
+              <div
+                onClick={() => {
+                  if (onNavigate) {
+                    onNavigate('industries');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  } else if (onOpenContactModal) {
+                    onOpenContactModal();
+                  }
+                }}
+                className="w-[185px] sm:w-[200px] flex-shrink-0 group relative bg-gradient-to-br from-[#0a1a38] via-[#0d2b59] to-[#0052cc] rounded-2xl sm:rounded-3xl p-4 sm:p-5 border border-blue-400/30 transition-all duration-300 flex flex-col items-center text-center justify-between overflow-hidden cursor-pointer shadow-[0_4px_16px_rgba(0,82,204,0.18)]"
+              >
+                <div className="absolute top-0 left-0 right-0 h-[4px] bg-gradient-to-r from-amber-400 via-yellow-400 to-sky-400" />
+                <div className="w-full flex justify-end mb-2 relative z-10">
+                  <span className="text-[9px] sm:text-[9.5px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-400 text-[#0a1a38] shadow-2xs font-bold">
+                    ALL 12+
+                  </span>
+                </div>
+                <div className="relative z-10 mb-3">
+                  <div className="w-13 h-13 sm:w-14 sm:h-14 rounded-2xl p-2.5 flex items-center justify-center bg-white/10 backdrop-blur-md border border-white/25 text-white shadow-md">
+                    <ArrowRight className="w-6 h-6" />
+                  </div>
+                </div>
+                <div className="relative z-10 w-full mb-3">
+                  <h4 className="text-xs sm:text-[13.5px] font-extrabold text-white mb-1 leading-snug">
+                    View All Industries
+                  </h4>
+                  <p className="text-[10.5px] sm:text-[11px] text-blue-100/80 leading-tight">
+                    Tailored Tally ERP
+                  </p>
+                </div>
+                <div className="relative z-10 pt-2 border-t border-white/15 w-full flex items-center justify-between mt-auto">
+                  <span className="text-[11px] font-bold text-white">
+                    Explore
+                  </span>
+                  <span className="w-6 h-6 rounded-full flex items-center justify-center bg-white/20 text-white shadow-2xs">
+                    <ArrowRight className="w-3 h-3" />
+                  </span>
+                </div>
+              </div>
+            </AutoSlidingRow>
           </div>
         </div>
       </section>

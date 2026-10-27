@@ -16,7 +16,9 @@ import {
   Headphones,
   Calendar,
   CheckCircle2,
-  ChevronRight
+  ChevronRight,
+  Sparkles,
+  ArrowRight
 } from 'lucide-react';
 
 export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
@@ -56,11 +58,271 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
     }));
   };
 
+  // 3D SVG emblem renderer for Other Ways to Connect
+  const renderConnectEmblem = (id) => {
+    switch (id) {
+      case 'connect-wa':
+        return (
+          <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="waGrad" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#34d399" />
+                <stop offset="50%" stopColor="#10b981" />
+                <stop offset="100%" stopColor="#047857" />
+              </linearGradient>
+            </defs>
+            {/* Circular Chat Bubble with Tail */}
+            <path
+              d="M16 4C9.4 4 4 9.4 4 16C4 18.3 4.6 20.4 5.7 22.3L4 28L9.9 26.4C11.7 27.4 13.8 28 16 28C22.6 28 28 22.6 28 16C28 9.4 22.6 4 16 4Z"
+              fill="url(#waGrad)"
+              stroke="#a7f3d0"
+              strokeWidth="0.8"
+            />
+            {/* Subtle Inner Highlight */}
+            <circle cx="16" cy="16" r="11" fill="none" stroke="#ffffff" strokeWidth="0.8" opacity="0.35" />
+            {/* WhatsApp Handset Icon */}
+            <path
+              d="M21.5 19.3C21.2 19.2 19.7 18.5 19.4 18.4C19.1 18.3 18.9 18.2 18.7 18.5C18.5 18.8 17.9 19.5 17.7 19.7C17.5 19.9 17.3 19.9 17 19.8C16.7 19.7 15.7 19.3 14.5 18.2C13.6 17.4 13 16.4 12.8 16.1C12.6 15.8 12.8 15.7 12.9 15.5C13 15.4 13.2 15.2 13.4 15C13.6 14.8 13.7 14.6 13.8 14.4C13.9 14.2 13.8 14 13.7 13.9C13.6 13.8 13 12.3 12.8 11.7C12.6 11.1 12.3 11.2 12.1 11.2C11.9 11.2 11.7 11.2 11.5 11.2C11.3 11.2 10.9 11.3 10.6 11.6C10.3 12 9.5 12.8 9.5 14.4C9.5 16 10.7 17.6 10.8 17.8C11 18 13.1 21.2 16.3 22.6C19.5 24 19.5 23.6 20.1 23.5C20.7 23.4 21.9 22.8 22.2 22C22.5 21.2 22.5 20.5 22.4 20.4C22.3 20.2 22.1 20.1 21.5 19.3Z"
+              fill="#ffffff"
+            />
+            {/* Active Online Indicator */}
+            <circle cx="23.5" cy="8.5" r="2.5" fill="#38bdf8" stroke="#ffffff" strokeWidth="0.8" />
+          </svg>
+        );
+
+      case 'connect-call':
+        return (
+          <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="callGrad" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#fef08a" />
+                <stop offset="30%" stopColor="#fbbf24" />
+                <stop offset="70%" stopColor="#f59e0b" />
+                <stop offset="100%" stopColor="#b45309" />
+              </linearGradient>
+            </defs>
+            {/* Pulse Wave Rings */}
+            <circle cx="16" cy="16" r="13" stroke="#fde68a" strokeWidth="1.2" strokeDasharray="3 3" opacity="0.7" />
+            <circle cx="16" cy="16" r="10" stroke="#fcd34d" strokeWidth="1.4" opacity="0.8" />
+            {/* Central Badge */}
+            <rect x="7" y="7" width="18" height="18" rx="6" fill="url(#callGrad)" stroke="#fef3c7" strokeWidth="0.8" />
+            {/* Phone Handset */}
+            <path
+              d="M12.5 11.5C12.5 11.5 13.5 11 14.5 12C15.5 13 15 14 14.5 14.5C14.8 15.5 16.5 17.2 17.5 17.5C18 17 19 16.5 20 17.5C21 18.5 20.5 19.5 20.5 19.5C19.5 20.5 18 20.5 16 19.5C14 18.5 12.5 16.5 12 14.5C11.5 13 11.5 12.5 12.5 11.5Z"
+              fill="#ffffff"
+            />
+            {/* Audio Waves */}
+            <path d="M19.5 10.5C21 12 21 14 21 14" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" />
+            <path d="M22 8C24.5 10.5 24.5 13.5 24.5 13.5" stroke="#ffffff" strokeWidth="1.6" strokeLinecap="round" />
+            <circle cx="10" cy="10" r="1.5" fill="#ffffff" />
+          </svg>
+        );
+
+      case 'connect-desk':
+        return (
+          <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="deskGrad" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#818cf8" />
+                <stop offset="50%" stopColor="#6366f1" />
+                <stop offset="100%" stopColor="#4338ca" />
+              </linearGradient>
+            </defs>
+            {/* Outer Squircle */}
+            <rect x="5" y="5" width="22" height="22" rx="7" fill="url(#deskGrad)" stroke="#c7d2fe" strokeWidth="0.8" />
+            {/* Headset Arc */}
+            <path d="M10 16C10 12.7 12.7 10 16 10C19.3 10 22 12.7 22 16" stroke="#ffffff" strokeWidth="2.4" strokeLinecap="round" />
+            {/* Earcups */}
+            <rect x="8" y="14.5" width="4" height="6.5" rx="2" fill="#38bdf8" stroke="#ffffff" strokeWidth="0.8" />
+            <rect x="20" y="14.5" width="4" height="6.5" rx="2" fill="#38bdf8" stroke="#ffffff" strokeWidth="0.8" />
+            {/* Mic Boom */}
+            <path d="M22 18.5V20.5C22 21.6 21.1 22.5 20 22.5H17.5" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
+            <rect x="15" y="21.5" width="3" height="2" rx="1" fill="#fbbf24" />
+            {/* Support Sparkle */}
+            <path d="M16 6L16.8 7.8L18.5 8.5L16.8 9.2L16 11L15.2 9.2L13.5 8.5L15.2 7.8L16 6Z" fill="#fef08a" />
+          </svg>
+        );
+
+      case 'connect-demo':
+        return (
+          <svg className="w-9 h-9 sm:w-10 sm:h-10" viewBox="0 0 32 32" fill="none">
+            <defs>
+              <linearGradient id="demoGrad" x1="4" y1="4" x2="28" y2="28" gradientUnits="userSpaceOnUse">
+                <stop offset="0%" stopColor="#38bdf8" />
+                <stop offset="45%" stopColor="#0052cc" />
+                <stop offset="100%" stopColor="#0a1a38" />
+              </linearGradient>
+            </defs>
+            {/* Calendar Main Plate */}
+            <rect x="5" y="7" width="22" height="20" rx="4" fill="url(#demoGrad)" stroke="#bfdbfe" strokeWidth="0.8" />
+            {/* Top Bar */}
+            <path d="M5 11C5 8.8 6.8 7 9 7H23C25.2 7 27 8.8 27 11V12.5H5V11Z" fill="#1e40af" />
+            {/* Gold Rings */}
+            <rect x="9" y="4.5" width="2.5" height="4.5" rx="1.25" fill="#fbbf24" stroke="#ffffff" strokeWidth="0.6" />
+            <rect x="15" y="4.5" width="2.5" height="4.5" rx="1.25" fill="#fbbf24" stroke="#ffffff" strokeWidth="0.6" />
+            <rect x="21" y="4.5" width="2.5" height="4.5" rx="1.25" fill="#fbbf24" stroke="#ffffff" strokeWidth="0.6" />
+            {/* Calendar Grid & Scheduled Star */}
+            <rect x="8" y="16" width="3.5" height="3" rx="0.75" fill="#ffffff" fillOpacity="0.8" />
+            <rect x="13.5" y="16" width="3.5" height="3" rx="0.75" fill="#ffffff" fillOpacity="0.8" />
+            <rect x="19" y="16" width="5" height="5" rx="1.5" fill="#fbbf24" />
+            <path d="M21.5 17L22 18.2L23.2 18.5L22.3 19.3L22.6 20.5L21.5 19.8L20.4 20.5L20.7 19.3L19.8 18.5L21 18.2L21.5 17Z" fill="#0a1a38" />
+            <rect x="8" y="21.5" width="3.5" height="3" rx="0.75" fill="#ffffff" fillOpacity="0.8" />
+            <rect x="13.5" y="21.5" width="3.5" height="3" rx="0.75" fill="#ffffff" fillOpacity="0.8" />
+          </svg>
+        );
+
+      default:
+        return null;
+    }
+  };
+
+  const connectWays = [
+    {
+      id: 'connect-wa',
+      title: 'WhatsApp Us',
+      desc: 'Chat with our experts on WhatsApp for quick support.',
+      tag: 'INSTANT CHAT',
+      badgeGradient: 'bg-emerald-50 text-emerald-700 border-emerald-200/80',
+      gradientBorder: 'from-[#10b981] via-[#059669] to-[#047857]',
+      ambientGradient: 'from-emerald-400/20 to-teal-400/5',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(16,185,129,0.18)] hover:border-emerald-300',
+      iconBoxBg: 'bg-gradient-to-br from-emerald-500/10 to-teal-500/5 border border-emerald-200/60',
+      cardBg: 'bg-gradient-to-b from-white via-white to-emerald-50/20',
+      titleHover: 'group-hover:text-emerald-600',
+      btnType: 'link',
+      btnHref: 'https://wa.me/919386896383?text=Hello%20Syn%20N%20Sol,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions.',
+      btnLabel: 'Chat on WhatsApp',
+      btnIcon: MessageCircle,
+      btnStyle: 'bg-emerald-50 hover:bg-emerald-600 text-emerald-700 hover:text-white border border-emerald-300/80 hover:border-emerald-600 shadow-2xs hover:shadow-emerald-500/25',
+    },
+    {
+      id: 'connect-call',
+      title: 'Request a Callback',
+      desc: "Share your details and we'll call you back shortly.",
+      tag: 'QUICK RESPONSE',
+      badgeGradient: 'bg-amber-50 text-amber-700 border-amber-200/80',
+      gradientBorder: 'from-[#fbbf24] via-[#f59e0b] to-[#d97706]',
+      ambientGradient: 'from-amber-400/20 to-yellow-400/5',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(245,158,11,0.18)] hover:border-amber-300',
+      iconBoxBg: 'bg-gradient-to-br from-amber-500/10 to-yellow-500/5 border border-amber-200/60',
+      cardBg: 'bg-gradient-to-b from-white via-white to-amber-50/20',
+      titleHover: 'group-hover:text-amber-600',
+      btnType: 'button',
+      onClick: () => onOpenContactModal && onOpenContactModal(),
+      btnLabel: 'Request Callback',
+      btnIcon: PhoneCall,
+      btnStyle: 'bg-amber-50 hover:bg-amber-500 text-amber-700 hover:text-white border border-amber-300/80 hover:border-amber-500 shadow-2xs hover:shadow-amber-500/25',
+    },
+    {
+      id: 'connect-desk',
+      title: 'Support Desk',
+      desc: 'For existing customers, get dedicated priority support.',
+      tag: '24/7 HELPDESK',
+      badgeGradient: 'bg-indigo-50 text-indigo-700 border-indigo-200/80',
+      gradientBorder: 'from-[#818cf8] via-[#6366f1] to-[#4338ca]',
+      ambientGradient: 'from-indigo-400/20 to-purple-400/5',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(99,102,241,0.18)] hover:border-indigo-300',
+      iconBoxBg: 'bg-gradient-to-br from-indigo-500/10 to-purple-500/5 border border-indigo-200/60',
+      cardBg: 'bg-gradient-to-b from-white via-white to-indigo-50/20',
+      titleHover: 'group-hover:text-indigo-600',
+      btnType: 'button',
+      onClick: () => onOpenContactModal && onOpenContactModal(),
+      btnLabel: 'Raise a Ticket →',
+      btnIcon: Headphones,
+      btnStyle: 'bg-indigo-50 hover:bg-indigo-600 text-indigo-700 hover:text-white border border-indigo-300/80 hover:border-indigo-600 shadow-2xs hover:shadow-indigo-500/25',
+    },
+    {
+      id: 'connect-demo',
+      title: 'Book a Demo',
+      desc: 'Schedule a free demo with our Tally solution experts.',
+      tag: '1-ON-1 DEMO',
+      badgeGradient: 'bg-blue-50 text-blue-700 border-blue-200/80',
+      gradientBorder: 'from-[#38bdf8] via-[#0052cc] to-[#0a1a38]',
+      ambientGradient: 'from-blue-400/20 to-sky-400/5',
+      glowShadow: 'hover:shadow-[0_12px_28px_rgba(0,82,204,0.18)] hover:border-blue-300',
+      iconBoxBg: 'bg-gradient-to-br from-blue-500/10 to-sky-500/5 border border-blue-200/60',
+      cardBg: 'bg-gradient-to-b from-white via-white to-blue-50/20',
+      titleHover: 'group-hover:text-[#0052cc]',
+      btnType: 'button',
+      onClick: () => onOpenDemoModal && onOpenDemoModal('Free Consultation'),
+      btnLabel: 'Book Free Demo',
+      btnIcon: Calendar,
+      btnStyle: 'bg-blue-50 hover:bg-[#0052cc] text-[#0052cc] hover:text-white border border-blue-300/80 hover:border-[#0052cc] shadow-2xs hover:shadow-blue-500/25',
+    },
+  ];
+
+  // Reusable card renderer for Other Ways to Connect
+  const renderConnectCard = (item, isMobile = false) => {
+    const BtnIcon = item.btnIcon;
+    return (
+      <div
+        key={item.id}
+        className={`group relative ${item.cardBg} rounded-2xl sm:rounded-3xl p-6 border border-slate-200/90 transition-all duration-300 flex flex-col justify-between overflow-hidden shadow-[0_2px_12px_rgba(0,0,0,0.04)] hover:shadow-xl hover:-translate-y-1.5 ${item.glowShadow} ${
+          isMobile ? 'w-[285px] sm:w-[315px] flex-shrink-0' : ''
+        }`}
+      >
+        {/* 4px top gradient stripe */}
+        <div className={`absolute top-0 left-0 right-0 h-[4px] group-hover:h-[6px] bg-gradient-to-r ${item.gradientBorder} transition-all duration-300`} />
+        
+        {/* Ambient colored corner glow */}
+        <div className={`absolute -top-10 -right-10 w-40 h-40 bg-gradient-to-br ${item.ambientGradient} rounded-full blur-2xl pointer-events-none opacity-40 group-hover:opacity-100 group-hover:scale-125 transition-all duration-500`} />
+        
+        {/* Specular shimmer light sweep on hover */}
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/35 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out pointer-events-none" />
+
+        <div className="relative z-10 flex flex-col">
+          {/* Top Row: Squircle 3D Emblem Container & Micro Badge */}
+          <div className="w-full flex items-start justify-between gap-3 mb-4">
+            <div className={`w-14 h-14 sm:w-15 sm:h-15 rounded-2xl p-2.5 flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-1 ${item.iconBoxBg}`}>
+              {renderConnectEmblem(item.id)}
+            </div>
+            <span className={`text-[10px] sm:text-[10.5px] font-black uppercase tracking-wider px-2.5 py-1 rounded-full shadow-2xs border ${item.badgeGradient}`}>
+              {item.tag}
+            </span>
+          </div>
+
+          {/* Title */}
+          <h3 className={`text-base sm:text-[17px] font-extrabold text-[#0a1a38] ${item.titleHover} transition-colors duration-200 mb-1.5 tracking-tight`}>
+            {item.title}
+          </h3>
+
+          {/* Description */}
+          <p className="text-xs sm:text-[13px] text-slate-500 leading-relaxed mb-6 min-h-[38px]">
+            {item.desc}
+          </p>
+        </div>
+
+        {/* Action Button */}
+        <div className="relative z-10 w-full mt-auto pt-2">
+          {item.btnType === 'link' ? (
+            <a
+              href={item.btnHref}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${item.btnStyle}`}
+            >
+              <BtnIcon className="w-4 h-4 transition-transform group-hover:scale-110" />
+              <span>{item.btnLabel}</span>
+            </a>
+          ) : (
+            <button
+              onClick={item.onClick}
+              className={`w-full inline-flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl text-xs sm:text-sm font-bold transition-all duration-200 cursor-pointer ${item.btnStyle}`}
+            >
+              <BtnIcon className="w-4 h-4 transition-transform group-hover:scale-110" />
+              <span>{item.btnLabel}</span>
+            </button>
+          )}
+        </div>
+      </div>
+    );
+  };
+
   return (
     <div className="bg-white">
       {/* 1. TOP SECTION: HERO & CONTACT FORM SPLIT */}
       <section className="relative overflow-hidden pt-8 pb-16 lg:py-16 bg-gradient-to-b from-slate-50/70 via-white to-white">
-        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
           
           {/* Breadcrumb */}
           <div className="flex items-center gap-1.5 text-xs text-slate-500 font-medium mb-6">
@@ -321,7 +583,7 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
 
       {/* 2. MIDDLE SECTION: VISIT OUR OFFICES */}
       <section className="py-12 sm:py-16 bg-white">
-        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
           
           <div className="text-center max-w-xl mx-auto mb-10">
             <span className="text-xs font-bold text-[#0052cc] uppercase tracking-wider">
@@ -551,220 +813,31 @@ export const ContactPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
 
       {/* 3. BOTTOM SECTION: OTHER WAYS TO CONNECT */}
       <section className="py-12 sm:py-16 bg-white">
-        <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
-          
-          <h2 className="text-2xl sm:text-3xl font-extrabold text-[#0a1a38] text-center tracking-tight mb-10">
-            Other Ways to Connect
-          </h2>
-
-          {/* Desktop View: Exact Original 4 Cards Grid */}
-          <div className="hidden lg:grid grid-cols-4 gap-6">
-            
-            {/* Card 1: WhatsApp Us */}
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-emerald-300 transition-all group justify-between">
-              <div>
-                <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform mx-auto">
-                  <MessageCircle className="w-7 h-7" />
-                </div>
-                <h3 className="text-base font-bold text-[#0a1a38]">
-                  WhatsApp Us
-                </h3>
-                <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
-                  Chat with our experts on WhatsApp for quick support.
-                </p>
-              </div>
-              <div className="w-full mt-auto">
-                <a
-                  href="https://wa.me/919386896383?text=Hello%20Syn%20N%20Sol,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions."
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full inline-flex items-center justify-center gap-1.5 border border-emerald-500 text-emerald-600 hover:bg-emerald-50 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all"
-                >
-                  <MessageCircle className="w-4 h-4" />
-                  <span>Chat on WhatsApp</span>
-                </a>
-              </div>
+        <div className="w-full px-4 sm:px-6 lg:px-8 xl:px-10 2xl:px-14">
+          <div className="text-center max-w-2xl mx-auto mb-10 sm:mb-12">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-[#0052cc] text-xs font-black uppercase tracking-wider mb-3 shadow-2xs">
+              <Sparkles className="w-3.5 h-3.5 text-[#0052cc]" />
+              <span>FAST & RELIABLE SUPPORT</span>
             </div>
-
-            {/* Card 2: Request a Callback */}
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-amber-300 transition-all group justify-between">
-              <div>
-                <div className="w-14 h-14 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform mx-auto">
-                  <PhoneCall className="w-7 h-7" />
-                </div>
-                <h3 className="text-base font-bold text-[#0a1a38]">
-                  Request a Callback
-                </h3>
-                <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
-                  Share your details and we'll call you back shortly.
-                </p>
-              </div>
-              <div className="w-full mt-auto">
-                <button
-                  onClick={() => onOpenContactModal && onOpenContactModal()}
-                  className="w-full inline-flex items-center justify-center gap-1.5 border border-amber-500 text-amber-600 hover:bg-amber-50 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer"
-                >
-                  <PhoneCall className="w-4 h-4" />
-                  <span>Request Callback</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Card 3: Support Desk */}
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-indigo-300 transition-all group justify-between">
-              <div>
-                <div className="w-14 h-14 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform mx-auto">
-                  <Headphones className="w-7 h-7" />
-                </div>
-                <h3 className="text-base font-bold text-[#0a1a38]">
-                  Support Desk
-                </h3>
-                <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
-                  For existing customers, get dedicated support.
-                </p>
-              </div>
-              <div className="w-full mt-auto">
-                <button
-                  onClick={() => onOpenContactModal && onOpenContactModal()}
-                  className="w-full inline-flex items-center justify-center gap-1.5 border border-indigo-500 text-indigo-600 hover:bg-indigo-50 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer"
-                >
-                  <Headphones className="w-4 h-4" />
-                  <span>Raise a Ticket →</span>
-                </button>
-              </div>
-            </div>
-
-            {/* Card 4: Book a Demo */}
-            <div className="bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-blue-300 transition-all group justify-between">
-              <div>
-                <div className="w-14 h-14 rounded-full bg-blue-50 text-[#0052cc] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform mx-auto">
-                  <Calendar className="w-7 h-7" />
-                </div>
-                <h3 className="text-base font-bold text-[#0a1a38]">
-                  Book a Demo
-                </h3>
-                <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
-                  Schedule a free demo with our Tally solution experts.
-                </p>
-              </div>
-              <div className="w-full mt-auto">
-                <button
-                  onClick={() => onOpenDemoModal && onOpenDemoModal('Free Consultation')}
-                  className="w-full inline-flex items-center justify-center gap-1.5 border border-[#0052cc] text-[#0052cc] hover:bg-blue-50 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer"
-                >
-                  <Calendar className="w-4 h-4" />
-                  <span>Book Free Demo</span>
-                </button>
-              </div>
-            </div>
-
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#0a1a38] tracking-tight mb-2">
+              Other Ways to Connect
+            </h2>
+            <p className="text-slate-600 text-xs sm:text-sm">
+              Choose your preferred channel to get in touch with our certified Tally experts.
+            </p>
           </div>
 
-          {/* Mobile View: Single Row Auto-Sliding Connect Cards */}
+          {/* Desktop 4-column Grid */}
+          <div className="hidden lg:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            {connectWays.map((item) => renderConnectCard(item, false))}
+          </div>
+
+          {/* Mobile Auto-Sliding Row Carousel */}
           <div className="block lg:hidden">
-            <AutoSlidingRow speed={0.8} gap="gap-6">
-              
-              {/* Card 1: WhatsApp Us */}
-              <div className="w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-emerald-300 transition-all group justify-between">
-                <div>
-                  <div className="w-14 h-14 rounded-full bg-emerald-50 text-emerald-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform mx-auto">
-                    <MessageCircle className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-base font-bold text-[#0a1a38]">
-                    WhatsApp Us
-                  </h3>
-                  <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
-                    Chat with our experts on WhatsApp for quick support.
-                  </p>
-                </div>
-                <div className="w-full mt-auto">
-                  <a
-                    href="https://wa.me/919386896383?text=Hello%20Syn%20N%20Sol,%20I%20would%20like%20to%20know%20more%20about%20your%20Tally%20solutions."
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full inline-flex items-center justify-center gap-1.5 border border-emerald-500 text-emerald-600 hover:bg-emerald-50 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all"
-                  >
-                    <MessageCircle className="w-4 h-4" />
-                    <span>Chat on WhatsApp</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Card 2: Request a Callback */}
-              <div className="w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-amber-300 transition-all group justify-between">
-                <div>
-                  <div className="w-14 h-14 rounded-full bg-amber-50 text-amber-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform mx-auto">
-                    <PhoneCall className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-base font-bold text-[#0a1a38]">
-                    Request a Callback
-                  </h3>
-                  <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
-                    Share your details and we'll call you back shortly.
-                  </p>
-                </div>
-                <div className="w-full mt-auto">
-                  <button
-                    onClick={() => onOpenContactModal && onOpenContactModal()}
-                    className="w-full inline-flex items-center justify-center gap-1.5 border border-amber-500 text-amber-600 hover:bg-amber-50 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer"
-                  >
-                    <PhoneCall className="w-4 h-4" />
-                    <span>Request Callback</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Card 3: Support Desk */}
-              <div className="w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-indigo-300 transition-all group justify-between">
-                <div>
-                  <div className="w-14 h-14 rounded-full bg-indigo-50 text-indigo-600 flex items-center justify-center mb-4 group-hover:scale-105 transition-transform mx-auto">
-                    <Headphones className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-base font-bold text-[#0a1a38]">
-                    Support Desk
-                  </h3>
-                  <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
-                    For existing customers, get dedicated support.
-                  </p>
-                </div>
-                <div className="w-full mt-auto">
-                  <button
-                    onClick={() => onOpenContactModal && onOpenContactModal()}
-                    className="w-full inline-flex items-center justify-center gap-1.5 border border-indigo-500 text-indigo-600 hover:bg-indigo-50 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer"
-                  >
-                    <Headphones className="w-4 h-4" />
-                    <span>Raise a Ticket →</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Card 4: Book a Demo */}
-              <div className="w-[260px] sm:w-[280px] flex-shrink-0 bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col items-center text-center shadow-xs hover:shadow-md hover:border-blue-300 transition-all group justify-between">
-                <div>
-                  <div className="w-14 h-14 rounded-full bg-blue-50 text-[#0052cc] flex items-center justify-center mb-4 group-hover:scale-105 transition-transform mx-auto">
-                    <Calendar className="w-7 h-7" />
-                  </div>
-                  <h3 className="text-base font-bold text-[#0a1a38]">
-                    Book a Demo
-                  </h3>
-                  <p className="text-xs text-slate-500 mt-1.5 mb-6 leading-relaxed max-w-[200px]">
-                    Schedule a free demo with our Tally solution experts.
-                  </p>
-                </div>
-                <div className="w-full mt-auto">
-                  <button
-                    onClick={() => onOpenDemoModal && onOpenDemoModal('Free Consultation')}
-                    className="w-full inline-flex items-center justify-center gap-1.5 border border-[#0052cc] text-[#0052cc] hover:bg-blue-50 py-2.5 px-4 rounded-lg text-xs sm:text-sm font-semibold transition-all cursor-pointer"
-                  >
-                    <Calendar className="w-4 h-4" />
-                    <span>Book Free Demo</span>
-                  </button>
-                </div>
-              </div>
-
+            <AutoSlidingRow speed={0.8} gap="gap-5">
+              {connectWays.map((item) => renderConnectCard(item, true))}
             </AutoSlidingRow>
           </div>
-
         </div>
       </section>
     </div>

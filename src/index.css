@@ -18,3 +18,45 @@
   background-image: radial-gradient(rgba(14, 165, 233, 0.08) 1px, transparent 1px);
   background-size: 24px 24px;
 }
+
+/* Floating & Ambient Keyframe Animations for Hero Slider */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-7px);
+  }
+}
+
+@keyframes floatDelay {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.65;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-float-delay {
+  animation: floatDelay 4.5s ease-in-out infinite 0.7s;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}

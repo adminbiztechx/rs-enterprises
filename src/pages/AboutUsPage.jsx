@@ -476,7 +476,7 @@ export const AboutUsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal })
         </div>
       </section>
 
-      {/* 5. WHY CHOOSE R.S ENTERPRISES? */}
+      {/* 5. WHY CHOOSE SYN N SOL? */}
       <section className="py-12 sm:py-16 bg-white">
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16">
           <div className="text-center max-w-2xl mx-auto mb-12">

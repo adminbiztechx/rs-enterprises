@@ -214,7 +214,7 @@ export const HeroMockup = () => {
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
       onTouchEnd={handleTouchEnd}
-      className="relative w-full max-w-4xl mx-auto select-none py-2 group/slider"
+      className="relative w-full max-w-4xl mx-auto select-none group/slider"
     >
       {/* Dynamic Ambient Background Lighting with Pulsing Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[115%] h-[115%] bg-gradient-to-tr from-blue-200/35 via-sky-100/30 to-amber-100/20 rounded-full blur-3xl pointer-events-none -z-10 animate-pulse-glow" />

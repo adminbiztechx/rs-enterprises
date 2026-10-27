@@ -54,63 +54,64 @@ export const Hero = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
 
       {/* Hero Container with comfortable, balanced gap */}
       <div className="w-full max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 xl:gap-16 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 lg:grid-rows-1 gap-10 lg:gap-12 xl:gap-16 items-stretch">
           
           {/* Left Column: Heading, Subtitle, CTA, Trust Badges (5 cols) */}
-          <div className="lg:col-span-5 space-y-6">
-            
-            {/* Main Headline */}
-            <h1 className="text-3xl sm:text-5xl lg:text-[46px] xl:text-[52px] font-extrabold text-[#0a1a38] tracking-tight leading-[1.12]">
-              Your Trusted <br />
-              <span className="text-[#0d5dd6]">Tally Partner</span> for <br />
-              Smarter Business
-            </h1>
+          <div className="lg:col-span-5 flex flex-col justify-between h-full">
+            <div className="space-y-6">
+              {/* Main Headline */}
+              <h1 className="text-3xl sm:text-5xl lg:text-[46px] xl:text-[52px] font-extrabold text-[#0a1a38] tracking-tight leading-[1.12]">
+                Your Trusted <br />
+                <span className="text-[#0d5dd6]">Tally Partner</span> for <br />
+                Smarter Business
+              </h1>
 
-            {/* Description */}
-            <p className="text-[14px] sm:text-[15.5px] text-slate-600 leading-relaxed max-w-lg">
-              We provide Tally Software, Implementation, Customization, Cloud Solutions, GST Compliance and End-to-End Support to help businesses grow with confidence.
-            </p>
+              {/* Description */}
+              <p className="text-[14px] sm:text-[15.5px] text-slate-600 leading-relaxed max-w-lg">
+                We provide Tally Software, Implementation, Customization, Cloud Solutions, GST Compliance and End-to-End Support to help businesses grow with confidence.
+              </p>
 
-            {/* Mobile View Only: Hero Mockup Slider placed right above Book Free Demo */}
-            <div className="block lg:hidden pt-2 pb-1">
-              <HeroMockup />
+              {/* Mobile View Only: Hero Mockup Slider placed right above Book Free Demo */}
+              <div className="block lg:hidden pt-2 pb-1">
+                <HeroMockup />
+              </div>
+
+              {/* CTAs */}
+              <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
+                {/* Primary Blue Button */}
+                <button
+                  onClick={onOpenDemoModal}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-xs font-bold text-white bg-[#0052cc] hover:bg-[#0043a8] active:scale-[0.98] transition-all shadow-md shadow-blue-600/25 cursor-pointer"
+                >
+                  <Calendar className="w-4 h-4" />
+                  <span>Book Free Demo</span>
+                </button>
+
+                {/* Secondary Outline Button */}
+                <button
+                  onClick={onOpenContactModal}
+                  className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-xs font-bold text-[#0052cc] bg-white border border-[#0052cc] hover:bg-blue-50 active:scale-[0.98] transition-all shadow-sm cursor-pointer"
+                >
+                  <PhoneCall className="w-4 h-4" />
+                  <span>Talk to Expert</span>
+                </button>
+
+                {/* Text Link */}
+                <button
+                  onClick={() => {
+                    onNavigate && onNavigate('products');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                  }}
+                  className="w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-1.5 text-xs font-bold text-[#0052cc] hover:text-[#003bb3] transition-colors group py-2 sm:py-0 sm:pl-1 cursor-pointer"
+                >
+                  <span>Explore Products</span>
+                  <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </div>
             </div>
 
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-1">
-              {/* Primary Blue Button */}
-              <button
-                onClick={onOpenDemoModal}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-xs font-bold text-white bg-[#0052cc] hover:bg-[#0043a8] active:scale-[0.98] transition-all shadow-md shadow-blue-600/25 cursor-pointer"
-              >
-                <Calendar className="w-4 h-4" />
-                <span>Book Free Demo</span>
-              </button>
-
-              {/* Secondary Outline Button */}
-              <button
-                onClick={onOpenContactModal}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-5 py-3 rounded-lg text-xs font-bold text-[#0052cc] bg-white border border-[#0052cc] hover:bg-blue-50 active:scale-[0.98] transition-all shadow-sm cursor-pointer"
-              >
-                <PhoneCall className="w-4 h-4" />
-                <span>Talk to Expert</span>
-              </button>
-
-              {/* Text Link */}
-              <button
-                onClick={() => {
-                  onNavigate && onNavigate('products');
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
-                }}
-                className="w-full sm:w-auto inline-flex items-center justify-center sm:justify-start gap-1.5 text-xs font-bold text-[#0052cc] hover:text-[#003bb3] transition-colors group py-2 sm:py-0 sm:pl-1 cursor-pointer"
-              >
-                <span>Explore Products</span>
-                <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </div>
-
-            {/* 4 Trust Badges Horizontal Strip */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-6 mt-2 border-t border-slate-100">
+            {/* 4 Trust Badges Horizontal Strip - Exactly aligned with the bottom of the card */}
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3.5 pt-6 lg:pt-8 pb-1.5 mt-auto border-t border-slate-100">
               {trustMetrics.map((item, idx) => {
                 const IconComp = item.icon;
                 return (
@@ -130,7 +131,7 @@ export const Hero = ({ onNavigate, onOpenDemoModal, onOpenContactModal }) => {
           </div>
 
           {/* Desktop View Only: Hero Visual Mockup (7 cols) with comfortable spacing */}
-          <div className="hidden lg:flex lg:col-span-7 relative justify-center lg:justify-end items-center lg:pl-6 xl:pl-10">
+          <div className="hidden lg:flex lg:col-span-7 relative justify-center lg:justify-end items-end lg:pl-6 xl:pl-10">
             <HeroMockup />
           </div>
 

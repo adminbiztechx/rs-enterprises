@@ -9,7 +9,8 @@ import {
   Phone,
   Mail,
   Globe,
-  MessageCircle
+  MessageCircle,
+  ArrowUp
 } from 'lucide-react';
 
 export const Footer = ({ onNavigate }) => {
@@ -350,7 +351,7 @@ export const Footer = ({ onNavigate }) => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-3 text-center sm:text-left">
+        <div className="pt-6 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-500 gap-4 text-center sm:text-left">
           <div>
             © 2025 Syn N Sol. All Rights Reserved.
           </div>
@@ -395,6 +396,18 @@ export const Footer = ({ onNavigate }) => {
               <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 inline-block"></span>
             </a>
           </div>
+
+          {/* Up Arrow - Scroll to Top Button */}
+          <button
+            onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-800/90 hover:bg-[#0052cc] border border-slate-700 hover:border-blue-500 text-xs font-semibold text-slate-300 hover:text-white transition-all shadow-md group cursor-pointer"
+            title="Scroll to Top"
+          >
+            <span>Back to Top</span>
+            <div className="w-5 h-5 rounded-full bg-slate-700/90 group-hover:bg-white text-slate-300 group-hover:text-[#0052cc] flex items-center justify-center transition-all">
+              <ArrowUp className="w-3.5 h-3.5 group-hover:-translate-y-0.5 transition-transform" />
+            </div>
+          </button>
         </div>
 
       </div>

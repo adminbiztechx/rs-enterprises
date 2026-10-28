@@ -1,8 +1,22 @@
-import React, { useState } from 'react';
-import { MessageCircle, X, Send, PhoneCall } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { MessageCircle, X, Send, PhoneCall, ArrowUp } from 'lucide-react';
 
 export const FloatingWhatsApp = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showScrollTop, setShowScrollTop] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 200) {
+        setShowScrollTop(true);
+      } else {
+        setShowScrollTop(false);
+      }
+    };
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const mainWhatsAppNumber = '919386896383';
   const defaultMessage = 'Hello Syn N Sol, I would like to know more about your Tally solutions.';
@@ -112,6 +126,18 @@ export const FloatingWhatsApp = () => {
           </div>
 
         </div>
+      )}
+
+      {/* Scroll to Top Up Arrow Button */}
+      {showScrollTop && (
+        <button
+          onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+          aria-label="Scroll to top"
+          title="Scroll to top"
+          className="mb-2.5 w-11 h-11 sm:w-12 sm:h-12 rounded-full bg-white text-[#0052cc] hover:bg-[#0052cc] hover:text-white border border-slate-200/90 shadow-2xl flex items-center justify-center transition-all duration-300 hover:scale-110 active:scale-95 cursor-pointer group"
+        >
+          <ArrowUp className="w-5 h-5 group-hover:-translate-y-0.5 transition-transform duration-200" />
+        </button>
       )}
 
       {/* Main Floating Trigger Button */}

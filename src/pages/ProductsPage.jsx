@@ -22,13 +22,32 @@ import {
   Award,
   ArrowRight,
   ArrowUpRight,
-  Sparkles
+  Sparkles,
+  ChevronRight,
+  Zap
 } from 'lucide-react';
 
 export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, highlightedProduct }) => {
   const [activeTab, setActiveTab] = useState('All Products');
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [currentHighlightId, setCurrentHighlightId] = useState(null);
+
+  // Interactive 3D Tilt for Laptop Mockup
+  const [deviceTilt, setDeviceTilt] = useState({ x: 0, y: 0 });
+  const [isDeviceHovered, setIsDeviceHovered] = useState(false);
+
+  const handleDeviceMouseMove = (e) => {
+    const rect = e.currentTarget.getBoundingClientRect();
+    const x = (e.clientX - rect.left) / rect.width - 0.5;
+    const y = (e.clientY - rect.top) / rect.height - 0.5;
+    setDeviceTilt({ x: x * 12, y: -y * 12 });
+  };
+
+  const handleDeviceMouseEnter = () => setIsDeviceHovered(true);
+  const handleDeviceMouseLeave = () => {
+    setIsDeviceHovered(false);
+    setDeviceTilt({ x: 0, y: 0 });
+  };
 
   const tabs = [
     { name: 'All Products', icon: LayoutGrid },
@@ -567,90 +586,167 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
   return (
     <div className="bg-white min-h-screen">
       
-      {/* 1. HERO SECTION (Dark Blue Gradient with Constellation Network matching reference) */}
-      <section className="bg-gradient-to-r from-[#031533] via-[#072149] to-[#0a2c5f] text-white pt-8 pb-12 lg:pt-12 lg:pb-16 relative overflow-hidden">
-        {/* Constellation / Geometric network overlay matching exact user reference */}
+      {/* 1. HERO SECTION (Animated Constellation Network & 3D Floating Device Mockup) */}
+      <section className="bg-gradient-to-r from-[#031533] via-[#072149] to-[#0a2c5f] text-white pt-8 pb-14 lg:pt-14 lg:pb-20 relative overflow-hidden">
+        
+        {/* Soft Ambient Light Orbs */}
+        <div className="absolute -top-24 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none animate-pulse-slow" />
+        <div className="absolute top-1/2 -right-24 -translate-y-1/2 w-[450px] h-[450px] bg-sky-500/15 rounded-full blur-[120px] pointer-events-none animate-hero-glow" />
+        <div className="absolute -bottom-24 left-1/3 w-80 h-80 bg-indigo-600/15 rounded-full blur-[100px] pointer-events-none animate-pulse-glow" />
+
+        {/* Constellation / Geometric network overlay with live animations */}
         <svg
-          className="absolute inset-0 w-full h-full opacity-30 pointer-events-none"
+          className="absolute inset-0 w-full h-full opacity-40 pointer-events-none select-none"
           xmlns="http://www.w3.org/2000/svg"
         >
           <defs>
             <linearGradient id="netGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.45" />
-              <stop offset="100%" stopColor="#818cf8" stopOpacity="0.15" />
+              <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.6" />
+              <stop offset="100%" stopColor="#818cf8" stopOpacity="0.2" />
             </linearGradient>
+            <filter id="neonGlow" x="-50%" y="-50%" width="200%" height="200%">
+              <feGaussianBlur stdDeviation="2.5" result="coloredBlur" />
+              <feMerge>
+                <feMergeNode in="coloredBlur" />
+                <feMergeNode in="SourceGraphic" />
+              </feMerge>
+            </filter>
           </defs>
-          {/* Geometric constellation lines */}
-          <line x1="8%" y1="20%" x2="22%" y2="45%" stroke="url(#netGrad)" strokeWidth="1" />
-          <line x1="22%" y1="45%" x2="35%" y2="25%" stroke="url(#netGrad)" strokeWidth="1" />
-          <line x1="35%" y1="25%" x2="48%" y2="60%" stroke="url(#netGrad)" strokeWidth="1" />
-          <line x1="48%" y1="60%" x2="62%" y2="30%" stroke="url(#netGrad)" strokeWidth="1" />
-          <line x1="62%" y1="30%" x2="78%" y2="65%" stroke="url(#netGrad)" strokeWidth="1" />
-          <line x1="78%" y1="65%" x2="92%" y2="25%" stroke="url(#netGrad)" strokeWidth="1" />
-          <line x1="22%" y1="45%" x2="15%" y2="85%" stroke="url(#netGrad)" strokeWidth="1" />
-          <line x1="15%" y1="85%" x2="48%" y2="60%" stroke="url(#netGrad)" strokeWidth="1" />
-          <line x1="48%" y1="60%" x2="55%" y2="88%" stroke="url(#netGrad)" strokeWidth="1" />
-          <line x1="55%" y1="88%" x2="78%" y2="65%" stroke="url(#netGrad)" strokeWidth="1" />
-          <line x1="62%" y1="30%" x2="88%" y2="15%" stroke="url(#netGrad)" strokeWidth="1" />
-          <line x1="88%" y1="15%" x2="92%" y2="25%" stroke="url(#netGrad)" strokeWidth="1" />
-          <line x1="35%" y1="25%" x2="62%" y2="30%" stroke="url(#netGrad)" strokeWidth="1" />
-          {/* Constellation nodes */}
-          <circle cx="8%" cy="20%" r="2.5" fill="#38bdf8" opacity="0.6" />
-          <circle cx="22%" cy="45%" r="3" fill="#38bdf8" opacity="0.8" />
-          <circle cx="35%" cy="25%" r="2.5" fill="#38bdf8" opacity="0.6" />
-          <circle cx="48%" cy="60%" r="3" fill="#38bdf8" opacity="0.7" />
-          <circle cx="62%" cy="30%" r="2.5" fill="#38bdf8" opacity="0.6" />
-          <circle cx="78%" cy="65%" r="3" fill="#38bdf8" opacity="0.8" />
-          <circle cx="92%" cy="25%" r="2.5" fill="#38bdf8" opacity="0.6" />
-          <circle cx="15%" cy="85%" r="2" fill="#38bdf8" opacity="0.5" />
-          <circle cx="55%" cy="88%" r="2" fill="#38bdf8" opacity="0.5" />
-          <circle cx="88%" cy="15%" r="2" fill="#38bdf8" opacity="0.5" />
+
+          {/* Geometric constellation lines with moving light pulse */}
+          <line x1="8%" y1="20%" x2="22%" y2="45%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+          <line x1="22%" y1="45%" x2="35%" y2="25%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+          <line x1="35%" y1="25%" x2="48%" y2="60%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+          <line x1="48%" y1="60%" x2="62%" y2="30%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+          <line x1="62%" y1="30%" x2="78%" y2="65%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+          <line x1="78%" y1="65%" x2="92%" y2="25%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+          <line x1="22%" y1="45%" x2="15%" y2="85%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+          <line x1="15%" y1="85%" x2="48%" y2="60%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+          <line x1="48%" y1="60%" x2="55%" y2="88%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+          <line x1="55%" y1="88%" x2="78%" y2="65%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+          <line x1="62%" y1="30%" x2="88%" y2="15%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+          <line x1="88%" y1="15%" x2="92%" y2="25%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+          <line x1="35%" y1="25%" x2="62%" y2="30%" stroke="url(#netGrad)" strokeWidth="1.2" className="animate-pulse-line" />
+
+          {/* Constellation nodes with pulsating neon twinkle effect */}
+          <circle cx="8%" cy="20%" r="3" fill="#38bdf8" filter="url(#neonGlow)" className="animate-twinkle-1" />
+          <circle cx="22%" cy="45%" r="3.5" fill="#38bdf8" filter="url(#neonGlow)" className="animate-twinkle-2" />
+          <circle cx="35%" cy="25%" r="3" fill="#60a5fa" filter="url(#neonGlow)" className="animate-twinkle-3" />
+          <circle cx="48%" cy="60%" r="3.5" fill="#38bdf8" filter="url(#neonGlow)" className="animate-twinkle-1" />
+          <circle cx="62%" cy="30%" r="3" fill="#60a5fa" filter="url(#neonGlow)" className="animate-twinkle-2" />
+          <circle cx="78%" cy="65%" r="4" fill="#38bdf8" filter="url(#neonGlow)" className="animate-twinkle-3" />
+          <circle cx="92%" cy="25%" r="3" fill="#38bdf8" filter="url(#neonGlow)" className="animate-twinkle-1" />
+          <circle cx="15%" cy="85%" r="2.5" fill="#818cf8" className="animate-twinkle-2" />
+          <circle cx="55%" cy="88%" r="2.5" fill="#818cf8" className="animate-twinkle-3" />
+          <circle cx="88%" cy="15%" r="2.5" fill="#38bdf8" className="animate-twinkle-1" />
         </svg>
 
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-4">
-              {/* Breadcrumb */}
-              <div className="flex items-center gap-2 text-xs font-semibold text-blue-200">
+            <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
+              
+              {/* Breadcrumb Pill with Live Indicator */}
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold text-blue-200">
                 <button
                   onClick={() => onNavigate('home')}
                   className="hover:text-white transition-colors cursor-pointer"
                 >
                   Home
                 </button>
-                <span>&gt;</span>
+                <ChevronRight className="w-3.5 h-3.5 text-blue-300/80" />
                 <span className="text-white">Products</span>
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse ml-1" />
               </div>
 
-              {/* Title */}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white tracking-tight leading-tight">
+              {/* Title with subtle gradient sheen */}
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-[54px] font-black text-white tracking-tight leading-tight">
                 Tally Products
               </h1>
 
               {/* Subtitle */}
-              <p className="text-xs sm:text-[14.5px] text-blue-100/90 leading-relaxed max-w-xl">
+              <p className="text-xs sm:text-[14.5px] text-blue-100/90 leading-relaxed max-w-xl mx-auto lg:mx-0">
                 Powerful. Reliable. Secure. Choose the right Tally product for your business and experience the power of simplified accounting.
               </p>
+
+              {/* Feature Highlight Chips */}
+              <div className="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3 text-xs text-blue-100">
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10 hover:border-sky-400/40">
+                  <CheckCircle2 className="w-3.5 h-3.5 text-sky-400" />
+                  <span>100% Genuine License</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10 hover:border-sky-400/40">
+                  <Zap className="w-3.5 h-3.5 text-amber-400" />
+                  <span>Instant Activation</span>
+                </div>
+                <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white/5 border border-white/10 backdrop-blur-sm transition-all hover:bg-white/10 hover:border-sky-400/40">
+                  <ShieldCheck className="w-3.5 h-3.5 text-emerald-400" />
+                  <span>PAN India Support</span>
+                </div>
+              </div>
+
             </div>
 
-            {/* Right Graphic: Laptop + Tally Box matching exact user reference */}
+            {/* Right Graphic: Laptop + Tally Packaging Mockup (3D Animated in Mobile & Desktop) */}
             <div className="lg:col-span-5 flex justify-center lg:justify-end">
-              <div className="relative max-w-lg w-full flex items-center justify-center">
-                {/* Soft ambient blue glow behind device */}
-                <div className="absolute inset-0 bg-blue-500/20 blur-3xl rounded-full scale-90 pointer-events-none" />
-                
-                <img
-                  src="/assets/images/product-hero-devices-clean.png"
-                  alt="TallyPrime Software on Laptop and Retail Box"
-                  className="w-full h-auto object-contain drop-shadow-2xl relative z-10 transition-transform duration-300 hover:scale-[1.02]"
-                  loading="eager"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = '/assets/images/product-hero-devices-exact.png';
-                  }}
-                />
+              <div
+                className="relative max-w-[340px] sm:max-w-[420px] lg:max-w-lg w-full flex items-center justify-center select-none"
+                onMouseMove={handleDeviceMouseMove}
+                onMouseEnter={handleDeviceMouseEnter}
+                onMouseLeave={handleDeviceMouseLeave}
+              >
+                {/* Breathing Ambient Glow behind device */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/35 via-sky-500/25 to-indigo-600/30 blur-3xl rounded-full scale-100 animate-hero-glow pointer-events-none" />
+
+                {/* Floating Mockup Wrapper */}
+                <div
+                  className={`relative z-10 w-full transition-transform duration-300 ease-out ${
+                    !isDeviceHovered ? 'animate-hero-device-float' : ''
+                  }`}
+                  style={
+                    isDeviceHovered
+                      ? {
+                          transform: `perspective(1000px) rotateX(${deviceTilt.y}deg) rotateY(${deviceTilt.x}deg) scale3d(1.03, 1.03, 1.03)`,
+                        }
+                      : undefined
+                  }
+                >
+                  <div className="relative overflow-hidden rounded-2xl p-1">
+                    {/* Main Image */}
+                    <img
+                      src="/assets/images/product-hero-devices-clean.png"
+                      alt="TallyPrime Software on Laptop and Retail Box"
+                      className="w-full h-auto object-contain drop-shadow-[0_20px_45px_rgba(2,12,30,0.65)] relative z-10 select-none pointer-events-none"
+                      loading="eager"
+                      onError={(e) => {
+                        e.target.onerror = null;
+                        e.target.src = '/assets/images/product-hero-devices-exact.png';
+                      }}
+                    />
+
+                    {/* Light Gleam Sweep Animation across the Laptop & Box */}
+                    <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden rounded-2xl">
+                      <div className="w-1/2 h-[260%] -top-3/4 absolute bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine-sweep transform -skew-x-25" />
+                    </div>
+                  </div>
+
+                  {/* Satellite Badge 1 (Top Left) */}
+                  <div className="absolute -top-2 left-2 sm:-left-3 z-30 bg-[#071938]/90 backdrop-blur-md border border-sky-400/40 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-xl flex items-center gap-2 text-[10px] sm:text-xs font-semibold animate-badge-float">
+                    <span className="relative flex h-2 w-2">
+                      <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                      <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                    </span>
+                    <span className="tracking-tight">Tally 5-Star Certified</span>
+                  </div>
+
+                  {/* Satellite Badge 2 (Bottom Right) */}
+                  <div className="absolute -bottom-2 right-2 sm:-right-3 z-30 bg-[#071938]/90 backdrop-blur-md border border-blue-400/40 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-xl flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-semibold animate-badge-float-delay">
+                    <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-amber-400" />
+                    <span className="tracking-tight">TallyPrime 5.0 Ready</span>
+                  </div>
+                </div>
+
               </div>
             </div>
 
@@ -658,10 +754,10 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
         </div>
       </section>
 
-      {/* 2. CATEGORY FILTER TABS STRIP (Centered floating bar) */}
-      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 -mt-6 relative z-20 flex justify-center">
-        <div className="bg-white rounded-2xl border border-slate-200/90 shadow-lg p-1.5 sm:p-2 max-w-full overflow-x-auto scrollbar-none">
-          <div className="flex items-center justify-center gap-1.5 sm:gap-2 min-w-max mx-auto">
+      {/* 2. CATEGORY FILTER TABS STRIP (Centered floating bar with responsive scroll & animations) */}
+      <section className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 -mt-6 sm:-mt-7 relative z-20 flex justify-center">
+        <div className="bg-white/95 backdrop-blur-md rounded-2xl border border-slate-200/90 shadow-[0_10px_35px_rgba(0,0,0,0.08)] p-1.5 sm:p-2 max-w-full overflow-x-auto scrollbar-none transition-all duration-300">
+          <div className="flex items-center justify-start sm:justify-center gap-1.5 sm:gap-2 min-w-max mx-auto px-1">
             {tabs.map((tab) => {
               const Icon = tab.icon;
               const isActive = activeTab === tab.name;
@@ -669,13 +765,13 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
                 <button
                   key={tab.name}
                   onClick={() => setActiveTab(tab.name)}
-                  className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold transition-all cursor-pointer ${
+                  className={`flex items-center gap-2 px-3.5 sm:px-4 py-2 sm:py-2.5 rounded-xl text-xs font-bold transition-all duration-200 cursor-pointer active:scale-95 ${
                     isActive
-                      ? 'bg-[#0052cc] text-white shadow-sm'
-                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                      ? 'bg-gradient-to-r from-[#0052cc] to-[#0065ff] text-white shadow-md shadow-blue-600/30 scale-[1.02]'
+                      : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100/80 hover:scale-[1.01]'
                   }`}
                 >
-                  <Icon className="w-4 h-4" />
+                  <Icon className={`w-4 h-4 transition-transform duration-200 ${isActive ? 'scale-110' : ''}`} />
                   <span>{tab.name}</span>
                 </button>
               );

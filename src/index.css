@@ -60,3 +60,128 @@
 .animate-pulse-glow {
   animation: pulseGlow 3s ease-in-out infinite;
 }
+
+/* Hero Floating, Glow & Constellation Animations (Desktop & Mobile) */
+@keyframes heroDeviceFloat {
+  0%, 100% {
+    transform: translateY(0px) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-11px) rotate(-0.6deg);
+  }
+}
+
+@keyframes heroGlowBreath {
+  0%, 100% {
+    transform: scale(0.92);
+    opacity: 0.35;
+  }
+  50% {
+    transform: scale(1.15);
+    opacity: 0.7;
+  }
+}
+
+@keyframes shineSweep {
+  0% {
+    transform: translateX(-180%) skewX(-25deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.85;
+  }
+  45% {
+    transform: translateX(280%) skewX(-25deg);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(280%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes twinkleNode {
+  0%, 100% {
+    opacity: 0.35;
+    transform: scale(0.85);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.4);
+  }
+}
+
+@keyframes pulseLineDash {
+  0% {
+    stroke-dashoffset: 40;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes badgeFloat {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(6px);
+  }
+}
+
+@keyframes badgeFloatDelay {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-hero-device-float {
+  animation: heroDeviceFloat 4.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-hero-glow {
+  animation: heroGlowBreath 3.6s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+.animate-shine-sweep {
+  animation: shineSweep 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-twinkle-1 {
+  animation: twinkleNode 2.6s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.animate-twinkle-2 {
+  animation: twinkleNode 3.4s ease-in-out infinite 0.8s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.animate-twinkle-3 {
+  animation: twinkleNode 3s ease-in-out infinite 1.6s;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.animate-pulse-line {
+  stroke-dasharray: 6 8;
+  animation: pulseLineDash 10s linear infinite;
+}
+
+.animate-badge-float {
+  animation: badgeFloat 3.8s ease-in-out infinite;
+  will-change: transform;
+}
+
+.animate-badge-float-delay {
+  animation: badgeFloatDelay 4.2s ease-in-out infinite 0.7s;
+  will-change: transform;
+}
+

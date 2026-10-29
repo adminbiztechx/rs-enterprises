@@ -27,36 +27,11 @@ export const HeroMockup = () => {
       tabLabel: 'Tally Suite',
       tag: 'TALLYPRIME 5.0 LIVE',
       tagColor: 'bg-blue-50 text-[#0052cc] border-blue-200/80',
-      title: 'TallyPrime Multi-Device Suite',
-      subtitle: 'Complete accounting, inventory & business control on desktop and mobile',
-      image: '/assets/images/hero-clean-4k@2x.png',
-      alt: 'TallyPrime Enterprise Dashboard Laptop and Mobile Mockup 4K Ultra HD',
-      hotspots: [
-        {
-          id: 's1-h1',
-          position: 'top-[22%] left-[16%]',
-          label: 'Total Sales: ₹45,80,000 (↑12%)',
-          dotColor: 'bg-emerald-500',
-          animClass: 'animate-float-slow',
-          icon: TrendingUp,
-        },
-        {
-          id: 's1-h2',
-          position: 'bottom-[28%] left-[44%]',
-          label: 'Expenses: ₹18,76,000',
-          dotColor: 'bg-blue-600',
-          animClass: 'animate-float-delay',
-          icon: BarChart3,
-        },
-        {
-          id: 's1-h3',
-          position: 'top-[15%] right-[10%]',
-          label: 'Live Mobile Sync',
-          dotColor: 'bg-sky-500',
-          animClass: 'animate-float-slow',
-          icon: Smartphone,
-        },
-      ],
+      title: 'TallyPrime Business Management',
+      subtitle: 'Powerful business management software for accounting, inventory & compliance',
+      image: '/assets/images/hero-tallyprime-banner.jpg',
+      alt: 'TallyPrime Powerful Business Management Software Dashboard',
+      hotspots: [],
       showPartnerBadge: false,
     },
     {
@@ -253,7 +228,7 @@ export const HeroMockup = () => {
         </div>
 
         {/* Viewport for Sliding Images & Animated Hotspots */}
-        <div className="relative aspect-[16/10.5] sm:aspect-[16/10] rounded-xl sm:rounded-2xl overflow-hidden bg-slate-900/5">
+        <div className="relative aspect-[16/9.5] sm:aspect-[16/9] rounded-xl sm:rounded-2xl overflow-hidden bg-[#051124]">
           
           {/* Images Stack with Smooth Crossfade & Slight Zoom */}
           {slides.map((s, idx) => {
@@ -270,7 +245,7 @@ export const HeroMockup = () => {
                 <img
                   src={s.image}
                   alt={s.alt}
-                  className="w-full h-full object-cover sm:object-contain rounded-xl transition-transform duration-500 hover:scale-[1.01]"
+                  className="w-full h-full object-contain rounded-xl transition-transform duration-500 hover:scale-[1.01]"
                   loading={idx === 0 ? 'eager' : 'lazy'}
                 />
 

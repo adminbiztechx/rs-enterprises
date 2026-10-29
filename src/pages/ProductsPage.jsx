@@ -645,7 +645,7 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-7 space-y-5 text-center lg:text-left">
+            <div className="lg:col-span-5 xl:col-span-5 space-y-5 text-center lg:text-left">
               
               {/* Breadcrumb Pill with Live Indicator */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold text-blue-200">
@@ -688,10 +688,10 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
 
             </div>
 
-            {/* Right Graphic: Laptop + Tally Packaging Mockup (3D Animated in Mobile & Desktop) */}
-            <div className="lg:col-span-5 flex justify-center lg:justify-end">
+            {/* Right Graphic: High Definition TallyPrime 3D Banner Showcase */}
+            <div className="lg:col-span-7 xl:col-span-7 flex justify-center lg:justify-end">
               <div
-                className="relative max-w-[340px] sm:max-w-[420px] lg:max-w-lg w-full flex items-center justify-center select-none"
+                className="relative max-w-xl xl:max-w-2xl w-full flex items-center justify-center select-none"
                 onMouseMove={handleDeviceMouseMove}
                 onMouseEnter={handleDeviceMouseEnter}
                 onMouseLeave={handleDeviceMouseLeave}
@@ -707,32 +707,28 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
                   style={
                     isDeviceHovered
                       ? {
-                          transform: `perspective(1000px) rotateX(${deviceTilt.y}deg) rotateY(${deviceTilt.x}deg) scale3d(1.03, 1.03, 1.03)`,
+                          transform: `perspective(1000px) rotateX(${deviceTilt.y}deg) rotateY(${deviceTilt.x}deg) scale3d(1.02, 1.02, 1.02)`,
                         }
                       : undefined
                   }
                 >
-                  <div className="relative overflow-hidden rounded-2xl p-1">
-                    {/* Main Image */}
+                  <div className="relative overflow-hidden rounded-2xl border border-sky-400/25 shadow-[0_20px_50px_rgba(2,12,30,0.85)] bg-[#051329]/90 backdrop-blur-xs">
+                    {/* Main Image - Full Original Quality Uncompressed */}
                     <img
-                      src="/assets/images/product-hero-devices-clean.png"
-                      alt="TallyPrime Software on Laptop and Retail Box"
-                      className="w-full h-auto object-contain drop-shadow-[0_20px_45px_rgba(2,12,30,0.65)] relative z-10 select-none pointer-events-none"
+                      src="/assets/images/product-hero-tallyprime-hd.jpg"
+                      alt="TallyPrime Powerful Business Management Software"
+                      className="w-full h-auto object-contain rounded-2xl relative z-10 select-none pointer-events-none"
                       loading="eager"
-                      onError={(e) => {
-                        e.target.onerror = null;
-                        e.target.src = '/assets/images/product-hero-devices-exact.png';
-                      }}
                     />
 
-                    {/* Light Gleam Sweep Animation across the Laptop & Box */}
+                    {/* Light Gleam Sweep Animation across the banner */}
                     <div className="absolute inset-0 pointer-events-none z-20 overflow-hidden rounded-2xl">
-                      <div className="w-1/2 h-[260%] -top-3/4 absolute bg-gradient-to-r from-transparent via-white/20 to-transparent animate-shine-sweep transform -skew-x-25" />
+                      <div className="w-1/2 h-[260%] -top-3/4 absolute bg-gradient-to-r from-transparent via-white/15 to-transparent animate-shine-sweep transform -skew-x-25" />
                     </div>
                   </div>
 
-                  {/* Satellite Badge 1 (Top Left) */}
-                  <div className="absolute -top-2 left-2 sm:-left-3 z-30 bg-[#071938]/90 backdrop-blur-md border border-sky-400/40 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-xl flex items-center gap-2 text-[10px] sm:text-xs font-semibold animate-badge-float">
+                  {/* Satellite Badge 1 (Top Right) */}
+                  <div className="absolute -top-3 -right-2 sm:-right-3 z-30 bg-[#071938]/95 backdrop-blur-md border border-sky-400/50 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-xl flex items-center gap-2 text-[10px] sm:text-xs font-semibold animate-badge-float">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
@@ -740,8 +736,8 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
                     <span className="tracking-tight">Tally 5-Star Certified</span>
                   </div>
 
-                  {/* Satellite Badge 2 (Bottom Right) */}
-                  <div className="absolute -bottom-2 right-2 sm:-right-3 z-30 bg-[#071938]/90 backdrop-blur-md border border-blue-400/40 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-xl flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-semibold animate-badge-float-delay">
+                  {/* Satellite Badge 2 (Bottom Left) */}
+                  <div className="absolute -bottom-3 -left-2 sm:-left-3 z-30 bg-[#071938]/95 backdrop-blur-md border border-blue-400/50 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-xl flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-semibold animate-badge-float-delay">
                     <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-amber-400" />
                     <span className="tracking-tight">TallyPrime 5.0 Ready</span>
                   </div>

@@ -587,7 +587,7 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
     <div className="bg-white min-h-screen">
       
       {/* 1. HERO SECTION (Animated Constellation Network & 3D Floating Device Mockup) */}
-      <section className="bg-gradient-to-r from-[#031533] via-[#072149] to-[#0a2c5f] text-white pt-8 pb-14 lg:pt-14 lg:pb-20 relative overflow-hidden">
+      <section className="bg-gradient-to-r from-[#031533] via-[#072149] to-[#0a2c5f] text-white pt-7 pb-12 lg:pt-10 lg:pb-16 relative overflow-hidden">
         
         {/* Soft Ambient Light Orbs */}
         <div className="absolute -top-24 -left-20 w-96 h-96 bg-blue-600/20 rounded-full blur-[100px] pointer-events-none animate-pulse-slow" />
@@ -688,10 +688,10 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
 
             </div>
 
-            {/* Right Graphic: High Definition TallyPrime 3D Banner Showcase (Fills the available space) */}
+            {/* Right Graphic: High Definition TallyPrime 3D Banner Showcase (Fills the available space with refined height) */}
             <div className="lg:col-span-7 xl:col-span-8 flex justify-center lg:justify-start items-center w-full">
               <div
-                className="relative w-full flex items-center justify-center select-none"
+                className="relative w-full max-w-[720px] xl:max-w-[790px] flex items-center justify-center select-none"
                 onMouseMove={handleDeviceMouseMove}
                 onMouseEnter={handleDeviceMouseEnter}
                 onMouseLeave={handleDeviceMouseLeave}
@@ -713,11 +713,11 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
                   }
                 >
                   <div className="relative overflow-hidden rounded-2xl border border-sky-400/25 shadow-[0_20px_50px_rgba(2,12,30,0.85)] bg-[#051329]/90 backdrop-blur-xs w-full">
-                    {/* Main Image - Full Original Quality Uncompressed */}
+                    {/* Main Image - Full Original Quality Uncompressed with Controlled Height */}
                     <img
                       src="/assets/images/product-hero-tallyprime-hd.jpg"
                       alt="TallyPrime Powerful Business Management Software"
-                      className="w-full h-auto object-cover rounded-2xl relative z-10 select-none pointer-events-none"
+                      className="w-full h-[240px] sm:h-[300px] lg:h-[340px] xl:h-[370px] object-cover object-center rounded-2xl relative z-10 select-none pointer-events-none"
                       loading="eager"
                     />
 

@@ -642,10 +642,10 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
         </svg>
 
         <div className="w-full px-4 sm:px-8 lg:px-12 xl:px-16 relative z-10">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
             
             {/* Left Content */}
-            <div className="lg:col-span-5 xl:col-span-5 space-y-5 text-center lg:text-left">
+            <div className="lg:col-span-5 xl:col-span-4 space-y-5 text-center lg:text-left flex-shrink-0">
               
               {/* Breadcrumb Pill with Live Indicator */}
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-xs font-semibold text-blue-200">
@@ -666,7 +666,7 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
               </h1>
 
               {/* Subtitle */}
-              <p className="text-xs sm:text-[14.5px] text-blue-100/90 leading-relaxed max-w-xl mx-auto lg:mx-0">
+              <p className="text-xs sm:text-[14.5px] text-blue-100/90 leading-relaxed">
                 Powerful. Reliable. Secure. Choose the right Tally product for your business and experience the power of simplified accounting.
               </p>
 
@@ -688,10 +688,10 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
 
             </div>
 
-            {/* Right Graphic: High Definition TallyPrime 3D Banner Showcase */}
-            <div className="lg:col-span-7 xl:col-span-7 flex justify-center lg:justify-end">
+            {/* Right Graphic: High Definition TallyPrime 3D Banner Showcase (Fills the available space) */}
+            <div className="lg:col-span-7 xl:col-span-8 flex justify-center lg:justify-start items-center w-full">
               <div
-                className="relative max-w-xl xl:max-w-2xl w-full flex items-center justify-center select-none"
+                className="relative w-full flex items-center justify-center select-none"
                 onMouseMove={handleDeviceMouseMove}
                 onMouseEnter={handleDeviceMouseEnter}
                 onMouseLeave={handleDeviceMouseLeave}
@@ -707,17 +707,17 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
                   style={
                     isDeviceHovered
                       ? {
-                          transform: `perspective(1000px) rotateX(${deviceTilt.y}deg) rotateY(${deviceTilt.x}deg) scale3d(1.02, 1.02, 1.02)`,
+                          transform: `perspective(1000px) rotateX(${deviceTilt.y}deg) rotateY(${deviceTilt.x}deg) scale3d(1.01, 1.01, 1.01)`,
                         }
                       : undefined
                   }
                 >
-                  <div className="relative overflow-hidden rounded-2xl border border-sky-400/25 shadow-[0_20px_50px_rgba(2,12,30,0.85)] bg-[#051329]/90 backdrop-blur-xs">
+                  <div className="relative overflow-hidden rounded-2xl border border-sky-400/25 shadow-[0_20px_50px_rgba(2,12,30,0.85)] bg-[#051329]/90 backdrop-blur-xs w-full">
                     {/* Main Image - Full Original Quality Uncompressed */}
                     <img
                       src="/assets/images/product-hero-tallyprime-hd.jpg"
                       alt="TallyPrime Powerful Business Management Software"
-                      className="w-full h-auto object-contain rounded-2xl relative z-10 select-none pointer-events-none"
+                      className="w-full h-auto object-cover rounded-2xl relative z-10 select-none pointer-events-none"
                       loading="eager"
                     />
 
@@ -728,7 +728,7 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
                   </div>
 
                   {/* Satellite Badge 1 (Top Right) */}
-                  <div className="absolute -top-3 -right-2 sm:-right-3 z-30 bg-[#071938]/95 backdrop-blur-md border border-sky-400/50 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-xl flex items-center gap-2 text-[10px] sm:text-xs font-semibold animate-badge-float">
+                  <div className="absolute -top-3 right-3 sm:right-6 z-30 bg-[#071938]/95 backdrop-blur-md border border-sky-400/50 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-xl flex items-center gap-2 text-[10px] sm:text-xs font-semibold animate-badge-float">
                     <span className="relative flex h-2 w-2">
                       <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
                       <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
@@ -737,7 +737,7 @@ export const ProductsPage = ({ onNavigate, onOpenDemoModal, onOpenContactModal, 
                   </div>
 
                   {/* Satellite Badge 2 (Bottom Left) */}
-                  <div className="absolute -bottom-3 -left-2 sm:-left-3 z-30 bg-[#071938]/95 backdrop-blur-md border border-blue-400/50 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-xl flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-semibold animate-badge-float-delay">
+                  <div className="absolute -bottom-3 left-3 sm:left-6 z-30 bg-[#071938]/95 backdrop-blur-md border border-blue-400/50 text-white px-2.5 sm:px-3 py-1 sm:py-1.5 rounded-xl shadow-xl flex items-center gap-1.5 sm:gap-2 text-[10px] sm:text-xs font-semibold animate-badge-float-delay">
                     <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-amber-400" />
                     <span className="tracking-tight">TallyPrime 5.0 Ready</span>
                   </div>
